@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template');
-});
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('template');
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/tambah_data', function () {
+    return view('tambah_data');
+});
+
+Route::get('/edit_data', function () {
+    return view('edit_data');
+});
 
 Route::get('/logout', function(){
     \Auth::logout();

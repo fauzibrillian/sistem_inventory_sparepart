@@ -23,6 +23,7 @@ Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
 
+
 Route::get('/edit_data', function () {
     return view('edit_data');
 });

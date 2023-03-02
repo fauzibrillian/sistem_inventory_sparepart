@@ -23,9 +23,20 @@ Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
 
+Route::get('/tambah_data_supplier', function () {
+    return view('tambah_data_supplier');
+});
 
 Route::get('/edit_data', function () {
     return view('edit_data');
+});
+
+Route::get('/edit_data_supplier', function () {
+    return view('edit_data_supplier');
+});
+
+Route::get('/master_supplier', function () {
+    return view('master_supplier');
 });
 
 Route::get('/logout', function(){

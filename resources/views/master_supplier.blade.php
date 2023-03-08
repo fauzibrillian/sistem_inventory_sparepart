@@ -72,9 +72,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="/master_sparepart">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Master Sparepart</p>
             </a>
           </li>
           <li>

@@ -51,6 +51,10 @@ Route::get('/master_supplier', function () {
     return view('master_supplier');
 });
 
+Route::get('/master_sparepart', function () {
+    return view('master_sparepart');
+});
+
 Route::get('/logout', function(){
     \Auth::logout();
     return redirect ('/');

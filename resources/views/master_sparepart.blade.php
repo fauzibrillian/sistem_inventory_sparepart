@@ -20,7 +20,6 @@ Coded by www.creative-tim.com
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <title>
     Sistem Inventory Sparepart 
   </title>
@@ -54,7 +53,7 @@ Coded by www.creative-tim.com
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="/">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
@@ -72,10 +71,10 @@ Coded by www.creative-tim.com
               <p>Transaksi</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/master_sparepart">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Master Sparepart</p>
+                <i class="nc-icon nc-bell-55"></i>
+                <p>Master Sparepart</p>
             </a>
           </li>
           <li>

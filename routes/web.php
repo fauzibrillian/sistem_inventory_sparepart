@@ -23,6 +23,14 @@ Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
 
+Route::get('/transaksi', function () {
+    return view('transaksi');
+});
+
+Route::get('/tambah_data_transaksi', function () {
+    return view('tambah_data_transaksi');
+});
+
 Route::get('/tambah_data_supplier', function () {
     return view('tambah_data_supplier');
 });
@@ -33,6 +41,10 @@ Route::get('/edit_data', function () {
 
 Route::get('/edit_data_supplier', function () {
     return view('edit_data_supplier');
+});
+
+Route::get('/edit_data_transaksi', function () {
+    return view('edit_data_transaksi');
 });
 
 Route::get('/master_supplier', function () {

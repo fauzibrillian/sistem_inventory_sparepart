@@ -78,6 +78,12 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
+            <a href="/return">
+              <i class="nc-icon nc-simple-remove"></i>
+              <p>Return</p>
+            </a>
+          </li>
+          <li>
             <a href="./user.html">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>

@@ -23,12 +23,12 @@ Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
 
-Route::get('/transaksi', function () {
-    return view('transaksi');
+Route::get('/monitoring', function () {
+    return view('monitoring');
 });
 
-Route::get('/tambah_data_transaksi', function () {
-    return view('tambah_data_transaksi');
+Route::get('/tambah_data_monitoring', function () {
+    return view('tambah_data_monitoring');
 });
 
 Route::get('/tambah_data_supplier', function () {
@@ -43,16 +43,16 @@ Route::get('/edit_data_supplier', function () {
     return view('edit_data_supplier');
 });
 
-Route::get('/edit_data_transaksi', function () {
-    return view('edit_data_transaksi');
+Route::get('/edit_data_monitoring', function () {
+    return view('edit_data_monitoring');
 });
 
 Route::get('/master_supplier', function () {
     return view('master_supplier');
 });
 
-Route::get('/master_sparepart', function () {
-    return view('master_sparepart');
+Route::get('/transaksi', function () {
+    return view('transaksi');
 });
 
 Route::get('/logout', function(){

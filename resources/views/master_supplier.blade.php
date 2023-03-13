@@ -59,40 +59,28 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="active">
+          <li class="active ">
             <a href="/master_supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
           <li>
-            <a href="/transaksi">
+            <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
-              <p>Transaksi</p>
+              <p>Monitoring</p>
             </a>
           </li>
           <li>
-            <a href="/master_sparepart">
+            <a href="/transaksi">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Master Sparepart</p>
+              <p>Transaksi</p>
             </a>
           </li>
           <li>
             <a href="./user.html">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
             </a>
           </li>
         </ul>

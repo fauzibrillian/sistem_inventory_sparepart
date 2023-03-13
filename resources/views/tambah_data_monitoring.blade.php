@@ -53,46 +53,34 @@ Coded by www.creative-tim.com
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li >
+          <li>
             <a href="/">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="active">
+          <li>
             <a href="/master_supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
-          <li>
-            <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
+          <li class="active">
+            <a href="/monitoring">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>Monitoring</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="/transaksi">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Transaksi</p>
             </a>
           </li>
           <li>
             <a href="./user.html">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
             </a>
           </li>
         </ul>
@@ -165,7 +153,7 @@ Coded by www.creative-tim.com
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/transaksi" class="btn btn-danger"> Back </a>
+                        <a href="/monitoring" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

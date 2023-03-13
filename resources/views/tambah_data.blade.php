@@ -141,9 +141,13 @@ Coded by www.creative-tim.com
                             <label for="inputtipe">Tipe Mobil</label>
                             <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
                             <input type="text" class="form-control" id="inputqty">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputsupplier">Supplier</label>
+                          <input type="text" class="form-control" id="inputsupplier" placeholder="Supplier">
                         </div>
                         </div>
                         <div class="form-group">

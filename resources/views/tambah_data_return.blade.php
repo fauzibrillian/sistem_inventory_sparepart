@@ -126,7 +126,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Monitoring</h4>
+                    <h4 class="card-title">Tambahkan Data Return</h4>
                     <form>
                         <div class="form-row">
                         <div class="form-group col-md-6">
@@ -144,22 +144,22 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
+                            <label for="inputtipe">Qty</label>
+                            <input type="qty" class="form-control" id="inputtipe" placeholder="Qty">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
                             <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" placeholder="Nopol">
-                        </div>
                         <div class="form-group col-md-12">
-                            <label for="inputtipe">Nama Pengambil Sparepart</label>
+                            <label for="inputtipe">Nama Pengirim Sparepart</label>
                             <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengambil Sparepart">
                         </div>
                         </div>
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/monitoring" class="btn btn-danger"> Back </a>
+                        <a href="/return" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

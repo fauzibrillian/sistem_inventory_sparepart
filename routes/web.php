@@ -55,6 +55,18 @@ Route::get('/transaksi', function () {
     return view('transaksi');
 });
 
+Route::get('/return', function () {
+    return view('return');
+});
+
+Route::get('/tambah_data_return', function () {
+    return view('tambah_data_return');
+});
+
+Route::get('/edit_data_return', function () {
+    return view('edit_data_return');
+});
+
 Route::get('/logout', function(){
     \Auth::logout();
     return redirect ('/');

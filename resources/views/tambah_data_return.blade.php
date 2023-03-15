@@ -65,7 +65,7 @@ Coded by www.creative-tim.com
               <p>Master Supplier</p>
             </a>
           </li>
-          <li class="active">
+          <li >
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
@@ -77,7 +77,7 @@ Coded by www.creative-tim.com
               <p>Transaksi</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/return">
               <i class="nc-icon nc-simple-remove"></i>
               <p>Return</p>
@@ -154,6 +154,10 @@ Coded by www.creative-tim.com
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
                             <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengambil Sparepart">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Supplier</label>
+                          <input type="nama" class="form-control" id="inputtipe" placeholder="Supplier">
                         </div>
                         </div>
                         <div class="form-group">

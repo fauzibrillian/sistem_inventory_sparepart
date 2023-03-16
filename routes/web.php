@@ -23,12 +23,16 @@ Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
 
+Route::get('/pengambilan', function () {
+    return view('pengambilan');
+});
+
 Route::get('/monitoring', function () {
     return view('monitoring');
 });
 
-Route::get('/tambah_data_monitoring', function () {
-    return view('tambah_data_monitoring');
+Route::get('/tambah_data_pengambilan', function () {
+    return view('tambah_data_pengambilan');
 });
 
 Route::get('/tambah_data_supplier', function () {
@@ -43,8 +47,8 @@ Route::get('/edit_data_supplier', function () {
     return view('edit_data_supplier');
 });
 
-Route::get('/edit_data_monitoring', function () {
-    return view('edit_data_monitoring');
+Route::get('/edit_data_pengambilan', function () {
+    return view('edit_data_pengambilan');
 });
 
 Route::get('/master_supplier', function () {

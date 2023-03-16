@@ -126,7 +126,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Monitoring</h4>
+                    <h4 class="card-title">Edit Data Monitoring</h4>
                     <form>
                         <div class="form-row">
                         <div class="form-group col-md-6">
@@ -159,7 +159,7 @@ Coded by www.creative-tim.com
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/monitoring" class="btn btn-danger"> Back </a>
+                        <a href="/pengambilan" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

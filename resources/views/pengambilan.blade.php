@@ -65,19 +65,19 @@ Coded by www.creative-tim.com
               <p>Master Supplier</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/transaksi">
-                <i class="nc-icon nc-bell-55"></i>
-                <p>Transaksi</p>
+              <i class="nc-icon nc-bell-55"></i>
+              <p>Transaksi</p>
             </a>
           </li>
-          <li class="active">
+          <li>
             <a href="/return">
               <i class="nc-icon nc-simple-remove"></i>
               <p>Return</p>
@@ -123,11 +123,11 @@ Coded by www.creative-tim.com
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-md-13">
+          <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Data Return</h4>
-                <a href="/tambah_data_return" class="btn btn-primary"> Tambah Data Return </a>
+                <h4 class="card-title"> Data Pengambilan Sparepart</h4>
+                <a href="/tambah_data_pengambilan" class="btn btn-primary"> Tambah Data Pengambilan</a>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -146,19 +146,13 @@ Coded by www.creative-tim.com
                         Kode Sparepart
                       </th>
                       <th>
-                        Qty
-                      </th>
-                      <th>
-                        Harga Satuan
-                      </th>
-                      <th>
                         Merk Mobil
                       </th>
                       <th>
-                        Nama Pengirim Return
+                        Nopol
                       </th>
                       <th>
-                        Supplier
+                        Nama Pengambil Sparepart
                       </th>
                       <th>
                         Aksi
@@ -173,28 +167,22 @@ Coded by www.creative-tim.com
                           Niger
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Surabaya
                         </td>
                         <td>
-                          $36,738
+                          23554354
                         </td>
                         <td>
-                          $36,738
+                          Niger@gmail.com
                         </td>
                         <td>
-                         $36,738
+                          Niger@gmail.com
                         </td>
                         <td>
-                          $36,738
-                         </td>
-                        <td>
-                         $36,738
+                          Niger@gmail.com
                         </td>
                         <td>
-                         $36,738
-                        </td>
-                        <td>
-                          <a href="/edit_data_return" class="btn btn-primary">
+                          <a href="edit_data_pengambilan" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
                               <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                             </svg>
@@ -214,28 +202,22 @@ Coded by www.creative-tim.com
                           Curaçao
                         </td>
                         <td>
-                          Sinaai-Waas
+                          Jakarta
                         </td>
                         <td>
-                          $23,789
+                          626244636
                         </td>
                         <td>
-                          $23,789
+                          curcao@gmail.com
                         </td>
                         <td>
-                          $36,738
+                          curcao@gmail.com
                         </td>
                         <td>
-                          $36,738
-                         </td>
-                        <td>
-                            $36,738
+                          curcao@gmail.com
                         </td>
                         <td>
-                            $36,738
-                        </td>
-                        <td>
-                          <a href="/edit_data_return" class="btn btn-primary">
+                          <a href="edit_data_pengambilan" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
                               <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                             </svg>
@@ -252,31 +234,25 @@ Coded by www.creative-tim.com
                           3
                         </td>
                         <td>
-                          Netherlands
+                          John
                         </td>
                         <td>
-                          Baileux
+                          Lampung
                         </td>
                         <td>
-                          $56,142
+                          8114682
                         </td>
                         <td>
-                          $56,142
+                          John@gmail.com
                         </td>
                         <td>
-                          $36,738
+                          John@gmail.com
                         </td>
                         <td>
-                          $36,738
+                          John@gmail.com
                         </td>
                         <td>
-                            $36,738
-                        </td>
-                        <td>
-                            $36,738
-                        </td>
-                        <td>
-                          <a href="/edit_data_return" class="btn btn-primary">
+                          <a href="edit_data_pengambilan" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
                               <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                             </svg>

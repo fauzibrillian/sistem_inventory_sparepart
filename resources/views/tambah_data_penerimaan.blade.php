@@ -65,13 +65,13 @@ Coded by www.creative-tim.com
               <p>Master Supplier</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="/transaksi">
               <i class="nc-icon nc-bell-55"></i>
               <p>Transaksi</p>
@@ -126,44 +126,40 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Transaksi</h4>
+                    <h4 class="card-title">Tambahkan Data Penerimaan Sparepart</h4>
                     <form>
                         <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="inputnama">Tanggal Transaksi</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal Transaksi">
+                        <div class="form-group col-md-6">
+                            <label for="inputnama">Tanggal</label>
+                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Sparepart">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Kode Sparepart">
+                            <label for="inputkode">Nama Sparepart</label>
+                            <input type="text" class="form-control" id="inputkode" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="inputharga">Harga Satuan</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Harga">
+                            <label for="inputharga">Kode Sparepart</label>
+                            <input type="text" class="form-control" id="inputharga" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
+                            <label for="inputtipe">Merk Mobil</label>
+                            <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty">
+                            <label for="inputtipe">Nopol</label>
+                            <input type="nopol" class="form-control" id="inputtipe" placeholder="Nopol">
                         </div>
                         <div class="form-group col-md-12">
-                          <label for="inputsupplier">Supplier</label>
-                          <input type="text" class="form-control" id="inputsupplier" placeholder="Supplier">
+                            <label for="inputtipe">Nama Penerima Sparepart</label>
+                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Penerima Sparepart">
                         </div>
                         </div>
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/transaksi" class="btn btn-danger"> Back </a>
+                        <a href="/penerimaan" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

@@ -126,7 +126,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Edit Data Monitoring</h4>
+                    <h4 class="card-title">Edit Data Pengambilan</h4>
                     <form>
                         <div class="form-row">
                         <div class="form-group col-md-6">

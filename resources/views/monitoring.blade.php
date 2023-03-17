@@ -169,7 +169,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/monitoring" class="btn btn-primary">Pilih</a>
+                  <a href="/penerimaan" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ Coded by www.creative-tim.com
                 <div class="card-footer ">
                   <hr>
                   <div class="stats">
-                    <a href="/transaksi" class="btn btn-primary">Pilih</a>
+                    <a href="/stock" class="btn btn-primary">Pilih</a>
                   </div>
                 </div>
               </div>

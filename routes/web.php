@@ -27,12 +27,24 @@ Route::get('/pengambilan', function () {
     return view('pengambilan');
 });
 
+Route::get('/penerimaan', function () {
+    return view('penerimaan');
+});
+
 Route::get('/monitoring', function () {
     return view('monitoring');
 });
 
+Route::get('/stock', function () {
+    return view('stock');
+});
+
 Route::get('/tambah_data_pengambilan', function () {
     return view('tambah_data_pengambilan');
+});
+
+Route::get('/tambah_data_penerimaan', function () {
+    return view('tambah_data_penerimaan');
 });
 
 Route::get('/tambah_data_supplier', function () {
@@ -49,6 +61,10 @@ Route::get('/edit_data_supplier', function () {
 
 Route::get('/edit_data_pengambilan', function () {
     return view('edit_data_pengambilan');
+});
+
+Route::get('/edit_data_penerimaan', function () {
+    return view('edit_data_penerimaan');
 });
 
 Route::get('/master_supplier', function () {

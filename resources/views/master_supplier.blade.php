@@ -132,7 +132,7 @@ Coded by www.creative-tim.com
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
-                    <thead class=" text-primary">
+                    <thead class=" table-primary">
                       <th>
                         No
                       </th>

@@ -123,7 +123,7 @@ Coded by www.creative-tim.com
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-md-13">
+          <div class="col-md-11">
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Data Return</h4>
@@ -132,7 +132,7 @@ Coded by www.creative-tim.com
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
-                    <thead class=" text-primary">
+                    <thead class=" table-primary">
                       <th>
                         No
                       </th>
@@ -148,7 +148,7 @@ Coded by www.creative-tim.com
                       <th>
                         Qty
                       </th>
-                      <th>
+                      <th class="text-center">
                         Harga Satuan
                       </th>
                       <th>
@@ -181,7 +181,7 @@ Coded by www.creative-tim.com
                         <td>
                           $36,738
                         </td>
-                        <td>
+                        <td class="text-center">
                          $36,738
                         </td>
                         <td>
@@ -222,17 +222,17 @@ Coded by www.creative-tim.com
                         <td>
                           $23,789
                         </td>
-                        <td>
+                        <td class="text-center">
                           $36,738
                         </td>
                         <td>
                           $36,738
                          </td>
                         <td>
-                            $36,738
+                          $36,738
                         </td>
                         <td>
-                            $36,738
+                          $36,738
                         </td>
                         <td>
                           <a href="/edit_data_return" class="btn btn-primary">
@@ -263,7 +263,7 @@ Coded by www.creative-tim.com
                         <td>
                           $56,142
                         </td>
-                        <td>
+                        <td class="text-center">
                           $36,738
                         </td>
                         <td>

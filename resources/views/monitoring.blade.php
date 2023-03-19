@@ -85,9 +85,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
+            <a href="/master_pegawai">
+              <i class="nc-icon nc-badge"></i>
+              <p>Master Pegawai</p>
             </a>
           </li>
         </ul>
@@ -130,7 +130,7 @@ Coded by www.creative-tim.com
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center">
-                      <i class="nc-icon nc-single-02 text"></i>
+                      <i class="nc-icon nc-briefcase-24 text"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
@@ -155,7 +155,7 @@ Coded by www.creative-tim.com
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center">
-                      <i class="nc-icon nc-tile-56 text"></i>
+                      <i class="nc-icon nc-box text"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
@@ -180,7 +180,7 @@ Coded by www.creative-tim.com
                   <div class="row">
                     <div class="col-5 col-md-4">
                       <div class="icon-big text-center">
-                        <i class="nc-icon nc-bell-55 text"></i>
+                        <i class="nc-icon nc-app text"></i>
                       </div>
                     </div>
                     <div class="col-7 col-md-8">

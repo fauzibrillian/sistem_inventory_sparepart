@@ -85,9 +85,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
+            <a href="/master_pegawai">
+              <i class="nc-icon nc-badge"></i>
+              <p>Master Pegawai</p>
             </a>
           </li>
         </ul>

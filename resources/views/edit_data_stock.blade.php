@@ -126,7 +126,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Edit Data Transaksi</h4>
+                    <h4 class="card-title">Tambahkan Data Stock</h4>
                     <form>
                         <div class="form-row">
                         <div class="form-group col-md-6">
@@ -137,25 +137,21 @@ Coded by www.creative-tim.com
                             <label for="inputkode">Kode Sparepart</label>
                             <input type="text" class="form-control" id="inputkode" placeholder="Kode Sparepart">
                         </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputharga">Harga Satuan</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Harga">
-                        </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
                             <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
                             <input type="text" class="form-control" id="inputqty">
-                        </div>
+                        </div>  
                         </div>
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/transaksi" class="btn btn-danger"> Back </a>
+                        <a href="/stock" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

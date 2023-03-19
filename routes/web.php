@@ -39,12 +39,24 @@ Route::get('/stock', function () {
     return view('stock');
 });
 
+Route::get('/master_pegawai', function () {
+    return view('master_pegawai');
+});
+
 Route::get('/tambah_data_pengambilan', function () {
     return view('tambah_data_pengambilan');
 });
 
+Route::get('/tambah_data_pegawai', function () {
+    return view('tambah_data_pegawai');
+});
+
 Route::get('/tambah_data_penerimaan', function () {
     return view('tambah_data_penerimaan');
+});
+
+Route::get('/tambah_data_stock', function () {
+    return view('tambah_data_stock');
 });
 
 Route::get('/tambah_data_supplier', function () {
@@ -55,8 +67,16 @@ Route::get('/edit_data', function () {
     return view('edit_data');
 });
 
+Route::get('/edit_data_pegawai', function () {
+    return view('edit_data_pegawai');
+});
+
 Route::get('/edit_data_supplier', function () {
     return view('edit_data_supplier');
+});
+
+Route::get('/edit_data_stock', function () {
+    return view('edit_data_stock');
 });
 
 Route::get('/edit_data_pengambilan', function () {

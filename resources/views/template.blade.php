@@ -36,6 +36,7 @@ Coded by www.creative-tim.com
 </head>
 
 <body class="">
+  @role('admin')
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
@@ -224,6 +225,31 @@ Coded by www.creative-tim.com
                 </div>
               </div>
             </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center">
+                        <i class="nc-icon nc-badge"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Master Pegawai</p>
+                        <p class="card-title">Pegawai<p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer ">
+                  <hr>
+                  <div class="stats">
+                    <a href="/master_pegawai" class="btn btn-primary">Pilih</a>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -248,6 +274,15 @@ Coded by www.creative-tim.com
       demo.initChartsPages();
     });
   </script>
+  @else 
+  <div class="card card-nav-tabs">
+    <h4 class="card-header card-header-info">MAAF ANDA TIDAK BISA MENGAKSES HALAMAN INI</h4>
+    <div class="card-body">
+      <p class="card-title">SILAHKAN KEMBALI PADA HALAMAN LOGIN</p>
+      <a href="{{ route('logout') }}" class="btn btn-danger"> Log out </a>
+    </div>
+  </div>
+  @endrole
 </body>
 
 </html>

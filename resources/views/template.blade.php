@@ -61,7 +61,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -144,7 +144,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/master_supplier" class="btn btn-primary">Pilih</a>
+                  <a href="/supplier" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>
@@ -301,7 +301,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -372,7 +372,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/master_supplier" class="btn btn-primary">Pilih</a>
+                  <a href="/supplier" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>

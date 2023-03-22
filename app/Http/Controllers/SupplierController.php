@@ -16,7 +16,7 @@ class SupplierController extends Controller
     public function index()
     {
         $supplier = DB::table('supplier')->get();
-        return view('master_supplier', ['supplier' => $supplier]);
+        return view('supplier', ['supplier' => $supplier]);
     }
 
     /**
@@ -26,7 +26,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('createsupplier');
     }
 
     /**
@@ -37,7 +37,18 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nama_supplier = $request->get('nama_supplier');
+        $alamat = $request->get('alamat');
+        $email = $request->get('email');
+        $no_telpon = $request->get('no_telpon');
+        /* Menyimpan data kedalam tabel */
+        $save_supplier = new \App\Models\supplier;
+        $save_supplier->nama_supplier = $nama_supplier;
+        $save_supplier->alamat = $alamat;
+        $save_supplier->email = $email;
+        $save_supplier->no_telpon = $no_telpon;
+        $save_supplier->save();
+        return redirect('supplier');
     }
 
     /**

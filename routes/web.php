@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/master_supplier', [SupplierController::class,'index']);
+Route::get('/supplier', [SupplierController::class,'index']);
+Route::get('/supplier/create', [SupplierController::class, 'create']);
+Route::resource('supplier', SupplierController::class);
 
 Route::get('/tambah_data', function () {
     return view('tambah_data');

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\SupplierController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,8 @@ use App\Http\Controllers\HomeController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/master_supplier', [SupplierController::class,'index']);
 
 Route::get('/tambah_data', function () {
     return view('tambah_data');
@@ -85,10 +87,6 @@ Route::get('/edit_data_pengambilan', function () {
 
 Route::get('/edit_data_penerimaan', function () {
     return view('edit_data_penerimaan');
-});
-
-Route::get('/master_supplier', function () {
-    return view('master_supplier');
 });
 
 Route::get('/transaksi', function () {

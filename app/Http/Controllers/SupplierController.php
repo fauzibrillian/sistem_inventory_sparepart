@@ -68,9 +68,9 @@ class SupplierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Supplier $supplier)
     {
-        //
+        return view('editsupplier',['supplier'=>$supplier]);
     }
 
     /**
@@ -80,9 +80,13 @@ class SupplierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Supplier $supplier)
     {
-        //
+        $data = $request->all();
+
+        $supplier->update($data);
+
+        return redirect()->route('supplier.index');
     }
 
     /**

@@ -70,7 +70,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active">
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -111,7 +111,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active" >
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -167,31 +167,33 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Edit Data Supplier Mobil</h4>
-                    <form>
+                    <form action="{{route('supplier.update',$supplier->id)}}" method="POST">
+                      @csrf
+                      @method('put')
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Supplier</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Supplier">
+                            <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" value="{{old('nama_supplier') ?? $supplier->nama_supplier}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Alamat</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Alamat">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputharga">No.Telpon</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="No.Telpon">
-                        </div>
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{old('alamat') ?? $supplier->alamat}}">
                         </div>
                         <div class="form-row">
+                          <div class="form-group col-md-12">
+                              <label for="inputtipe">Email</label>
+                              <input type="email" class="form-control" id="email" name="email" value="{{old('email') ?? $supplier->email}}">
+                          </div>
+                          </div>
                         <div class="form-group col-md-12">
-                            <label for="inputtipe">Email</label>
-                            <input type="email" class="form-control" id="inputtipe" placeholder="Email">
+                            <label for="inputharga">No.Telpon</label>
+                            <input type="text" class="form-control" id="no_telpon" name="no_telpon" value="{{old('no_telpon') ?? $supplier->no_telpon}}">
                         </div>
                         </div>
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/master_supplier" class="btn btn-danger"> Back </a>
+                        <a href="/supplier" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

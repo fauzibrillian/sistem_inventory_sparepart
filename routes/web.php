@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PegawaiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/supplier', [SupplierController::class,'index']);
 Route::get('/supplier/create', [SupplierController::class, 'create']);
 Route::resource('supplier', SupplierController::class);
+
+Route::get('/pegawai', [PegawaiController::class,'index']);
+Route::get('/pegawai/create', [PegawaiController::class, 'create']);
+Route::resource('pegawai', PegawaiController::class);
 
 Route::get('/tambah_data', function () {
     return view('tambah_data');
@@ -43,20 +48,12 @@ Route::get('/stock', function () {
     return view('stock');
 });
 
-Route::get('/master_pegawai', function () {
-    return view('master_pegawai');
-});
-
 Route::get('/tambah_data_pengambilan', function () {
     return view('tambah_data_pengambilan');
 });
 
 Route::get('/tambah_data_pegawai', function () {
     return view('tambah_data_pegawai');
-});
-
-Route::get('/tambah_data_penerimaan', function () {
-    return view('tambah_data_penerimaan');
 });
 
 Route::get('/tambah_data_stock', function () {
@@ -69,10 +66,6 @@ Route::get('/tambah_data_supplier', function () {
 
 Route::get('/edit_data', function () {
     return view('edit_data');
-});
-
-Route::get('/edit_data_pegawai', function () {
-    return view('edit_data_pegawai');
 });
 
 Route::get('/edit_data_supplier', function () {

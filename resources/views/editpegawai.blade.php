@@ -36,102 +36,62 @@ Coded by www.creative-tim.com
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="white" data-active-color="danger">
-      <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
-          <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
-          </div>
-          <!-- <p>CT</p> -->
-        </a>
-        @role('admin')
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Admin
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
-        </a>
-        @else
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          User
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
-        </a>
-        @endrole
+      <div class="sidebar" data-color="white" data-active-color="danger">
+        <div class="logo">
+          <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+            <div class="logo-image-small">
+              <img src="../assets/img/logo-small.png">
+            </div>
+            <!-- <p>CT</p> -->
+          </a>
+          <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+            Admin
+            <!-- <div class="logo-image-big">
+              <img src="../assets/img/logo-big.png">
+            </div> -->
+          </a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li>
+              <a href="/">
+                <i class="nc-icon nc-bank"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li>
+              <a href="/master_supplier">
+                <i class="nc-icon nc-single-02"></i>
+                <p>Master Supplier</p>
+              </a>
+            </li>
+            <li>
+              <a href="/monitoring">
+                <i class="nc-icon nc-tile-56"></i>
+                <p>Monitoring</p>
+              </a>
+            </li>
+            <li>
+              <a href="/transaksi">
+                <i class="nc-icon nc-bell-55"></i>
+                <p>Transaksi</p>
+              </a>
+            </li>
+            <li>
+              <a href="/return">
+                <i class="nc-icon nc-simple-remove"></i>
+                <p>Return</p>
+              </a>
+            </li>
+            <li class="active">
+              <a href="/pegawai">
+                <i class="nc-icon nc-badge"></i>
+                <p>Master Pegawai</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      @role('admin')
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li>
-            <a href="/">
-              <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li >
-            <a href="/master_supplier">
-              <i class="nc-icon nc-single-02"></i>
-              <p>Master Supplier</p>
-            </a>
-          </li>
-          <li >
-            <a href="/monitoring">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Monitoring</p>
-            </a>
-          </li>
-          <li>
-            <a href="/transaksi">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Transaksi</p>
-            </a>
-          </li>
-          <li >
-            <a href="/return">
-              <i class="nc-icon nc-simple-remove"></i>
-              <p>Return</p>
-            </a>
-          </li>
-          <li class="active">
-            <a href="/master_pegawai">
-              <i class="nc-icon nc-badge"></i>
-              <p>Master Pegawai</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-      @else
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li>
-            <a href="/">
-              <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li  >
-            <a href="/master_supplier">
-              <i class="nc-icon nc-single-02"></i>
-              <p>Master Supplier</p>
-            </a>
-          </li>
-          <li class="active">
-            <a href="/monitoring">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Monitoring</p>
-            </a>
-          </li>
-          <li >
-            <a href="/return">
-              <i class="nc-icon nc-simple-remove"></i>
-              <p>Return</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-      @endrole
-    </div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -166,7 +126,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Pegawai</h4>
+                    <h4 class="card-title">Edit Data Pegawai</h4>
                     <form>
                         <div class="form-row">
                         <div class="form-group col-md-6">
@@ -191,7 +151,7 @@ Coded by www.creative-tim.com
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/master_pegawai" class="btn btn-danger"> Back </a>
+                        <a href="/pegawai" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

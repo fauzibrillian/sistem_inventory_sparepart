@@ -85,7 +85,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active">
-            <a href="/master_pegawai">
+            <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
             </a>

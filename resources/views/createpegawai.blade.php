@@ -167,7 +167,7 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data Pegawai</h4>
-                    <form action="{{route('supplier.store')}}" method="POST">
+                    <form action="{{route('pegawai.store')}}" method="POST">
                       @csrf
                         <div class="form-row">
                         <div class="form-group col-md-6">

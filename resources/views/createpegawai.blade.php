@@ -94,7 +94,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active">
-            <a href="/pegawai
+            <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
             </a>
@@ -167,25 +167,26 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data Pegawai</h4>
-                    <form>
+                    <form action="{{route('supplier.store')}}" method="POST">
+                      @csrf
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Pegawai</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Pegawai">
+                            <input type="text" class="form-control" id="nama_pegawai" name="nama_pegawai" placeholder="Nama Pegawai">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Alamat</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Alamat">
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">No.Telpon</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="No.Telpon">
+                            <input type="text" class="form-control" id="no_telpon" name="no_telpon" placeholder="No.Telpon">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Email</label>
-                            <input type="email" class="form-control" id="inputtipe" placeholder="Email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                         </div>
                         </div>
                         <div class="form-group">

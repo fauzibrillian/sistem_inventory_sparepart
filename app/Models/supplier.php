@@ -11,7 +11,7 @@ class supplier extends Model
     protected $table = 'supplier';
     protected $fillable = ['nama_supplier','alamat','email','no_telpon'];
 
-    public function retur(){
-        return $this->hasMany(retur::class);
-    }
+    // public function pengembalian(){
+    //     return $this->hasMany(pengembalian::class);
+    // }
 }

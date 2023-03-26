@@ -88,9 +88,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active">
-            <a href="/return">
+            <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
-              <p>Return</p>
+              <p>pengembalian</p>
             </a>
           </li>
           <li>
@@ -123,9 +123,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active">
-            <a href="/return">
+            <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
-              <p>Return</p>
+              <p>pengembalian</p>
             </a>
           </li>
         </ul>
@@ -166,7 +166,7 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Edit Data Return</h4>
+                    <h4 class="card-title">Edit Data pengembalian</h4>
                     <form>
                         <div class="form-row">
                         <div class="form-group col-md-6">
@@ -203,7 +203,7 @@ Coded by www.creative-tim.com
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/return" class="btn btn-danger"> Back </a>
+                        <a href="/pengembalian" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

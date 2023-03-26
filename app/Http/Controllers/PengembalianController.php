@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\retur;
-use App\Models\pegawai;
-use App\Models\supplier;
+use App\Models\pengembalian;
 
-class ReturnController extends Controller
+
+class PengembalianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,8 @@ class ReturnController extends Controller
      */
     public function index()
     {
-        $retur = retur::with('supplier','pegawai')->paginate(2);
-        $retur = DB::table('retur')->get();
-        return view('retur', ['retur' => $retur]);
+        $pengembalian = DB::table('pengembalian')->get();
+        return view('pengembalian', ['pengembalian' => $pengembalian]);
     }
 
     /**
@@ -29,9 +27,7 @@ class ReturnController extends Controller
      */
     public function create()
     {
-        $pegawai = pegawai::all();
-        $supplier = supplier::all();
-        return view ('createretur',compact('pegawai'),compact('supplier'));
+        return view('createpengembalian');
     }
 
     /**
@@ -48,22 +44,18 @@ class ReturnController extends Controller
         $qty = $request->get('qty');
         $harga = $request->get('harga');
         $merk = $request->get('merk');
-        $nopol = $request->get('nopol');
-        $pegawai_id = $request->get('pegawai_id');
-        $supplier_id = $request->get('supplier_id');
+        $nopol =$request->get('nopol');
         /* Menyimpan data kedalam tabel */
-        $save_retur = new \App\Models\retur;
-        $save_retur->tangal = $tangal;
-        $save_retur->nama_sparepart = $nama_sparepart;
-        $save_retur->kode_sparepart = $kode_sparepart;
-        $save_retur->qty = $qty;
-        $save_retur->harga = $harga;
-        $save_retur->merk = $merk;
-        $save_retur->nopol = $nopol;
-        $save_retur->pegawai_id = $pegawai_id;
-        $save_retur->supplier_id = $supplier_id;
-        $save_retur->save();
-        return redirect('retur');
+        $save_pengembalian = new \App\Models\pengembalian;
+        $save_pengembalian->tanggal = $tanggal;
+        $save_pengembalian->nama_sparepart = $nama_sparepart;
+        $save_pengembalian->kode_sparepart = $kode_sparepart;
+        $save_pengembalian->qty = $qty;
+        $save_pengembalian->harga = $harga;
+        $save_pengembalian->merk = $merk;
+        $save_pengembalian->nopol = $nopol;
+        $save_pengembalian->save();
+        return redirect('pengembalian');
     }
 
     /**
@@ -83,11 +75,9 @@ class ReturnController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Retur $retur)
+    public function edit( Pengembalian $pengembalian)
     {
-        $pegawai = pegawai::all();
-        $supplier = supplier::all();
-        return view('editretur',['retur'=>$retur],compact('pegawai'),compact('supplier'));
+        return view('editpengembalian',['pengembalian'=>$pengembalian]);
     }
 
     /**
@@ -97,13 +87,13 @@ class ReturnController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Retur $retur)
+    public function update(Request $request, Pengembalian $pengembalian)
     {
         $data = $request->all();
 
-        $retur->update($data);
+        $pengembalian->update($data);
 
-        return redirect()->route('retur.index');
+        return redirect()->route('pengembalian.index');
     }
 
     /**
@@ -112,10 +102,10 @@ class ReturnController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pengembalian $pengembalian)
     {
-        $retur->delete();
+        $pengembalian->delete();
 
-        return redirect()->route('retur.index');
+        return redirect()->route('pengembalian.index');
     }
 }

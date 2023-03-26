@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PengembalianController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +31,10 @@ Route::get('/pegawai', [PegawaiController::class,'index']);
 Route::get('/pegawai/create', [PegawaiController::class, 'create']);
 Route::resource('pegawai', PegawaiController::class);
 
+Route::get('/pengembalian', [PengembalianController::class,'index']);
+Route::get('/pengembalian/create', [PengembalianController::class, 'create']);
+Route::resource('pengembalian', PengembalianController::class);
+
 Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
@@ -50,10 +57,6 @@ Route::get('/stock', function () {
 
 Route::get('/tambah_data_pengambilan', function () {
     return view('tambah_data_pengambilan');
-});
-
-Route::get('/tambah_data_pegawai', function () {
-    return view('tambah_data_pegawai');
 });
 
 Route::get('/tambah_data_stock', function () {
@@ -86,18 +89,6 @@ Route::get('/edit_data_penerimaan', function () {
 
 Route::get('/transaksi', function () {
     return view('transaksi');
-});
-
-Route::get('/return', function () {
-    return view('return');
-});
-
-Route::get('/tambah_data_return', function () {
-    return view('tambah_data_return');
-});
-
-Route::get('/edit_data_return', function () {
-    return view('edit_data_return');
 });
 
 Route::get('/logout', function(){

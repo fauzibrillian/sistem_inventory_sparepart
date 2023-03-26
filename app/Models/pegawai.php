@@ -11,7 +11,7 @@ class pegawai extends Model
     protected $table = 'pegawai';
     protected $fillable = ['nama_pegawai','alamat','no_telpon','email'];
 
-    public function retur(){
-        return $this->hasMany(retur::class);
-    }
+    // public function pegawai(){
+    //     return $this->hasMany(pegawai::class);
+    // }
 }

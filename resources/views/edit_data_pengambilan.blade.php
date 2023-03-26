@@ -88,9 +88,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="/return">
+            <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
-              <p>Return</p>
+              <p>pengembalian</p>
             </a>
           </li>
           <li>
@@ -128,9 +128,9 @@ Coded by www.creative-tim.com
           </a>
         </li>
         <li>
-          <a href="/return">
+          <a href="/pengembalian">
             <i class="nc-icon nc-simple-remove"></i>
-            <p>Return</p>
+            <p>pengembalian</p>
           </a>
         </li>
         <li>

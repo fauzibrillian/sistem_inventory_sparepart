@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\retur;
+use App\Models\pegawai;
+use App\Models\supplier;
 
 class ReturnController extends Controller
 {
@@ -15,6 +17,7 @@ class ReturnController extends Controller
      */
     public function index()
     {
+        $retur = retur::with('supplier','pegawai')->paginate(2);
         $retur = DB::table('retur')->get();
         return view('retur', ['retur' => $retur]);
     }
@@ -26,7 +29,9 @@ class ReturnController extends Controller
      */
     public function create()
     {
-        return view ('createretur');
+        $pegawai = pegawai::all();
+        $supplier = supplier::all();
+        return view ('createretur',compact('pegawai'),compact('supplier'));
     }
 
     /**
@@ -44,6 +49,8 @@ class ReturnController extends Controller
         $harga = $request->get('harga');
         $merk = $request->get('merk');
         $nopol = $request->get('nopol');
+        $pegawai_id = $request->get('pegawai_id');
+        $supplier_id = $request->get('supplier_id');
         /* Menyimpan data kedalam tabel */
         $save_retur = new \App\Models\retur;
         $save_retur->tangal = $tangal;
@@ -53,6 +60,8 @@ class ReturnController extends Controller
         $save_retur->harga = $harga;
         $save_retur->merk = $merk;
         $save_retur->nopol = $nopol;
+        $save_retur->pegawai_id = $pegawai_id;
+        $save_retur->supplier_id = $supplier_id;
         $save_retur->save();
         return redirect('retur');
     }
@@ -76,7 +85,9 @@ class ReturnController extends Controller
      */
     public function edit(Retur $retur)
     {
-        return view('editretur',['retur'=>$retur]);
+        $pegawai = pegawai::all();
+        $supplier = supplier::all();
+        return view('editretur',['retur'=>$retur],compact('pegawai'),compact('supplier'));
     }
 
     /**

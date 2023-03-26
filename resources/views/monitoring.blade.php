@@ -71,7 +71,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li >
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -112,7 +112,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li >
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>

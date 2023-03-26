@@ -167,11 +167,11 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data pengembalian</h4>
-                    <form>
+                    <form action="{{route('pengembalian.store')}}" method="POST">
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal">
+                            <input type="date" class="form-control" id="inputnama" placeholder="Tanggal">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
@@ -193,11 +193,11 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengambil Sparepart">
+                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengirim Sparepart">
                         </div>
                         <div class="form-group col-md-12">
-                          <label for="inputtipe">Supplier</label>
-                          <input type="nama" class="form-control" id="inputtipe" placeholder="Supplier">
+                          <label for="inputtipe">Transaksi ID</label>
+                          <input type="nama" class="form-control" id="inputtipe" placeholder="Transaksi ID">
                         </div>
                         </div>
                         <div class="form-group">

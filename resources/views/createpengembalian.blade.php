@@ -168,36 +168,49 @@ Coded by www.creative-tim.com
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data pengembalian</h4>
                     <form action="{{route('pengembalian.store')}}" method="POST">
+                      @csrf
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="date" class="form-control" id="inputnama" placeholder="Tanggal">
+                            <input type="date" class="form-control" id="inputnama" name="tanggal" placeholder="Tanggal">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Qty</label>
-                            <input type="qty" class="form-control" id="inputtipe" placeholder="Qty">
+                            <input type="text" class="form-control" id="inputtipe" name="qty" placeholder="Qty">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" placeholder="Merk Mobil">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Harga Satuan</label>
+                          <input type="text" class="form-control" id="inputtipe" name="harga" placeholder="Harga Satuan">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Nomor Polisi</label>
+                          <input type="text" class="form-control" id="inputtipe" name="nopol" placeholder="Nomor Polis">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengirim Sparepart">
+                            <select class="form-group col-md-12" class="form-select" aria-label="Default select example">
+                              @foreach($pegawai as $key=>$y)
+                                <option value={{$y->id}}>{{$y->nama_pegawai}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Transaksi ID</label>
-                          <input type="nama" class="form-control" id="inputtipe" placeholder="Transaksi ID">
+                          <input type="text" class="form-control" id="inputtipe" name="transaksi_id" placeholder="Transaksi ID">
                         </div>
                         </div>
                         <div class="form-group">

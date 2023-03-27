@@ -16,7 +16,10 @@ class PengembalianController extends Controller
      */
     public function index()
     {
-        $pengembalian = DB::table('pengembalian')->get();
+        $pengembalian = DB::table('pengembalian')
+        ->leftJoin('pegawai','pengembalian.pegawai_id','=','pegawai.id')
+        ->select('pengembalian.*', 'pegawai.nama_pegawai')
+        ->get();
         return view('pengembalian', ['pengembalian' => $pengembalian]);
     }
 
@@ -27,7 +30,8 @@ class PengembalianController extends Controller
      */
     public function create()
     {
-        return view('createpengembalian');
+        $pegawai = DB::table('pegawai')->get();
+        return view('createpengembalian',['pegawai'=>$pegawai]);
     }
 
     /**
@@ -45,6 +49,8 @@ class PengembalianController extends Controller
         $harga = $request->get('harga');
         $merk = $request->get('merk');
         $nopol =$request->get('nopol');
+        $pegawai_id=$request->get('pegawai_id');
+        $transaksi_id=$request->get('transaksi_id');
         /* Menyimpan data kedalam tabel */
         $save_pengembalian = new \App\Models\pengembalian;
         $save_pengembalian->tanggal = $tanggal;
@@ -54,6 +60,8 @@ class PengembalianController extends Controller
         $save_pengembalian->harga = $harga;
         $save_pengembalian->merk = $merk;
         $save_pengembalian->nopol = $nopol;
+        $save_pengembalian->pegawai_id = $pegawai_id;
+        $save_pengembalian->transaksi_id = $transaksi_id;
         $save_pengembalian->save();
         return redirect('pengembalian');
     }
@@ -77,7 +85,11 @@ class PengembalianController extends Controller
      */
     public function edit( Pengembalian $pengembalian)
     {
-        return view('editpengembalian',['pengembalian'=>$pengembalian]);
+        $pegawai = DB::table('pegawai')->get();
+        return view('editpengembalian',
+        [
+        'pengembalian'=>$pengembalian,
+        'pegawai'=>$pegawai]);
     }
 
     /**

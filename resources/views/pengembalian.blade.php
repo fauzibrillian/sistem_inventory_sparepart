@@ -235,7 +235,7 @@ Coded by www.creative-tim.com
                             {{$y->nopol}}
                           </td>
                           <td>
-                            {{$y->pegawai_id}}
+                            {{$y->nama_pegawai}}
                           </td>
                           <td>
                             {{$y->transaksi_id}}

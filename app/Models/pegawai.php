@@ -10,8 +10,4 @@ class pegawai extends Model
     use HasFactory;
     protected $table = 'pegawai';
     protected $fillable = ['nama_pegawai','alamat','no_telpon','email'];
-
-    // public function pegawai(){
-    //     return $this->hasMany(pegawai::class);
-    // }
 }

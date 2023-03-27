@@ -10,8 +10,4 @@ class supplier extends Model
     use HasFactory;
     protected $table = 'supplier';
     protected $fillable = ['nama_supplier','alamat','email','no_telpon'];
-
-    // public function pengembalian(){
-    //     return $this->hasMany(pengembalian::class);
-    // }
 }

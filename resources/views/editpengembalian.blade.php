@@ -17,8 +17,8 @@ Coded by www.creative-tim.com
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
+  <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Sistem Inventory Sparepart 
@@ -28,10 +28,10 @@ Coded by www.creative-tim.com
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('assets/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -40,7 +40,7 @@ Coded by www.creative-tim.com
       <div class="logo">
         <a href="https://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="{{asset('assets/img/logo-small.png')}}">
           </div>
           <!-- <p>CT</p> -->
         </a>
@@ -167,37 +167,51 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Edit Data pengembalian</h4>
-                    <form>
+                    <form action="{{route('pengembalian.update',$pengembalian->id )}}" method="POST">
+                      @csrf
+                      @method('put')
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal">
+                            <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $pengembalian->tanggal}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengembalian->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengembalian->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Qty</label>
-                            <input type="qty" class="form-control" id="inputtipe" placeholder="Qty">
+                            <input type="qty" class="form-control" id="inputtipe" name="qty" value="{{old('qty') ?? $pengembalian->qty}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $pengembalian->merk}}">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Harga Satuan</label>
+                          <input type="text" class="form-control" id="inputtipe" name="harga" value="{{old('harga') ?? $pengembalian->harga}}">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Nomor Polisi</label>
+                          <input type="text" class="form-control" id="inputtipe" name="nopol" value="{{old('nopol') ?? $pengembalian->nopol}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengambil Sparepart">
-                        </div>
-                            <div class="form-group col-md-12">
-                            <label for="inputtipe">Supplier</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Supplier">
+                            <select class="form-group col-md-12" class="form-select" aria-label="Default select example">
+                              @foreach($pegawai as $key=>$y)
+                                <option value="{{$y->id}}"{{ old('pegawai_id') == $y->id ? 'selected' : null }}>{{$y->nama_pegawai}}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Transaksi ID</label>
+                          <input type="text" class="form-control" id="inputtipe" name="transaksi_id" value="{{old('transaksi_id') ?? $pengembalian->transaksi_id}}">
                         </div>
                         </div>
                         <div class="form-group">

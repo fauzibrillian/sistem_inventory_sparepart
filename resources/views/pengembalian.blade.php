@@ -164,7 +164,7 @@ Coded by www.creative-tim.com
       <div class="content">
         <div class="row">
           <div class="col-md-14">
-            <div class="card" style="width:80rem">
+            <div class="card" style="width:78rem">
               <div class="card-header">
                 <h4 class="card-title"> Data Return</h4>
                 <a href="/pengembalian/create" class="btn btn-primary"> Tambah Data Return </a>

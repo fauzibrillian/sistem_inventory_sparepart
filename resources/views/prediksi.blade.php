@@ -69,13 +69,19 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li >
-            <a href="/master_supplier">
+          <li>
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
-          <li class="active">
+          <li>
+            <a href="/sparepart">
+              <i class="nc-icon nc-briefcase-24"></i>
+              <p>Master Sparepart</p>
+            </a>
+          </li>
+          <li >
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
@@ -87,7 +93,7 @@ Coded by www.creative-tim.com
               <p>Transaksi</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
               <p>pengembalian</p>
@@ -97,6 +103,12 @@ Coded by www.creative-tim.com
             <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/abcmodel">
+              <i class="nc-icon nc-money-coins"></i>
+              <p>ABC Model</p>
             </a>
           </li>
         </ul>
@@ -110,19 +122,19 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li  >
-            <a href="/master_supplier">
+          <li class="active" >
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
-          <li class="active">
+          <li >
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
               <p>pengembalian</p>
@@ -166,40 +178,17 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Penerimaan Sparepart</h4>
-                    <form>
+                    <h4 class="card-title">Masukan Jangka Waktu Prediksi </h4>
+                    <form action="{{route('supplier.store')}}" method="POST">
+                      @csrf
                         <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputnama">Tanggal</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Nama Sparepart">
-                        </div>
                         <div class="form-group col-md-12">
-                            <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Kode Sparepart">
+                            <label for="inputnama">Masukan Jangka Waktu Prediksi </label>
+                            <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Hitungan Bulan">
                         </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" placeholder="Nopol">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputtipe">Nama Penerima Sparepart</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Penerima Sparepart">
-                        </div>
-                        </div>
-                        <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/penerimaan" class="btn btn-danger"> Back </a>
+                        <a href="/abcmodel" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

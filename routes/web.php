@@ -43,6 +43,10 @@ Route::get('/abcmodel', function () {
     return view('abcmodel');
 });
 
+Route::get('/prediksi', function () {
+    return view('prediksi');
+});
+
 Route::get('/sparepart', function () {
     return view('sparepart');
 });

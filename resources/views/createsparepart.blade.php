@@ -69,13 +69,13 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li >
-            <a href="/master_supplier">
+          <li>
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/sparepart">
               <i class="nc-icon nc-briefcase-24"></i>
               <p>Master Sparepart</p>
@@ -93,13 +93,13 @@ Coded by www.creative-tim.com
               <p>Transaksi</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
               <p>pengembalian</p>
             </a>
           </li>
-          <li class="active">
+          <li>
             <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
@@ -122,19 +122,19 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li  >
-            <a href="/master_supplier">
+          <li class="active" >
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
-          <li class="active">
+          <li >
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
               <p>pengembalian</p>
@@ -178,33 +178,23 @@ Coded by www.creative-tim.com
           <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Pegawai</h4>
-                    <form action="{{route('pegawai.store')}}" method="POST">
+                    <h4 class="card-title">Tambahkan Data Sparepart Mobil</h4>
+                    <form >
                       @csrf
                         <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputnama">Nama Pegawai</label>
-                            <input type="text" class="form-control" id="nama_pegawai" name="nama_pegawai" placeholder="Nama Pegawai">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputkode">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+                        <div class="form-group col-md-12">
+                            <label for="inputnama">Nama Sparepart</label>
+                            <input type="text" class="form-control" id="nama_supplier" name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="inputharga">No.Telpon</label>
-                            <input type="text" class="form-control" id="no_telpon" name="no_telpon" placeholder="No.Telpon">
-                        </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="inputtipe">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            <label for="inputkode">Kode Sparepart</label>
+                            <input type="text" class="form-control" id="alamat" name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/pegawai" class="btn btn-danger"> Back </a>
+                        <a href="/sparepart" class="btn btn-danger"> Back </a>
                     </form>
                 </div>
             </div>

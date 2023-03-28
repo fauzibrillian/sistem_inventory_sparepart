@@ -67,6 +67,12 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
+            <a href="/sparepart">
+              <i class="nc-icon nc-briefcase-24"></i>
+              <p>Master Sparepart</p>
+            </a>
+          </li>
+          <li>
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
               <p>Monitoring</p>
@@ -81,13 +87,19 @@ Coded by www.creative-tim.com
           <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
-              <p>Retur</p>
+              <p>Pengembalian</p>
             </a>
           </li>
           <li>
             <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
+            </a>
+          </li>
+          <li>
+            <a href="/abcmodel">
+              <i class="nc-icon nc-money-coins"></i>
+              <p>ABC Model</p>
             </a>
           </li>
         </ul>
@@ -160,7 +172,7 @@ Coded by www.creative-tim.com
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">List Sparepart</p>
+                      <p class="card-category">Monitoring</p>
                       <p class="card-title">Monitoring<p>
                     </div>
                   </div>
@@ -270,6 +282,31 @@ Coded by www.creative-tim.com
                   <hr>
                   <div class="stats">
                     <a href="/abcmodel" class="btn btn-primary">Pilih</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center">
+                        <i class="nc-icon nc-briefcase-24"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Master Sparepart</p>
+                        <p class="card-title">Sparepart<p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer ">
+                  <hr>
+                  <div class="stats">
+                    <a href="/sparepart" class="btn btn-primary">Pilih</a>
                   </div>
                 </div>
               </div>

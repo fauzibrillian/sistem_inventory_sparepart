@@ -43,6 +43,18 @@ Route::get('/abcmodel', function () {
     return view('abcmodel');
 });
 
+Route::get('/sparepart', function () {
+    return view('sparepart');
+});
+
+Route::get('/sparepart/create', function () {
+    return view('createsparepart');
+});
+
+Route::get('/sparepart/edit', function () {
+    return view('editsparepart');
+});
+
 Route::get('/pengambilan', function () {
     return view('pengambilan');
 });

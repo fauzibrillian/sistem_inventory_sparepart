@@ -69,10 +69,16 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li >
-            <a href="/master_supplier">
+          <li>
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
+            </a>
+          </li>
+          <li>
+            <a href="/sparepart">
+              <i class="nc-icon nc-briefcase-24"></i>
+              <p>Master Sparepart</p>
             </a>
           </li>
           <li >
@@ -97,6 +103,12 @@ Coded by www.creative-tim.com
             <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
+            </a>
+          </li>
+          <li>
+            <a href="/abcmodel">
+              <i class="nc-icon nc-money-coins"></i>
+              <p>ABC Model</p>
             </a>
           </li>
         </ul>

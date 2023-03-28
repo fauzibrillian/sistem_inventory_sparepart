@@ -39,6 +39,10 @@ Route::get('/tambah_data', function () {
     return view('tambah_data');
 });
 
+Route::get('/abcmodel', function () {
+    return view('abcmodel');
+});
+
 Route::get('/pengambilan', function () {
     return view('pengambilan');
 });

@@ -269,7 +269,7 @@ Coded by www.creative-tim.com
                 <div class="card-footer ">
                   <hr>
                   <div class="stats">
-                    <a href="/forecasting" class="btn btn-primary">Pilih</a>
+                    <a href="/abcmodel" class="btn btn-primary">Pilih</a>
                   </div>
                 </div>
               </div>

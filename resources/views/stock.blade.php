@@ -222,7 +222,10 @@ Coded by www.creative-tim.com
                           2
                         </td>
                         <td>
-                         $36,738
+                         Honda Mobilio
+                        </td>
+                        <td>
+                         Rp. 976.000
                         </td>
                         <td>
                           <a href="/edit_data_stock" class="btn btn-primary">
@@ -242,16 +245,19 @@ Coded by www.creative-tim.com
                           2
                         </td>
                         <td>
-                          Sinaai-Waas
+                          Pintu Bagasi
                         </td>
                         <td>
-                          $23,789
+                          67221-BZ990
                         </td>
                         <td>
-                          $23,789
+                          3
                         </td>
                         <td>
-                          $36,738
+                          Daihatsu Granmax
+                        </td>
+                        <td>
+                          Rp. 1.013.000
                         </td>
                         <td>
                           <a href="/edit_data_stock" class="btn btn-primary">
@@ -271,16 +277,19 @@ Coded by www.creative-tim.com
                           3
                         </td>
                         <td>
-                          Baileux
+                          Stoplamp Kanan
                         </td>
                         <td>
-                          $56,142
+                          88700-BZ340
                         </td>
                         <td>
-                          $56,142
+                          4
                         </td>
                         <td>
-                            $36,738
+                         Daihatsu Sigra
+                        </td>
+                        <td>
+                         Rp.470.000
                         </td>
                         <td>
                           <a href="/edit_data_stock" class="btn btn-primary">

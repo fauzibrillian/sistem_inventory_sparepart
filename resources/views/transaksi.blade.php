@@ -179,25 +179,25 @@ Coded by www.creative-tim.com
                           1
                         </td>
                         <td>
-                          Niger
+                          2023-01-20
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Headlamp Kanan
                         </td>
                         <td>
-                          $36,738
+                          99810-0K120
                         </td>
                         <td>
-                          $36,738
+                          1
                         </td>
                         <td>
-                          $36,738
+                          Toyota Avanza Veloz
                         </td>
                         <td>
-                          $36,738
+                          Rp. 1.466.000
                         </td>
                         <td>
-                          $36,738
+                          PT. Delwin
                         </td>
                         <td class="text-center">
                           <a href="/edit_data" class="btn btn-primary">
@@ -217,25 +217,25 @@ Coded by www.creative-tim.com
                           2
                         </td>
                         <td>
-                          Curaçao
+                          2023-02-03
                         </td>
                         <td>
-                          Sinaai-Waas
+                          Kaca Depan
                         </td>
                         <td>
-                          $23,789
+                          22008-BZ290
                         </td>
                         <td>
-                          $23,789
+                          1
                         </td>
                         <td>
-                          $23,789
+                          Toyota Altis
                         </td>
                         <td>
-                          $36,738
+                          Rp. 3.762.900
                         </td>
                         <td>
-                          $36,738
+                          Suratama
                         </td>
                         <td class="text-center">
                           <a href="/edit_data" class="btn btn-primary">
@@ -255,25 +255,25 @@ Coded by www.creative-tim.com
                           3
                         </td>
                         <td>
-                          Netherlands
+                          2023-02-10
                         </td>
                         <td>
-                          Baileux
+                          Kaca Pintu Depan Kiri
                         </td>
                         <td>
-                          $56,142
+                          23657-BZ886
                         </td>
                         <td>
-                          $56,142
+                          1
                         </td>
                         <td>
-                          $56,142
+                          Honda Civic
                         </td>
                         <td>
-                          $36,738
+                          Rp. 2.899.200
                         </td>
                         <td>
-                          $36,738
+                          PT. Delwin 
                         </td>
                         <td class="text-center">
                           <a href="/edit_data" class="btn btn-primary">

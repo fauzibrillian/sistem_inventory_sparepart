@@ -87,7 +87,7 @@ Coded by www.creative-tim.com
               <p>Monitoring</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/transaksi">
               <i class="nc-icon nc-bell-55"></i>
               <p>Transaksi</p>
@@ -201,6 +201,9 @@ Coded by www.creative-tim.com
                         Tipe Mobil
                       </th>
                       <th>
+                        Harga Satuan
+                      </th>
+                      <th>
                         Aksi
                       </th>
                     </thead>
@@ -210,14 +213,13 @@ Coded by www.creative-tim.com
                           1
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Ban Depan Kanan
                         </td>
                         <td>
-                          $36,738
+                          Dunlop Enasave 195/60 R16
                         </td>
                         <td>
-                          $36,738
-                        </td>
+                          2
                         </td>
                         <td>
                          $36,738

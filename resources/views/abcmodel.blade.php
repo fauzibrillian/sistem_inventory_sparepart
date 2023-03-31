@@ -70,7 +70,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li >
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -123,7 +123,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li  >
-            <a href="/master_supplier">
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
@@ -221,25 +221,25 @@ Coded by www.creative-tim.com
                           1
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Bumper Depan
                         </td>
                         <td>
-                          $36,738
+                          23556-BZ120
                         </td>
                         <td>
-                          $36,738
+                          10
                         </td>
                         <td>
-                         $36,738
+                         Honda Jazz
                         </td>
                         <td>
-                          $36,738
+                          Rp. 500.000
                         </td>
                         <td>
-                          $36,738
+                          Rp. 5.000.000
                         </td>
                         <td>
-                          $36,738
+                          A
                         </td>
                       </tr>
                       <tr>
@@ -247,25 +247,25 @@ Coded by www.creative-tim.com
                           2
                         </td>
                         <td>
-                          Sinaai-Waas
+                          Kap Mesin
                         </td>
                         <td>
-                          $23,789
+                          78997-BZ778
                         </td>
                         <td>
-                          $23,789
+                          5
                         </td>
                         <td>
-                          $36,738
+                          Honda Freed
                         </td>
                         <td>
-                          $36,738
+                          Rp.942.000
                          </td>
                          <td>
-                           $36,738
+                          Rp. 4.710.000
                          </td>
                          <td>
-                           $36,738
+                           A
                          </td>
                       </tr>
                       <tr>
@@ -273,25 +273,25 @@ Coded by www.creative-tim.com
                           3
                         </td>
                         <td>
-                          Baileux
+                          Velg
                         </td>
                         <td>
-                          $56,142
+                          88764-0K120
                         </td>
                         <td>
-                          $56,142
+                          7
                         </td>
                         <td>
-                          $36,738
+                          Toyota Innova Reborn
                         </td>
                         <td>
-                          $56,142
+                          Rp. 978.000
                         </td>
                         <td>
-                          $36,738
+                          Rp. 6.846.000
                         </td>
                         <td>
-                          $36,738
+                          B
                         </td> 
                       </tr>
                     </tbody>

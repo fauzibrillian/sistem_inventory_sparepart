@@ -216,22 +216,22 @@ Coded by www.creative-tim.com
                           1
                         </td>
                         <td>
-                          Niger
+                          2023-03-15
                         </td>
                         <td>
-                          Surabaya
+                          Velg
                         </td>
                         <td>
-                          23554354
+                          23557-43548
                         </td>
                         <td>
-                          Niger@gmail.com
+                          Honda Freed
                         </td>
                         <td>
-                          Niger@gmail.com
+                          W 8890 NUD
                         </td>
                         <td>
-                          Niger@gmail.com
+                          Dika
                         </td>
                         <td class="text-center">
                           <a href="edit_data_pengambilan" class="btn btn-primary">
@@ -251,22 +251,22 @@ Coded by www.creative-tim.com
                           2
                         </td>
                         <td>
-                          Curaçao
+                          2023-02-28
                         </td>
                         <td>
-                          Jakarta
+                          Kap Mesin
                         </td>
                         <td>
-                          626244636
+                          62624-BZ998
                         </td>
                         <td>
-                          curcao@gmail.com
+                          Toyota Innova Reborn 
                         </td>
                         <td>
-                          curcao@gmail.com
+                          AB 8873 NU
                         </td>
                         <td>
-                          curcao@gmail.com
+                          Jono
                         </td>
                         <td class="text-center">
                           <a href="edit_data_pengambilan" class="btn btn-primary">
@@ -286,22 +286,22 @@ Coded by www.creative-tim.com
                           3
                         </td>
                         <td>
-                          John
+                          2023-03-20
                         </td>
                         <td>
-                          Lampung
+                          Ban Depan Kanan
                         </td>
                         <td>
-                          8114682
+                          BridgeStone Ecopia 185/85R16
                         </td>
                         <td>
-                          John@gmail.com
+                          Mitsubishi Xpander
                         </td>
                         <td>
-                          John@gmail.com
+                          B 2442 SRU
                         </td>
                         <td>
-                          John@gmail.com
+                          Dika
                         </td>
                         <td class="text-center">
                           <a href="edit_data_pengambilan" class="btn btn-primary">

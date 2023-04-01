@@ -179,6 +179,17 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Forecasting Sparepart </h4>
+                <div class="col-md-12">
+                  <div class="card ">
+                    <div class="card-header ">
+                      <h5 class="card-title">Users Behavior</h5>
+                      <p class="card-category">24 Hours performance</p>
+                    </div>
+                    <div class="card-body ">
+                      <canvas id=chartHours width="400" height="100"></canvas>
+                    </div>
+                  </div>
+                </div>
                 <a href="/prediksi" class="btn btn-warning"> 
                   Prediksi 
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="fa-solid fa-chart-line" viewBox="0 0 512 512">

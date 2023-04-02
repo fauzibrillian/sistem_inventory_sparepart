@@ -176,21 +176,15 @@ Coded by www.creative-tim.com
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card" >
-                <div class="card-body">
-                    <h4 class="card-title">Masukan Jangka Waktu Prediksi </h4>
-                    <form action="{{route('supplier.store')}}" method="POST">
-                      @csrf
-                        <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="inputnama">Masukan Jangka Waktu Prediksi </label>
-                            <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Hitungan Bulan">
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/abcmodel" class="btn btn-danger"> Back </a>
-                    </form>
-                </div>
+            <div class="card">
+              <div class="card-header ">
+                <h5 class="card-title">Prediksi Pemakaian Sparepart</h5>
+                <p class="card-category">Periode Januari - Desember </p>
+              </div>
+              <div class="card-body ">
+                <canvas id=chartHours width="400" height="100"></canvas>
+                <a href="/abcmodel" class="btn btn-danger"> Back </a>
+              </div>
             </div>
           </div>
         </div>

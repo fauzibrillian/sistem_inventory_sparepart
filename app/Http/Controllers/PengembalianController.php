@@ -42,7 +42,6 @@ class PengembalianController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai = DB::table('pegawai')->get();
         $tanggal = $request->get('tanggal');
         $nama_sparepart = $request->get('nama_sparepart');
         $kode_sparepart = $request->get('kode_sparepart');
@@ -50,7 +49,7 @@ class PengembalianController extends Controller
         $harga = $request->get('harga');
         $merk = $request->get('merk');
         $nopol =$request->get('nopol');
-        $pegawai=$request->get('pegawai_id');
+        $pegawai_id =$request->get('pegawai_id');
         $transaksi_id=$request->get('transaksi_id');
         /* Menyimpan data kedalam tabel */
         $save_pengembalian = new \App\Models\pengembalian;
@@ -61,10 +60,10 @@ class PengembalianController extends Controller
         $save_pengembalian->harga = $harga;
         $save_pengembalian->merk = $merk;
         $save_pengembalian->nopol = $nopol;
-        $save_pengembalian->pegawai = $pegawai;
+        $save_pengembalian->pegawai_id = $pegawai_id;
         $save_pengembalian->transaksi_id = $transaksi_id;
         $save_pengembalian->save();
-        return redirect('pengembalian',['pegawai'=>$pegawai]);
+        return redirect('pengembalian');
     }
 
     /**
@@ -86,11 +85,10 @@ class PengembalianController extends Controller
      */
     public function edit( Pengembalian $pengembalian)
     {
-        $pegawai = DB::table('pegawai')->get();
-        return view('editpengembalian',
-        [
+        $pegawai_id = DB::table('pegawai')->get();
+        return view('editpengembalian',[
         'pengembalian'=>$pengembalian,
-        'pegawai'=>$pegawai]);
+        'pegawai'=>$pegawai_id]);
     }
 
     /**
@@ -103,7 +101,6 @@ class PengembalianController extends Controller
     public function update(Request $request, Pengembalian $pengembalian)
     {
         $data = $request->all();
-
         $pengembalian->update($data);
 
         return redirect()->route('pengembalian.index');

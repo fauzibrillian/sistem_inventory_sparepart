@@ -35,6 +35,10 @@ Route::get('/pengembalian', [PengembalianController::class,'index']);
 Route::get('/pengembalian/create', [PengembalianController::class, 'create']);
 Route::resource('pengembalian', PengembalianController::class);
 
+Route::get('/pengembalian', [PengembalianController::class,'index']);
+Route::get('/pengembalian/create', [PengembalianController::class, 'create']);
+Route::resource('pengembalian', PengembalianController::class);
+
 Route::get('/tambah_data', function () {
     return view('tambah_data');
 });

@@ -58,8 +58,6 @@ class PenerimaanController extends Controller
         $save_penerimaan->tanggal = $tanggal;
         $save_penerimaan->nama_sparepart = $nama_sparepart;
         $save_penerimaan->kode_sparepart = $kode_sparepart;
-        $save_penerimaan->qty = $qty;
-        $save_penerimaan->harga = $harga;
         $save_penerimaan->merk = $merk;
         $save_penerimaan->nopol = $nopol;
         $save_penerimaan->pegawai = $pegawai;

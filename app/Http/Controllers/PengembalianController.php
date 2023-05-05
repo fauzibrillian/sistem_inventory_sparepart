@@ -49,7 +49,7 @@ class PengembalianController extends Controller
         $harga = $request->get('harga');
         $merk = $request->get('merk');
         $nopol =$request->get('nopol');
-        $pegawai_id =$request->get('pegawai_id');
+        $pegawai =$request->get('pegawai_id');
         $transaksi_id=$request->get('transaksi_id');
         /* Menyimpan data kedalam tabel */
         $save_pengembalian = new \App\Models\pengembalian;
@@ -60,7 +60,7 @@ class PengembalianController extends Controller
         $save_pengembalian->harga = $harga;
         $save_pengembalian->merk = $merk;
         $save_pengembalian->nopol = $nopol;
-        $save_pengembalian->pegawai_id = $pegawai_id;
+        $save_pengembalian->pegawai = $pegawai;
         $save_pengembalian->transaksi_id = $transaksi_id;
         $save_pengembalian->save();
         return redirect('pengembalian');
@@ -85,10 +85,10 @@ class PengembalianController extends Controller
      */
     public function edit( Pengembalian $pengembalian)
     {
-        $pegawai_id = DB::table('pegawai')->get();
+        $pegawai = DB::table('pegawai')->get();
         return view('editpengembalian',[
         'pengembalian'=>$pengembalian,
-        'pegawai'=>$pegawai_id]);
+        'pegawai'=>$pegawai]);
     }
 
     /**

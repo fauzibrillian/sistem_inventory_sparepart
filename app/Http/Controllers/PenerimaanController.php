@@ -60,8 +60,8 @@ class PenerimaanController extends Controller
         $save_penerimaan->kode_sparepart = $kode_sparepart;
         $save_penerimaan->merk = $merk;
         $save_penerimaan->nopol = $nopol;
-        $save_penerimaan->pegawai = $pegawai;
-        $save_penerimaan->supplier = $supplier;
+        $save_penerimaan->pegawai_id = $pegawai;
+        $save_penerimaan->supplier_id = $supplier;
         $save_penerimaan->save();
         return redirect('penerimaan');
     }
@@ -83,7 +83,7 @@ class PenerimaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Penerimaan $penerimaan)
     {
         $pegawai = DB::table('pegawai')->get();
         $supplier = DB::table('supplier')->get();
@@ -100,7 +100,7 @@ class PenerimaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Penerimaan $penerimaan)
     {
         $data = $request->all();
         $penerimaan->update($data);
@@ -114,7 +114,7 @@ class PenerimaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Penerimaan $penerimaan)
     {
         $penerimaan->delete();
 

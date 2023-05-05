@@ -60,7 +60,7 @@ class PengembalianController extends Controller
         $save_pengembalian->harga = $harga;
         $save_pengembalian->merk = $merk;
         $save_pengembalian->nopol = $nopol;
-        $save_pengembalian->pegawai = $pegawai;
+        $save_pengembalian->pegawai_id = $pegawai;
         $save_pengembalian->transaksi_id = $transaksi_id;
         $save_pengembalian->save();
         return redirect('pengembalian');

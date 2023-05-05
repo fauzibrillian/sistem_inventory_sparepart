@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PengembalianController;
+use App\Http\Controllers\PenerimaanController;
 
 
 /*
@@ -35,9 +36,9 @@ Route::get('/pengembalian', [PengembalianController::class,'index']);
 Route::get('/pengembalian/create', [PengembalianController::class, 'create']);
 Route::resource('pengembalian', PengembalianController::class);
 
-Route::get('/pengembalian', [PengembalianController::class,'index']);
-Route::get('/pengembalian/create', [PengembalianController::class, 'create']);
-Route::resource('pengembalian', PengembalianController::class);
+Route::get('/penerimaan', [PenerimaanController::class,'index']);
+Route::get('/penerimaan/create', [PenerimaanController::class, 'create']);
+Route::resource('penerimaan', PenerimaanController::class);
 
 Route::get('/tambah_data', function () {
     return view('tambah_data');
@@ -65,10 +66,6 @@ Route::get('/sparepart/edit', function () {
 
 Route::get('/pengambilan', function () {
     return view('pengambilan');
-});
-
-Route::get('/penerimaan', function () {
-    return view('penerimaan');
 });
 
 Route::get('/monitoring', function () {

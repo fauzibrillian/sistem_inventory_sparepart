@@ -214,8 +214,8 @@ Coded by www.creative-tim.com
                       </th>
                     </thead>
                     <tbody>
-                      @foreach($penerimaan as $key=>$x )
                         <tr>
+                        @foreach($penerimaan as $key=>$x )
                           <td>
                             {{$key+1}}
                           </td>
@@ -238,8 +238,8 @@ Coded by www.creative-tim.com
                             {{$x->nama_pegawai}}
                           </td>
                           <td>
-                            @foreach ($supplier as $key=>$y)
-                              {{$y->nama_supplier}}
+                            @foreach ($supplier as $y)
+                            {{$y->nama_supplier}}
                             @endforeach
                           </td>
                           <td>
@@ -258,7 +258,7 @@ Coded by www.creative-tim.com
                             </form>
                           </td>
                          </tr>
-                         @endforeach
+                    @endforeach
                     </tbody>
                   </table>
                 </div>

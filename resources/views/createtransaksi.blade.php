@@ -167,38 +167,43 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data Transaksi</h4>
-                    <form>
+                    <form action="{{route('transaksi.store')}}" method="POST">
+                      @csrf
                         <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal Transaksi</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal Transaksi">
+                            <input type="date" class="form-control" id="inputnama" name="tanggal" placeholder="Tanggal Transaksi">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Harga Satuan</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Harga">
+                            <input type="text" class="form-control" id="inputharga" name="harga" placeholder="Harga">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
+                            <input type="text" class="form-control" id="inputtipe" name="merk" placeholder="Tipe Mobil">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty">
+                            <input type="text" class="form-control" name="qty" id="inputqty">
                         </div>
                         <div class="form-group col-md-12">
-                          <label for="inputsupplier">Supplier</label>
-                          <input type="text" class="form-control" id="inputsupplier" placeholder="Supplier">
-                        </div>
+                          <label for="inputtipe">Nama Supplier</label>
+                          <select class="form-group col-md-12" class="form-select" name="supplier_id" aria-label="Default select example">
+                            @foreach($supplier as $key=>$y)
+                              <option value={{$y->id}}>{{$y->nama_supplier}}</option>
+                            @endforeach
+                          </select>
+                      </div>
                         </div>
                         <div class="form-group">
                         </div>

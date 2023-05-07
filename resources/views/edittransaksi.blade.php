@@ -27,11 +27,11 @@ Coded by www.creative-tim.com
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/paper-dashboard.css?v=2.0.1')}}" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="{{asset('assets/demo/demo.css')}}" />
 </head>
 
 <body class="">
@@ -127,30 +127,43 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Edit Data Transaksi</h4>
-                    <form>
+                    <form action="{{route('transaksi.update',$transaksi->id )}}" method="POST">
+                      @csrf
+                      @method('put')
                         <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputnama">Tanggal Transaksi</label>
+                            <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $transaksi->tanggal}}">
+                          </div>
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" value="{{old('nama_sparepart') ?? $transaksi->nama_sparepart}}">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" value="{{old('kode_sparepart') ?? $transaksi->kode_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Harga Satuan</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Harga">
+                            <input type="text" class="form-control" id="inputharga" name="harga" value="{{old('harga') ?? $transaksi->harga}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
+                            <input type="text" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $transaksi->merk}}">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty">
+                            <input type="text" class="form-control" id="inputqty" name="qty" value="{{old('qty') ?? $transaksi->qty}}">
                         </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Nama Supplier</label>
+                          <select class="form-group col-md-12" class="form-select" name="supplier_id" aria-label="Default select example">
+                            @foreach($supplier as $key=>$y)
+                              <option value="{{$y->id}}"{{ old('supplier_id') == $y->id ? 'selected' : null }}>{{$y->nama_supplier}}</option>
+                            @endforeach
+                          </select>
                         </div>
                         <div class="form-group">
                         </div>

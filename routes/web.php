@@ -6,6 +6,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\PenerimaanController;
+use App\Http\Controllers\TransaksiController;
 
 
 /*
@@ -39,6 +40,10 @@ Route::resource('pengembalian', PengembalianController::class);
 Route::get('/penerimaan', [PenerimaanController::class,'index']);
 Route::get('/penerimaan/create', [PenerimaanController::class, 'create']);
 Route::resource('penerimaan', PenerimaanController::class);
+
+Route::get('/transaksi', [TransaksiController::class,'index']);
+Route::get('/transaksi/create', [TransaksiController::class, 'create']);
+Route::resource('transaksi', TransaksiController::class);
 
 Route::get('/tambah_data', function () {
     return view('tambah_data');
@@ -106,10 +111,6 @@ Route::get('/edit_data_pengambilan', function () {
 
 Route::get('/edit_data_penerimaan', function () {
     return view('edit_data_penerimaan');
-});
-
-Route::get('/transaksi', function () {
-    return view('transaksi');
 });
 
 Route::get('/logout', function(){

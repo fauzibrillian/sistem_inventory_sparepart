@@ -220,7 +220,7 @@ Coded by www.creative-tim.com
                                 <option value="{{$y->id}}"{{ old('pegawai_id') == $y->id ? 'selected' : null }}>{{$y->nama_pegawai}}</option>
                               @endforeach
                             </select>
-                          </div>
+                        </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Transaksi ID</label>
                           <input type="text" class="form-control" id="inputtipe" name="transaksi_id" value="{{old('transaksi_id') ?? $pengembalian->transaksi_id}}">

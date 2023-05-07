@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\penerimaan;
+use App\Models\transaksi;
 
-class PenerimaanController extends Controller
+class TransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +15,11 @@ class PenerimaanController extends Controller
      */
     public function index()
     {
-        $penerimaan = DB::table('penerimaan')
-        ->leftJoin('pegawai','penerimaan.pegawai_id','=','pegawai.id')
-        ->select('penerimaan.*', 'pegawai.nama_pegawai')
+        $transaksi = DB::table('transaksi')
+        ->leftJoin('supplier','transaksi.supplier_id','=','supplier.id')
+        ->select('transaksi.*', 'supplier.nama_supplier')
         ->get();
-        $supplier = DB::table('penerimaan')
-        ->rightJoin('supplier','penerimaan.supplier_id','=','supplier.id')
-        ->select('penerimaan.*', 'supplier.nama_supplier')
-        ->get();
-        return view('penerimaan', ['penerimaan' => $penerimaan, 'supplier'=> $supplier]);
+        return view('transaksi', ['transaksi' => $transaksi]);
     }
 
     /**
@@ -33,9 +29,8 @@ class PenerimaanController extends Controller
      */
     public function create()
     {
-        $pegawai = DB::table('pegawai')->get();
         $supplier = DB::table('supplier')->get();
-        return view('createpenerimaan',['pegawai'=>$pegawai, 'supplier'=>$supplier]);
+        return view('createtransaksi',['supplier'=>$supplier]);
     }
 
     /**
@@ -49,21 +44,21 @@ class PenerimaanController extends Controller
         $tanggal = $request->get('tanggal');
         $nama_sparepart = $request->get('nama_sparepart');
         $kode_sparepart = $request->get('kode_sparepart');
+        $qty = $request->get('qty');
         $merk = $request->get('merk');
-        $nopol =$request->get('nopol');
-        $pegawai =$request->get('pegawai_id');
+        $harga = $request->get('harga');
         $supplier =$request->get('supplier_id');
         /* Menyimpan data kedalam tabel */
-        $save_penerimaan = new \App\Models\penerimaan;
-        $save_penerimaan->tanggal = $tanggal;
-        $save_penerimaan->nama_sparepart = $nama_sparepart;
-        $save_penerimaan->kode_sparepart = $kode_sparepart;
-        $save_penerimaan->merk = $merk;
-        $save_penerimaan->nopol = $nopol;
-        $save_penerimaan->pegawai_id = $pegawai;
-        $save_penerimaan->supplier_id = $supplier;
-        $save_penerimaan->save();
-        return redirect('penerimaan');
+        $save_transaksi = new \App\Models\transaksi;
+        $save_transaksi->tanggal = $tanggal;
+        $save_transaksi->nama_sparepart = $nama_sparepart;
+        $save_transaksi->kode_sparepart = $kode_sparepart;
+        $save_transaksi->qty = $qty;
+        $save_transaksi->harga = $harga;
+        $save_transaksi->merk = $merk;
+        $save_transaksi->supplier_id = $supplier;
+        $save_transaksi->save();
+        return redirect('transaksi');
     }
 
     /**
@@ -83,14 +78,12 @@ class PenerimaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Penerimaan $penerimaan)
+    public function edit( Transaksi $transaksi )
     {
-        $pegawai = DB::table('pegawai')->get();
         $supplier = DB::table('supplier')->get();
-        return view('editpenerimaan',[
-        'penerimaan'=>$penerimaan,
-        'pegawai'=>$pegawai,
-        'supplier'=>$supplier ]);
+        return view('edittransaksi',[
+        'transaksi'=>$transaksi,
+        'supplier'=>$supplier]);
     }
 
     /**
@@ -100,12 +93,12 @@ class PenerimaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Penerimaan $penerimaan)
+    public function update(Request $request, Transaksi $transaksi)
     {
         $data = $request->all();
-        $penerimaan->update($data);
+        $transaksi->update($data);
 
-        return redirect()->route('penerimaan.index');
+        return redirect()->route('transaksi.index');
     }
 
     /**
@@ -114,10 +107,10 @@ class PenerimaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Penerimaan $penerimaan)
+    public function destroy(Transaksi $transaksi)
     {
-        $penerimaan->delete();
+        $transaksi->delete();
 
-        return redirect()->route('penerimaan.index');
+        return redirect()->route('transaksi.index');
     }
 }

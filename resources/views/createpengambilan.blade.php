@@ -167,33 +167,38 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data Pengambilan Sparepart</h4>
-                    <form>
+                    <form action="{{route('pengambilan.store')}}" method="POST">
+                      @csrf
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal">
+                            <input type="date" class="form-control" id="inputnama" name="tanggal" placeholder="Tanggal">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" placeholder="Merk Mobil">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" placeholder="Nopol">
+                            <input type="nopol" class="form-control" id="inputtipe" name="nopol" placeholder="Nopol">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="inputtipe">Nama Pengambil Sparepart</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengambil Sparepart">
+                          <label for="inputtipe">Nama Pegawai</label>
+                          <select class="form-group col-md-12" class="form-select" name="pegawai_id" aria-label="Default select example">
+                            @foreach($pegawai as $key=>$y)
+                              <option value={{$y->id}}>{{$y->nama_pegawai}}</option>
+                            @endforeach
+                          </select>
                         </div>
                         </div>
                         <div class="form-group">

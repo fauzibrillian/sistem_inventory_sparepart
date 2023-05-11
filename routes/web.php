@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\PenerimaanController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\PengambilanController;
 
 
 /*
@@ -45,9 +46,10 @@ Route::get('/transaksi', [TransaksiController::class,'index']);
 Route::get('/transaksi/create', [TransaksiController::class, 'create']);
 Route::resource('transaksi', TransaksiController::class);
 
-Route::get('/tambah_data', function () {
-    return view('tambah_data');
-});
+Route::get('/pengambilan', [PengambilanController::class,'index']);
+Route::get('/pengambilan/create', [PengambilanController::class, 'create']);
+Route::resource('pengambilan', PengambilanController::class);
+
 
 Route::get('/abcmodel', function () {
     return view('abcmodel');
@@ -69,48 +71,8 @@ Route::get('/sparepart/edit', function () {
     return view('editsparepart');
 });
 
-Route::get('/pengambilan', function () {
-    return view('pengambilan');
-});
-
 Route::get('/monitoring', function () {
     return view('monitoring');
-});
-
-Route::get('/stock', function () {
-    return view('stock');
-});
-
-Route::get('/tambah_data_pengambilan', function () {
-    return view('tambah_data_pengambilan');
-});
-
-Route::get('/tambah_data_stock', function () {
-    return view('tambah_data_stock');
-});
-
-Route::get('/tambah_data_supplier', function () {
-    return view('tambah_data_supplier');
-});
-
-Route::get('/edit_data', function () {
-    return view('edit_data');
-});
-
-Route::get('/edit_data_supplier', function () {
-    return view('edit_data_supplier');
-});
-
-Route::get('/edit_data_stock', function () {
-    return view('edit_data_stock');
-});
-
-Route::get('/edit_data_pengambilan', function () {
-    return view('edit_data_pengambilan');
-});
-
-Route::get('/edit_data_penerimaan', function () {
-    return view('edit_data_penerimaan');
 });
 
 Route::get('/logout', function(){

@@ -27,11 +27,11 @@ Coded by www.creative-tim.com
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+      <!-- CSS Files -->
+      <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
+      <link rel="stylesheet" href="{{asset('assets/css/paper-dashboard.css?v=2.0.1')}}" />
+      <!-- CSS Just for demo purpose, don't include it in your project -->
+      <link rel="stylesheet" href="{{asset('assets/demo/demo.css')}}" />
 </head>
 
 <body class="">
@@ -177,33 +177,39 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Edit Data Pengambilan</h4>
-                    <form>
+                    <form action="{{route('pengambilan.update',$pengambilan->id )}}" method="POST">
+                      @csrf
+                      @method('put')
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Tanggal">
+                            <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $pengambilan->tanggal}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengambilan->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengambilan->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" placeholder="Merk Mobil">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $pengambilan->merk}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" placeholder="Nopol">
+                            <input type="nopol" class="form-control" id="inputtipe" name="nopol" value="{{old('nopol') ?? $pengambilan->nopol}}">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="inputtipe">Nama Pengambil Sparepart</label>
-                            <input type="nama" class="form-control" id="inputtipe" placeholder="Nama Pengambil Sparepart">
+                          <label for="inputtipe">Nama Pegawai</label>
+                          <select class="form-group col-md-12" class="form-select" name="pegawai_id" aria-label="Default select example">
+                            @foreach($pegawai as $key=>$y)
+                              <option value="{{$y->id}}"{{ old('pegawai_id') == $y->id ? 'selected' : null }}>{{$y->nama_pegawai}}</option>
+                            @endforeach
+                          </select>
                         </div>
                         </div>
                         <div class="form-group">

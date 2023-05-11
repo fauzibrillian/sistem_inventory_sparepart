@@ -203,7 +203,7 @@ Coded by www.creative-tim.com
                               <option value={{$y->id}}>{{$y->nama_supplier}}</option>
                             @endforeach
                           </select>
-                      </div>
+                        </div>
                         </div>
                         <div class="form-group">
                         </div>

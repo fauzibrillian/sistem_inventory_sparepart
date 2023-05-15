@@ -18,7 +18,7 @@ class PengembalianController extends Controller
     {
         $pengembalian = DB::table('pengembalian')
         ->leftJoin('pegawai','pengembalian.pegawai_id','=','pegawai.id')
-        ->rightJoin('transaksi','penerimaan.transaksi_id','=','transaksi.id')
+        ->rightJoin('transaksi','pengembalian.transaksi_id','=','transaksi.id')
         ->select('pengembalian.*', 'pegawai.nama_pegawai', 'transaksi.kode_transaksi')
         ->get();
         return view('pengembalian', ['pengembalian' => $pengembalian]);
@@ -32,7 +32,8 @@ class PengembalianController extends Controller
     public function create()
     {
         $pegawai = DB::table('pegawai')->get();
-        return view('createpengembalian',['pegawai'=>$pegawai]);
+        $transaksi = DB::table('transaksi')->get();
+        return view('createpengembalian',['pegawai'=>$pegawai,'transaksi'=>$transaksi]);
     }
 
     /**
@@ -87,9 +88,11 @@ class PengembalianController extends Controller
     public function edit( Pengembalian $pengembalian)
     {
         $pegawai = DB::table('pegawai')->get();
+        $transaksi = DB::table('transaksi')->get();
         return view('editpengembalian',[
         'pengembalian'=>$pengembalian,
-        'pegawai'=>$pegawai]);
+        'pegawai'=>$pegawai,
+        'transaksi'=>$transaksi]);
     }
 
     /**

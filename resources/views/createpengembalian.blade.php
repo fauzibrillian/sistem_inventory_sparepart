@@ -221,9 +221,13 @@ Coded by www.creative-tim.com
                             </select>
                         </div>
                         <div class="form-group col-md-12">
-                          <label for="inputtipe">Transaksi ID</label>
-                          <input type="text" class="form-control" id="inputtipe" name="transaksi_id" placeholder="Transaksi ID">
-                        </div>
+                          <label for="inputtipe">Kode Transaksi</label>
+                          <select class="form-group col-md-12" class="form-select" name="transaksi_id" aria-label="Default select example">
+                            @foreach($transaksi as $key=>$y)
+                              <option value={{$y->id}}>{{$y->kode_transaksi}}</option>
+                            @endforeach
+                          </select>
+                      </div>
                         </div>
                         <div class="form-group">
                         </div>

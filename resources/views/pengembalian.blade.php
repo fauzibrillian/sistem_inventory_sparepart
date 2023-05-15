@@ -250,7 +250,7 @@ Coded by www.creative-tim.com
                             {{$y->nama_pegawai}}
                           </td>
                           <td>
-                            {{$y->transaksi_id}}
+                            {{$y->kode_transaksi}}
                           </td>
                           <td>
                             <a href="/pengembalian/{{$y->id}}/edit/" class="btn btn-primary">

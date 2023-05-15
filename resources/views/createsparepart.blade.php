@@ -69,12 +69,12 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
-          </li>
+          </li> --}}
           <li class="active">
             <a href="/sparepart">
               <i class="nc-icon nc-briefcase-24"></i>

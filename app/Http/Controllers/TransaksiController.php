@@ -42,6 +42,7 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $tanggal = $request->get('tanggal');
+        $kode_transaksi = $request->get('kode_transaksi');
         $nama_sparepart = $request->get('nama_sparepart');
         $kode_sparepart = $request->get('kode_sparepart');
         $qty = $request->get('qty');
@@ -51,6 +52,7 @@ class TransaksiController extends Controller
         /* Menyimpan data kedalam tabel */
         $save_transaksi = new \App\Models\transaksi;
         $save_transaksi->tanggal = $tanggal;
+        $save_transaksi->kode_transaksi = $kode_transaksi;
         $save_transaksi->nama_sparepart = $nama_sparepart;
         $save_transaksi->kode_sparepart = $kode_sparepart;
         $save_transaksi->qty = $qty;

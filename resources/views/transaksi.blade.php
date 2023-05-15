@@ -152,6 +152,9 @@ Coded by www.creative-tim.com
                         Tanggal
                       </th>
                       <th>
+                        Kode Transaksi
+                      </th>
+                      <th>
                         Nama Sparepart
                       </th>
                       <th>
@@ -181,6 +184,9 @@ Coded by www.creative-tim.com
                           </td>
                           <td>
                             {{$x->tanggal}}
+                          </td>
+                          <td>
+                            {{$x->kode_transaksi}}
                           </td>
                           <td>
                             {{$x->nama_sparepart}}

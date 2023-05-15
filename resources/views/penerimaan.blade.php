@@ -215,7 +215,7 @@ Coded by www.creative-tim.com
                     </thead>
                     <tbody>
                         <tr>
-                        @foreach($penerimaan and $supplier as $key=>$x )
+                        @foreach($penerimaan as $key=>$x )
                           <td>
                             {{$key+1}}
                           </td>
@@ -238,7 +238,7 @@ Coded by www.creative-tim.com
                             {{$x->nama_pegawai}}
                           </td>
                           <td>
-                            {{$x->supplier_id}}
+                            {{$x->nama_supplier}}
                           </td>
                           <td>
                             <a href="/penerimaan/{{$x->id}}/edit/" class="btn btn-primary">

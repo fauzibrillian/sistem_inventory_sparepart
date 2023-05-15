@@ -9,5 +9,5 @@ class transaksi extends Model
 {
     use HasFactory;
     protected $table = 'transaksi';
-    protected $fillable = ['tanggal','nama_sparepart','kode_sparepart','qty','merk','harga','supplier_id'];
+    protected $fillable = ['tanggal','kode_transaksi','nama_sparepart','kode_sparepart','qty','merk','harga','supplier_id'];
 }

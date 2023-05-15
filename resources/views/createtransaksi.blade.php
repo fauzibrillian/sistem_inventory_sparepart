@@ -170,11 +170,15 @@ Coded by www.creative-tim.com
                     <form action="{{route('transaksi.store')}}" method="POST">
                       @csrf
                         <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputnama">Tanggal Transaksi</label>
                             <input type="date" class="form-control" id="inputnama" name="tanggal" placeholder="Tanggal Transaksi">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
+                          <label for="inputkode">Kode Transaksi</label>
+                          <input type="text" class="form-control" id="inputkode" name="kode_transaksi" placeholder="Kode Transaksi">
+                        </div>
+                        <div class="form-group col-md-12">
                             <label for="inputnama">Nama Sparepart</label>
                             <input type="text" class="form-control" id="inputnama" name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>

@@ -18,7 +18,8 @@ class PengembalianController extends Controller
     {
         $pengembalian = DB::table('pengembalian')
         ->leftJoin('pegawai','pengembalian.pegawai_id','=','pegawai.id')
-        ->select('pengembalian.*', 'pegawai.nama_pegawai')
+        ->rightJoin('transaksi','penerimaan.transaksi_id','=','transaksi.id')
+        ->select('pengembalian.*', 'pegawai.nama_pegawai', 'transaksi.kode_transaksi')
         ->get();
         return view('pengembalian', ['pengembalian' => $pengembalian]);
     }

@@ -84,7 +84,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="/pegawai
+            <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
             </a>
@@ -132,10 +132,14 @@ Coded by www.creative-tim.com
                       @method('put')
                         <div class="form-row">
                           <div class="form-group col-md-6">
+                            <label for="inputnama">Nama Sparepart</label>
+                              <input type="text" class="form-control" id="inputnama" name="kode_transaksi" value="{{old('kode_transaksi') ?? $transaksi->kode_transaksi}}">
+                            </div>
+                          <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal Transaksi</label>
                             <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $transaksi->tanggal}}">
                           </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputnama">Nama Sparepart</label>
                             <input type="text" class="form-control" id="inputnama" name="nama_sparepart" value="{{old('nama_sparepart') ?? $transaksi->nama_sparepart}}">
                         </div>

@@ -17,13 +17,10 @@ class PenerimaanController extends Controller
     {
         $penerimaan = DB::table('penerimaan')
         ->leftJoin('pegawai','penerimaan.pegawai_id','=','pegawai.id')
-        ->select('penerimaan.*', 'pegawai.nama_pegawai')
-        ->get();
-        $supplier = DB::table('penerimaan')
         ->rightJoin('supplier','penerimaan.supplier_id','=','supplier.id')
-        ->select('penerimaan.*', 'supplier.nama_supplier')
+        ->select('penerimaan.*', 'pegawai.nama_pegawai', 'supplier.nama_supplier')
         ->get();
-        return view('penerimaan', ['penerimaan' => $penerimaan, 'supplier'=> $supplier]);
+        return view('penerimaan', ['penerimaan' => $penerimaan]);
     }
 
     /**

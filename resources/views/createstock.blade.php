@@ -167,25 +167,26 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data Stock</h4>
-                    <form>
+                    <form action="{{route('stock.store')}}" method="POST">
+                      @csrf
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
+                            <input type="text" class="form-control" id="inputtipe" name="merk" placeholder="Tipe Mobil">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty">
+                            <input type="text" class="form-control" placeholder="Qty" name="qty" id="qty">
                         </div>  
                         </div>
                         <div class="form-group">

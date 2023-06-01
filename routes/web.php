@@ -8,6 +8,8 @@ use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\PenerimaanController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\PengambilanController;
+use App\Http\Controllers\StockController;
+
 
 
 /*
@@ -49,6 +51,10 @@ Route::resource('transaksi', TransaksiController::class);
 Route::get('/pengambilan', [PengambilanController::class,'index']);
 Route::get('/pengambilan/create', [PengambilanController::class, 'create']);
 Route::resource('pengambilan', PengambilanController::class);
+
+Route::get('/stock', [StockController::class,'index']);
+Route::get('/stock/create', [StockController::class, 'create']);
+Route::resource('stock', StockController::class);
 
 
 Route::get('/abcmodel', function () {

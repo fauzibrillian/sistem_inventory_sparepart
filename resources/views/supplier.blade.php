@@ -75,12 +75,12 @@ Coded by www.creative-tim.com
                 <p>Master Supplier</p>
               </a>
             </li>
-            <li>
+            {{-- <li>
               <a href="/sparepart">
                 <i class="nc-icon nc-briefcase-24"></i>
                 <p>Master Sparepart</p>
               </a>
-            </li>
+            </li> --}}
             <li >
               <a href="/monitoring">
                 <i class="nc-icon nc-tile-56"></i>

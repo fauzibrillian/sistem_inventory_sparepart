@@ -28,10 +28,10 @@ Coded by www.creative-tim.com
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
+  <link rel="stylesheet" href="{{asset('assets/css/paper-dashboard.css?v=2.0.1')}}" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{asset('assets/demo/demo.css')}}" />
 </head>
 
 <body class="">
@@ -167,25 +167,27 @@ Coded by www.creative-tim.com
             <div class="card" >
                 <div class="card-body">
                     <h4 class="card-title">Tambahkan Data Stock</h4>
-                    <form>
+                    <form action="{{route('stock.update',$stock->id)}}" method="POST">
+                      @csrf
+                      @method('put')
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" value="{{old('nama_sparepart') ?? $stock->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" value="{{old('kode_sparepart') ?? $stock->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" placeholder="Tipe Mobil">
+                            <input type="text" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $stock->merk}}"">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty">
+                            <input type="text" class="form-control" id="inputqty" name="qty" value="{{old('qty') ?? $stock->qty}}">
                         </div>  
                         </div>
                         <div class="form-group">

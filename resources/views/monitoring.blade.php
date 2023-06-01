@@ -213,7 +213,7 @@ Coded by www.creative-tim.com
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Penerimaan Sparepart</p>
-                      <p class="card-title">Stock<p>
+                      <p class="card-title">Part In<p>
                     </div>
                   </div>
                 </div>
@@ -222,6 +222,31 @@ Coded by www.creative-tim.com
                 <hr>
                 <div class="stats">
                   <a href="/penerimaan" class="btn btn-primary">Pilih</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center">
+                      <i class="nc-icon nc-box-2 text"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Stock Sparepart Mobil</p>
+                      <p class="card-title">Stock<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <a href="/stock" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>

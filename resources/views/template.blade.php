@@ -344,9 +344,9 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="/retur">
+            <a href="/Pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
-              <p>retur</p>
+              <p>Pengembalian</p>
             </a>
           </li>
         </ul>
@@ -444,8 +444,8 @@ Coded by www.creative-tim.com
                     </div>
                     <div class="col-7 col-md-8">
                       <div class="numbers">
-                        <p class="card-category">retur Sparepart</p>
-                        <p class="card-title">retur<p>
+                        <p class="card-category">Pengembalian</p>
+                        <p class="card-title">Retur<p>
                       </div>
                     </div>
                   </div>
@@ -453,7 +453,7 @@ Coded by www.creative-tim.com
                 <div class="card-footer ">
                   <hr>
                   <div class="stats">
-                    <a href="/retur" class="btn btn-primary">Pilih</a>
+                    <a href="/pengembalian" class="btn btn-primary">Pilih</a>
                   </div>
                 </div>
               </div>

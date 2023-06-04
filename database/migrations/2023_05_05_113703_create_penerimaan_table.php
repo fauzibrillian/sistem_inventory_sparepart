@@ -15,11 +15,9 @@ class CreatePenerimaanTable extends Migration
     {
         Schema::create('penerimaan', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('tanggal');
+            $table->date('tanggal');
             $table->string('nama_sparepart',100);
             $table->string('kode_sparepart',100);
-            $table->string('qty',100);
-            $table->string('harga',100);
             $table->string('merk',100);
             $table->string('nopol',100);
             $table->timestamps();

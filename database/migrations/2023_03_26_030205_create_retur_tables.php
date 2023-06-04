@@ -15,7 +15,7 @@ class CreateReturTables extends Migration
     {
         Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('tanggal');
+            $table->date('tanggal');
             $table->string('nama_sparepart',100);
             $table->string('kode_sparepart',100);
             $table->string('qty',100);

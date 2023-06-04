@@ -193,7 +193,7 @@ Coded by www.creative-tim.com
                             <input type="nopol" class="form-control" id="inputtipe" name="nopol" placeholder="Nopol">
                         </div>
                         <div class="form-group col-md-12">
-                          <label for="inputtipe">Nama Pengirim Sparepart</label>
+                          <label for="inputtipe">Nama Penerima Sparepart</label>
                           <select class="form-group col-md-12" class="form-select" name="pegawai_id" aria-label="Default select example">
                             @foreach($pegawai as $key=>$y)
                               <option value={{$y->id}}>{{$y->nama_pegawai}}</option>
@@ -212,7 +212,7 @@ Coded by www.creative-tim.com
                         <div class="form-group">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/penerimaan" class="btn btn-danger"> Back </a>
+                        <a href="/penerimaan" class="btn btn-danger"> Kembali ke Data </a>
                         <a href="/" class="btn btn-warning"> Kembali ke Dashboard </a>
                     </form>
                 </div>

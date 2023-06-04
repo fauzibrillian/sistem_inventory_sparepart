@@ -261,8 +261,8 @@ Coded by www.creative-tim.com
                               </button>
                             </form>
                           </td>
-                         </tr>
-                    @endforeach
+                        </tr>
+                        @endforeach
                     </tbody>
                   </table>
                 </div>

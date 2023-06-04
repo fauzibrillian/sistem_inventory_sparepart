@@ -9,6 +9,7 @@ use App\Http\Controllers\PenerimaanController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\PengambilanController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\MonitoringController;
 
 
 
@@ -63,6 +64,7 @@ Route::get('/stock/create', [StockController::class, 'create']);
 Route::resource('stock', StockController::class);
 Route::get('/search_stock', [StockController::class, 'search_stock'])->name('search_stock');
 
+Route::get('/monitoring', [MonitoringController::class,'index']);
 
 Route::get('/abcmodel', function () {
     return view('abcmodel');
@@ -82,10 +84,6 @@ Route::get('/sparepart/create', function () {
 
 Route::get('/sparepart/edit', function () {
     return view('editsparepart');
-});
-
-Route::get('/monitoring', function () {
-    return view('monitoring');
 });
 
 Route::get('/logout', function(){

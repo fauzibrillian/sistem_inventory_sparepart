@@ -237,8 +237,11 @@ Coded by www.creative-tim.com
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
+                      
                       <p class="card-category">Stock Sparepart Mobil</p>
-                      <p class="card-title">Stock<p>
+                      <p class="card-title">
+                      <span class="badge badge-danger">{{ $count }}</span>
+                      Stock<p>
                     </div>
                   </div>
                 </div>

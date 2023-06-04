@@ -196,7 +196,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/pengambilan" class="btn btn-primary">Pilih</a>
+                  <a href="/pengambilan/create" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/penerimaan" class="btn btn-primary">Pilih</a>
+                  <a href="/penerimaan/create" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>

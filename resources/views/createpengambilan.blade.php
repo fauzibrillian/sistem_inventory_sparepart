@@ -205,6 +205,7 @@ Coded by www.creative-tim.com
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="/pengambilan" class="btn btn-danger"> Back </a>
+                        <a href="/" class="btn btn-warning"> Kembali ke Dashboard </a>
                     </form>
                 </div>
             </div>

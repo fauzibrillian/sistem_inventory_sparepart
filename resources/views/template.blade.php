@@ -200,7 +200,7 @@ Coded by www.creative-tim.com
                 <div class="card-footer ">
                   <hr>
                   <div class="stats">
-                    <a href="/transaksi" class="btn btn-primary">Pilih</a>
+                    <a href="/transaksi/create" class="btn btn-primary">Pilih</a>
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@ Coded by www.creative-tim.com
                 <div class="card-footer ">
                   <hr>
                   <div class="stats">
-                    <a href="/pengembalian" class="btn btn-primary">Pilih</a>
+                    <a href="/pengembalian/create" class="btn btn-primary">Pilih</a>
                   </div>
                 </div>
               </div>

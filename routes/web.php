@@ -74,18 +74,6 @@ Route::get('/prediksi', function () {
     return view('prediksi');
 });
 
-Route::get('/sparepart', function () {
-    return view('sparepart');
-});
-
-Route::get('/sparepart/create', function () {
-    return view('createsparepart');
-});
-
-Route::get('/sparepart/edit', function () {
-    return view('editsparepart');
-});
-
 Route::get('/logout', function(){
     \Auth::logout();
     return redirect ('/');

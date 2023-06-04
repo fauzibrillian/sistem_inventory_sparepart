@@ -13,7 +13,7 @@ class CreateReturTables extends Migration
      */
     public function up()
     {
-        Schema::create('retur', function (Blueprint $table) {
+        Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
             $table->timestamp('tanggal');
             $table->string('nama_sparepart',100);
@@ -33,6 +33,6 @@ class CreateReturTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retur');
+        Schema::dropIfExists('pengembalian');
     }
 }

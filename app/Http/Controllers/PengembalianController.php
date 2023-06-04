@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\pengembalian;
 
-
 class PengembalianController extends Controller
 {
     /**
@@ -52,7 +51,7 @@ class PengembalianController extends Controller
         $merk = $request->get('merk');
         $nopol =$request->get('nopol');
         $pegawai =$request->get('pegawai_id');
-        $transaksi_id=$request->get('transaksi_id');
+        $transaksi =$request->get('transaksi_id');
         /* Menyimpan data kedalam tabel */
         $save_pengembalian = new \App\Models\pengembalian;
         $save_pengembalian->tanggal = $tanggal;
@@ -63,7 +62,7 @@ class PengembalianController extends Controller
         $save_pengembalian->merk = $merk;
         $save_pengembalian->nopol = $nopol;
         $save_pengembalian->pegawai_id = $pegawai;
-        $save_pengembalian->transaksi_id = $transaksi_id;
+        $save_pengembalian->transaksi_id = $transaksi;
         $save_pengembalian->save();
         return redirect('pengembalian');
     }

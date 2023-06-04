@@ -140,6 +140,12 @@ Coded by www.creative-tim.com
               <div class="card-header">
                 <h4 class="card-title"> Data Pegawai</h4>
                 <a href="/pegawai/create" class="btn btn-primary"> Tambah Data Pegawai</a>
+                <div class="form-group">
+                  <form action="{{ route('search_pegawai') }}" method="GET">
+                    <input type="text" name="search_pegawai"  placeholder="Cari Nama Pegawai....">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                  </form>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

@@ -140,6 +140,12 @@ Coded by www.creative-tim.com
               <div class="card-header">
                 <h4 class="card-title"> Data Transaksi</h4>
                 <a href="/transaksi/create" class="btn btn-primary"> Tambah Data Transaksi </a>
+                <div class="form-group">
+                  <form action="{{ route('search_transaksi') }}" method="GET">
+                    <input type="text" name="search_transaksi"  placeholder="Cari Kode Transaksi....">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                  </form>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

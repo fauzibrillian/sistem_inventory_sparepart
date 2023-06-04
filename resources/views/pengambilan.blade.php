@@ -180,6 +180,12 @@ Coded by www.creative-tim.com
               <div class="card-header">
                 <h4 class="card-title"> Data Pengambilan Sparepart</h4>
                 <a href="/pengambilan/create" class="btn btn-primary"> Tambah Data Pengambilan</a>
+                <div class="form-group">
+                  <form action="{{ route('search_pengambilan') }}" method="GET">
+                    <input type="text" name="search_pengambilan"  placeholder="Cari Kode Sparepart....">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                  </form>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

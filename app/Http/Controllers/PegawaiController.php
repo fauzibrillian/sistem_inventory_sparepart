@@ -101,4 +101,13 @@ class PegawaiController extends Controller
 
         return redirect()->route('pegawai.index');
     }
+
+    public function search_pegawai(Request $request, Pegawai $pegawai)
+    {
+        $searchTerm = $request->input('search_pegawai');
+
+        $pegawai = pegawai::where('nama_pegawai', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+        return view('pegawai', ['pegawai' => $pegawai]);
+    }
 }

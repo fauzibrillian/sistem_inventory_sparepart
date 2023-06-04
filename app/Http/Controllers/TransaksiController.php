@@ -115,4 +115,13 @@ class TransaksiController extends Controller
 
         return redirect()->route('transaksi.index');
     }
+
+    public function search_transaksi(Request $request, Transaksi $transaksi)
+    {
+        $searchTerm = $request->input('search_transaksi');
+
+        $transaksi = transaksi::where('kode_transaksi', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+        return view('transaksi', ['transaksi' => $transaksi]);
+    }
 }

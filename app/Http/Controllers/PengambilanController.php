@@ -111,4 +111,13 @@ class PengambilanController extends Controller
 
         return redirect()->route('pengambilan.index');
     }
+
+    public function search_pengambilan(Request $request, Pengambilan $pengambilan)
+    {
+        $searchTerm = $request->input('search_pengambilan');
+
+        $pengambilan = pengambilan::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+        return view('pengambilan', ['pengambilan' => $pengambilan]);
+    }
 }

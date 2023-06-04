@@ -117,4 +117,14 @@ class PenerimaanController extends Controller
 
         return redirect()->route('penerimaan.index');
     }
+
+    public function search_penerimaan(Request $request, Penerimaan $penerimaan)
+    {
+        $searchTerm = $request->input('search_penerimaan');
+        
+        $penerimaan = penerimaan::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+
+        
+        return view('penerimaan', ['penerimaan' => $penerimaan]);
+    }
 }

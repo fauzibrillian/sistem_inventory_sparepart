@@ -180,9 +180,15 @@ Coded by www.creative-tim.com
               <div class="card-header">
                 <h4 class="card-title"> Data Supplier</h4>
                 <a href="/supplier/create" class="btn btn-primary"> Tambah Data Supplier</a>
+                <div class="form-group">
+                  <form action="{{ route('search_supplier') }}" method="GET">
+                    <input type="text" name="search_supplier"  placeholder="Cari Nama Supplier....">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                  </form>
+                </div>   
               </div>
               <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive"> 
                   <table class="table">
                     <thead class=" table-primary">
                       <th>

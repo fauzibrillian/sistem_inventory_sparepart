@@ -101,4 +101,13 @@ class SupplierController extends Controller
 
         return redirect()->route('supplier.index');
     }
+
+    public function search_supplier(Request $request, Supplier $supplier)
+    {
+        $searchTerm = $request->input('search_supplier');
+
+        $supplier = supplier::where('nama_supplier', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+        return view('supplier', ['supplier' => $supplier]);
+    }
 }

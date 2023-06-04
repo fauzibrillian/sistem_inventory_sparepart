@@ -101,4 +101,13 @@ class StockController extends Controller
 
         return redirect()->route('stock.index');
     }
+
+    public function search_stock(Request $request, Stock $stock)
+    {
+        $searchTerm = $request->input('search_stock');
+
+        $stock = stock::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+        return view('stock', ['stock' => $stock]);
+    }
 }

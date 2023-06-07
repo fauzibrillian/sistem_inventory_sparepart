@@ -202,7 +202,7 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Nama Supplier</label>
-                          <select class="form-group col-md-12" class="form-select" name="supplier_id" aria-label="Default select example">
+                          <select class="form-control" id="exampleFormControlSelect1" name="supplier_id">
                             @foreach($supplier as $key=>$y)
                               <option value={{$y->id}}>{{$y->nama_supplier}}</option>
                             @endforeach

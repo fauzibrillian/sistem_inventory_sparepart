@@ -179,7 +179,6 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Data Stock</h4>
-                <a href="/stock/create" class="btn btn-primary"> Tambah Data Stock</a>
                 <div class="form-group">
                   <form action="{{ route('search_stock') }}" method="GET">
                     <input type="text" name="search_stock"  placeholder="Cari Kode Sparepart....">

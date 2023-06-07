@@ -176,25 +176,41 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" placeholder="Nama Sparepart">
+                            <select class="form-control" name="nama_sparepart" id="exampleFormControlSelect1"> 
+                              @foreach($transaksi as $key=>$y)
+                                <option value={{$y->id}}>{{$y->nama_sparepart}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" placeholder="Kode Sparepart">
+                            <select class="form-control" id="exampleFormControlSelect1" name="kode_sparepart">
+                              @foreach($transaksi as $key=>$y)
+                                <option value={{$y->id}}>{{$y->kode_sparepart}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" placeholder="Merk Mobil">
+                            <select class="form-control" id="exampleFormControlSelect1" name="merk">
+                              @foreach($transaksi as $key=>$y)
+                                <option value={{$y->id}}>{{$y->merk}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Nopol</label>
                             <input type="nopol" class="form-control" id="inputtipe" required name="nopol" placeholder="Nopol">
                         </div>
                         <div class="form-group col-md-12">
+                          <label for="inputtipe">Qty</label>
+                          <input type="qty" class="form-control" id="inputtipe" required name="qty" placeholder="Qty">
+                      </div>
+                        <div class="form-group col-md-12">
                           <label for="inputtipe">Nama Pegawai</label>
-                          <select class="form-group col-md-12" class="form-select"  name="pegawai_id" aria-label="Default select example">
+                          <select class="form-control" id="exampleFormControlSelect1"  name="pegawai_id" >
                             @foreach($pegawai as $key=>$y)
                               <option value={{$y->id}}>{{$y->nama_pegawai}}</option>
                             @endforeach

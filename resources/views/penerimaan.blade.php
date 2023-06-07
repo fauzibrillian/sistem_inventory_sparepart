@@ -207,7 +207,7 @@ Coded by www.creative-tim.com
                         Merk Mobil
                       </th>
                       <th>
-                        Nopol
+                        Qty
                       </th>
                       <th>
                         Nama Penerima
@@ -238,7 +238,7 @@ Coded by www.creative-tim.com
                             {{$x->merk}}
                           </td>
                           <td>
-                            {{$x->nopol}}
+                            {{$x->qty}}
                           </td>
                           <td>
                             {{$x->nama_pegawai}}

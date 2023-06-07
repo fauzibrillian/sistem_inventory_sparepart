@@ -17,8 +17,9 @@ class PenerimaanController extends Controller
     {
         $penerimaan = DB::table('penerimaan')
         ->leftJoin('pegawai','penerimaan.pegawai_id','=','pegawai.id')
-        ->rightJoin('supplier','penerimaan.supplier_id','=','supplier.id')
-        ->select('penerimaan.*', 'pegawai.nama_pegawai', 'supplier.nama_supplier')
+        ->leftJoin('supplier','penerimaan.supplier_id','=','supplier.id')
+        ->leftJoin('transaksi','penerimaan.transaksi_id','=','transaksi.id')
+        ->select('penerimaan.*', 'pegawai.nama_pegawai', 'supplier.nama_supplier', 'transaksi.nama_sparepart', 'transaksi.kode_sparepart','transaksi.kode_transaksi')
         ->get();
         return view('penerimaan', ['penerimaan' => $penerimaan]);
     }
@@ -32,7 +33,8 @@ class PenerimaanController extends Controller
     {
         $pegawai = DB::table('pegawai')->get();
         $supplier = DB::table('supplier')->get();
-        return view('createpenerimaan',['pegawai'=>$pegawai, 'supplier'=>$supplier]);
+        $transaksi = DB::table('transaksi')->get();
+        return view('createpenerimaan',['pegawai'=>$pegawai, 'supplier'=>$supplier, 'transaksi'=>$transaksi]);
     }
 
     /**
@@ -47,19 +49,27 @@ class PenerimaanController extends Controller
         $nama_sparepart = $request->get('nama_sparepart');
         $kode_sparepart = $request->get('kode_sparepart');
         $merk = $request->get('merk');
-        $nopol =$request->get('nopol');
+        $qty =$request->get('qty');
         $pegawai =$request->get('pegawai_id');
         $supplier =$request->get('supplier_id');
+        $transaksi =$request->get('transaksi_id');
         /* Menyimpan data kedalam tabel */
         $save_penerimaan = new \App\Models\penerimaan;
+        $save_stock = new \App\Models\stock;
+        $save_stock->nama_sparepart = $nama_sparepart;
+        $save_stock->kode_sparepart = $kode_sparepart;
+        $save_stock->qty = $qty;
+        $save_stock->merk = $merk;
         $save_penerimaan->tanggal = $tanggal;
         $save_penerimaan->nama_sparepart = $nama_sparepart;
         $save_penerimaan->kode_sparepart = $kode_sparepart;
         $save_penerimaan->merk = $merk;
-        $save_penerimaan->nopol = $nopol;
+        $save_penerimaan->qty = $qty;
         $save_penerimaan->pegawai_id = $pegawai;
         $save_penerimaan->supplier_id = $supplier;
+        $save_penerimaan->transaksi_id = $transaksi;
         $save_penerimaan->save();
+        $save_stock->save();
         return redirect('penerimaan');
     }
 

@@ -210,6 +210,9 @@ Coded by www.creative-tim.com
                         Nopol
                       </th>
                       <th>
+                        Qty
+                      </th>
+                      <th>
                         Nama Pengambil
                       </th>
                       <th >
@@ -236,6 +239,9 @@ Coded by www.creative-tim.com
                         </td>
                         <td>
                           {{$x->nopol}}
+                        </td>
+                        <td>
+                          {{$x->qty}}
                         </td>
                         <td>
                           {{$x->nama_pegawai}}

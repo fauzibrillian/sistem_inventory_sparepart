@@ -30,7 +30,8 @@ class PengambilanController extends Controller
     public function create()
     {
         $pegawai = DB::table('pegawai')->get();
-        return view('createpengambilan',['pegawai'=>$pegawai]);
+        $transaksi = DB::table('transaksi')->get();
+        return view('createpengambilan',['pegawai'=>$pegawai, 'transaksi'=>$transaksi]);
     }
 
     /**
@@ -46,6 +47,7 @@ class PengambilanController extends Controller
         $kode_sparepart = $request->get('kode_sparepart');
         $merk = $request->get('merk');
         $nopol = $request->get('nopol');
+        $qty = $request->get('qty');
         $pegawai =$request->get('pegawai_id');
         /* Menyimpan data kedalam tabel */
         $save_pengambilan = new \App\Models\pengambilan;
@@ -54,6 +56,7 @@ class PengambilanController extends Controller
         $save_pengambilan->kode_sparepart = $kode_sparepart;
         $save_pengambilan->merk = $merk;
         $save_pengambilan->nopol = $nopol;
+        $save_pengambilan->qty = $qty;
         $save_pengambilan->pegawai_id = $pegawai;
         $save_pengambilan->save();
         return redirect('pengambilan');

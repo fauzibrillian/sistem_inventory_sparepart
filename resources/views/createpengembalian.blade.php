@@ -214,7 +214,7 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
-                            <select class="form-group col-md-12" class="form-select" name="pegawai_id" aria-label="Default select example">
+                            <select class="form-control" id="exampleFormControlSelect1" name="pegawai_id" >
                               @foreach($pegawai as $key=>$y)
                                 <option value={{$y->id}}>{{$y->nama_pegawai}}</option>
                               @endforeach
@@ -222,7 +222,7 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Kode Transaksi</label>
-                          <select class="form-group col-md-12" class="form-select" name="transaksi_id" aria-label="Default select example">
+                          <select class="form-control" id="exampleFormControlSelect1" name="transaksi_id" >
                             @foreach($transaksi as $key=>$y)
                               <option value={{$y->id}}>{{$y->kode_transaksi}}</option>
                             @endforeach

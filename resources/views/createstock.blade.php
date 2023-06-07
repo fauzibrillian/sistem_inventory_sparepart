@@ -172,21 +172,21 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputnama" required name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputkode" required name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" name="merk" placeholder="Tipe Mobil">
+                            <input type="text" class="form-control" id="inputtipe" required name="merk" placeholder="Tipe Mobil">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" placeholder="Qty" name="qty" id="qty">
+                            <input type="text" class="form-control" placeholder="Qty" required name="qty" id="qty">
                         </div>  
                         </div>
                         <div class="form-group">

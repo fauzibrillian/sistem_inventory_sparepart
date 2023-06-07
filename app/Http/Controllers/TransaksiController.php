@@ -78,7 +78,7 @@ class TransaksiController extends Controller
         $save_transaksi->merk = $merk;
         $save_transaksi->supplier_id = $supplier;
         $save_transaksi->save();
-        
+
         Session::flash('success', 'Data berhasil disimpan!');
         Session::flash('error', 'Coba cek kelengkapan data anda!!!');
         return redirect('transaksi');
@@ -118,6 +118,24 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, Transaksi $transaksi)
     {
+        $validator = Validator::make($request->all(), [
+            'tanggal' => 'required',
+            'kode_transaksi' => 'required',
+            'nama_sparepart' => 'required',
+            'kode_sparepart' => 'required',
+            'qty' => 'required|numeric',
+            'merk' => 'required',
+            'harga' => 'required|numeric',
+            'supplier_id' => 'required',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect('transaksi')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        Session::flash('success', 'Data berhasil disimpan!');
+        Session::flash('error', 'Coba cek kelengkapan data anda!!!');
         $data = $request->all();
         $transaksi->update($data);
 

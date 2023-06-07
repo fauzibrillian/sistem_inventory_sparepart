@@ -185,33 +185,33 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $pengembalian->tanggal}}">
+                            <input type="date" class="form-control" id="inputnama" required name="tanggal" value="{{old('tanggal') ?? $pengembalian->tanggal}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengembalian->nama_sparepart}}">
+                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengembalian->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengembalian->kode_sparepart}}">
+                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengembalian->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Qty</label>
-                            <input type="qty" class="form-control" id="inputtipe" name="qty" value="{{old('qty') ?? $pengembalian->qty}}">
+                            <input type="qty" class="form-control" id="inputtipe" required name="qty" value="{{old('qty') ?? $pengembalian->qty}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $pengembalian->merk}}">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $pengembalian->merk}}">
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Harga Satuan</label>
-                          <input type="text" class="form-control" id="inputtipe" name="harga" value="{{old('harga') ?? $pengembalian->harga}}">
+                          <input type="text" class="form-control" id="inputtipe" name="harga" required value="{{old('harga') ?? $pengembalian->harga}}">
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Nomor Polisi</label>
-                          <input type="text" class="form-control" id="inputtipe" name="nopol" value="{{old('nopol') ?? $pengembalian->nopol}}">
+                          <input type="text" class="form-control" id="inputtipe" name="nopol" required value="{{old('nopol') ?? $pengembalian->nopol}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>

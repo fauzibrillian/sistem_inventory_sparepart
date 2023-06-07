@@ -184,21 +184,21 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Supplier</label>
-                            <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Nama Supplier">
+                            <input type="text" class="form-control" id="nama_supplier" required name="nama_supplier" placeholder="Nama Supplier">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+                            <input type="text" class="form-control" id="alamat" name="alamat" required placeholder="Alamat">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputharga">No.Telpon</label>
-                          <input type="text" class="form-control" id="no_telpon" name="no_telpon"placeholder="No.Telpon">
+                          <input type="text" class="form-control" id="no_telpon" required name="no_telpon" placeholder="No.Telpon">
                         </div>
                         </div>
                         <div class="form-group">

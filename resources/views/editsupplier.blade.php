@@ -185,19 +185,19 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Supplier</label>
-                            <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" value="{{old('nama_supplier') ?? $supplier->nama_supplier}}">
+                            <input type="text" class="form-control" id="nama_supplier" required name="nama_supplier" value="{{old('nama_supplier') ?? $supplier->nama_supplier}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{old('alamat') ?? $supplier->alamat}}">
+                            <input type="text" class="form-control" id="alamat" name="alamat" required value="{{old('alamat') ?? $supplier->alamat}}">
                         </div>
                         <div class="form-group col-md-12">
                               <label for="inputtipe">Email</label>
-                              <input type="email" class="form-control" id="email" name="email" value="{{old('email') ?? $supplier->email}}">
+                              <input type="email" class="form-control" id="email" name="email" required value="{{old('email') ?? $supplier->email}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">No.Telpon</label>
-                            <input type="text" class="form-control" id="no_telpon" name="no_telpon" value="{{old('no_telpon') ?? $supplier->no_telpon}}">
+                            <input type="text" class="form-control" id="no_telpon" name="no_telpon" required value="{{old('no_telpon') ?? $supplier->no_telpon}}">
                         </div>
                         </div>
                         <div class="form-group">

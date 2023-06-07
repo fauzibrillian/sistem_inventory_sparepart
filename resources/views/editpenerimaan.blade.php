@@ -180,25 +180,25 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="date" class="form-control" id="inputnama"  name="tanggal" value="{{old('tanggal') ?? $penerimaan->tanggal}}">
+                            <input type="date" class="form-control" id="inputnama" required name="tanggal" value="{{old('tanggal') ?? $penerimaan->tanggal}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" value="{{old('nama_sparepart') ?? $penerimaan->nama_sparepart}}">
+                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $penerimaan->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" value="{{old('kode_sparepart') ?? $penerimaan->kode_sparepart}}">
+                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $penerimaan->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $penerimaan->merk}}">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $penerimaan->merk}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" name="nopol" value="{{old('nopol') ?? $penerimaan->nopol}}">
+                            <input type="nopol" class="form-control" id="inputtipe" required name="nopol" value="{{old('nopol') ?? $penerimaan->nopol}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Penerima Sparepart</label>

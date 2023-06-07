@@ -183,21 +183,21 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $pengambilan->tanggal}}">
+                            <input type="date" class="form-control" id="inputnama" required name="tanggal" value="{{old('tanggal') ?? $pengambilan->tanggal}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengambilan->nama_sparepart}}">
+                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengambilan->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengambilan->kode_sparepart}}">
+                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengambilan->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $pengambilan->merk}}">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $pengambilan->merk}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Nopol</label>

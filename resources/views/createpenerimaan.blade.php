@@ -172,25 +172,25 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal</label>
-                            <input type="date" class="form-control" id="inputnama" name="tanggal" placeholder="Tanggal">
+                            <input type="date" class="form-control" id="inputnama" required name="tanggal" placeholder="Tanggal">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="nama_sparepart" placeholder="Nama Sparepart">
+                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" placeholder="Nama Sparepart">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" name="kode_sparepart" placeholder="Kode Sparepart">
+                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" placeholder="Kode Sparepart">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" name="merk" placeholder="Merk Mobil">
+                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" placeholder="Merk Mobil">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" name="nopol" placeholder="Nopol">
+                            <input type="nopol" class="form-control" id="inputtipe" required name="nopol" placeholder="Nopol">
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Nama Penerima Sparepart</label>

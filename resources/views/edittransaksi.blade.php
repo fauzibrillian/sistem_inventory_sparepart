@@ -40,7 +40,7 @@ Coded by www.creative-tim.com
       <div class="logo">
         <a href="https://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="{{asset('assets/img/logo-small.png')}}">
           </div>
           <!-- <p>CT</p> -->
         </a>
@@ -133,33 +133,33 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                              <input type="text" class="form-control" id="inputnama" name="kode_transaksi" value="{{old('kode_transaksi') ?? $transaksi->kode_transaksi}}">
+                              <input type="text" class="form-control" id="inputnama" required name="kode_transaksi" value="{{old('kode_transaksi') ?? $transaksi->kode_transaksi}}">
                             </div>
                           <div class="form-group col-md-6">
                             <label for="inputnama">Tanggal Transaksi</label>
-                            <input type="date" class="form-control" id="inputnama" name="tanggal" value="{{old('tanggal') ?? $transaksi->tanggal}}">
+                            <input type="date" class="form-control" id="inputnama" required name="tanggal" value="{{old('tanggal') ?? $transaksi->tanggal}}">
                           </div>
                         <div class="form-group col-md-12">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" value="{{old('nama_sparepart') ?? $transaksi->nama_sparepart}}">
+                            <input type="text" class="form-control" id="inputnama" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $transaksi->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" value="{{old('kode_sparepart') ?? $transaksi->kode_sparepart}}">
+                            <input type="text" class="form-control" id="inputkode" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $transaksi->kode_sparepart}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Harga Satuan</label>
-                            <input type="text" class="form-control" id="inputharga" name="harga" value="{{old('harga') ?? $transaksi->harga}}">
+                            <input type="text" class="form-control" id="inputharga" required name="harga" value="{{old('harga') ?? $transaksi->harga}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $transaksi->merk}}">
+                            <input type="text" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $transaksi->merk}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty" name="qty" value="{{old('qty') ?? $transaksi->qty}}">
+                            <input type="text" class="form-control" id="inputqty" required name="qty" value="{{old('qty') ?? $transaksi->qty}}">
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Nama Supplier</label>

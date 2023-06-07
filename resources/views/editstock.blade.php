@@ -173,21 +173,21 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" name="nama_sparepart" value="{{old('nama_sparepart') ?? $stock->nama_sparepart}}">
+                            <input type="text" class="form-control" id="inputnama" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $stock->nama_sparepart}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" name="kode_sparepart" value="{{old('kode_sparepart') ?? $stock->kode_sparepart}}">
+                            <input type="text" class="form-control" id="inputkode" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $stock->kode_sparepart}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" name="merk" value="{{old('merk') ?? $stock->merk}}"">
+                            <input type="text" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $stock->merk}}"">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
-                            <input type="text" class="form-control" id="inputqty" name="qty" value="{{old('qty') ?? $stock->qty}}">
+                            <input type="text" class="form-control" id="inputqty" required name="qty" value="{{old('qty') ?? $stock->qty}}">
                         </div>  
                         </div>
                         <div class="form-group">

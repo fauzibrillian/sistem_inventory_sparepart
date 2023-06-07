@@ -145,21 +145,21 @@ Coded by www.creative-tim.com
                         <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputnama">Nama Pegawai</label>
-                            <input type="text" class="form-control" id="nama_pegawai" name="nama_pegawai" value="{{old('nama_pegawai') ?? $pegawai->nama_pegawai}}">
+                            <input type="text" class="form-control" id="nama_pegawai" required name="nama_pegawai" value="{{old('nama_pegawai') ?? $pegawai->nama_pegawai}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="{{old('alamat') ?? $pegawai->alamat}}">
+                            <input type="text" class="form-control" id="alamat" required name="alamat" placeholder="Alamat" value="{{old('alamat') ?? $pegawai->alamat}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">No.Telpon</label>
-                            <input type="text" class="form-control" id="no_telpon" name="no_telpon" placeholder="No.Telpon" value="{{old('no_telpon') ?? $pegawai->no_telpon}}">
+                            <input type="text" class="form-control" id="no_telpon" required name="no_telpon" placeholder="No.Telpon" value="{{old('no_telpon') ?? $pegawai->no_telpon}}">
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{old('email') ?? $pegawai->email}}">
+                            <input type="email" class="form-control" id="email" required name="email" placeholder="Email" value="{{old('email') ?? $pegawai->email}}">
                         </div>
                         </div>
                         <div class="form-group">

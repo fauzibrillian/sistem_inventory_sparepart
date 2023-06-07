@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\transaksi;
+use Illuminate\Support\Facades\Validator;
 
 class TransaksiController extends Controller
 {
@@ -39,8 +40,25 @@ class TransaksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request )
+    {   
+        $validator = Validator::make($request->all(), [
+            'tanggal' => 'required',
+            'kode_transaksi' => 'required',
+            'nama_sparepart' => 'required',
+            'kode_sparepart' => 'required',
+            'qty' => 'required|numeric',
+            'merk' => 'required',
+            'harga' => 'required|numeric',
+            'supplier_id' => 'required',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect('transaksi')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
         $tanggal = $request->get('tanggal');
         $kode_transaksi = $request->get('kode_transaksi');
         $nama_sparepart = $request->get('nama_sparepart');
@@ -60,6 +78,9 @@ class TransaksiController extends Controller
         $save_transaksi->merk = $merk;
         $save_transaksi->supplier_id = $supplier;
         $save_transaksi->save();
+        
+        Session::flash('success', 'Data berhasil disimpan!');
+        Session::flash('error', 'Coba cek kelengkapan data anda!!!');
         return redirect('transaksi');
     }
 

@@ -201,19 +201,16 @@ Coded by www.creative-tim.com
                         Qty
                       </th>
                       <th>
-                        Harga Satuan
-                      </th>
-                      <th>
                         Merk Mobil
-                      </th>
-                      <th>
-                        Nopol
                       </th>
                       <th>
                         Nama Pengirim
                       </th>
                       <th>
                         Kode Transaksi
+                      </th>
+                      <th>
+                        Keterangan
                       </th>
                       <th>
                         Aksi
@@ -238,19 +235,16 @@ Coded by www.creative-tim.com
                             {{$x->qty}}
                           </td>
                           <td>
-                           {{ formatRupiah($x->harga) }}
-                          </td>
-                          <td>
                             {{$x->merk}}
-                          </td>
-                          <td>
-                            {{$x->nopol}}
                           </td>
                           <td>
                             {{$x->nama_pegawai}}
                           </td>
                           <td>
                             {{$x->kode_transaksi}}
+                          </td>
+                          <td>
+                            {{$x->ket}}
                           </td>
                           <td>
                             <a href="/pengembalian/{{$x->id}}/edit/" class="btn btn-primary">

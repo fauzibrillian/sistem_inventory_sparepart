@@ -9,5 +9,5 @@ class pengembalian extends Model
 {
     use HasFactory;
     protected $table = 'pengembalian';
-    protected $fillable = ['tanggal','nama_sparepart','kode_sparepart','qty','harga','merk','nopol','pegawai_id','transaksi_id'];
+    protected $fillable = ['tanggal','nama_sparepart','kode_sparepart','qty','harga','merk','nopol','pegawai_id','transaksi_id','ket'];
 }

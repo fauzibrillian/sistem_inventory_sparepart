@@ -18,7 +18,7 @@ class PengembalianController extends Controller
         $pengembalian = DB::table('pengembalian')
         ->leftJoin('pegawai','pengembalian.pegawai_id','=','pegawai.id')
         ->leftJoin('transaksi','pengembalian.transaksi_id','=','transaksi.id')
-        ->select('pengembalian.*', 'pegawai.nama_pegawai', 'transaksi.kode_transaksi')
+        ->select('pengembalian.*', 'pegawai.nama_pegawai','transaksi.nama_sparepart','transaksi.kode_sparepart','transaksi.merk', 'transaksi.kode_transaksi')
         ->get();
         return view('pengembalian', ['pengembalian' => $pengembalian]);
     }
@@ -52,6 +52,7 @@ class PengembalianController extends Controller
         $nopol =$request->get('nopol');
         $pegawai =$request->get('pegawai_id');
         $transaksi =$request->get('transaksi_id');
+        $ket =$request->get('ket');
         /* Menyimpan data kedalam tabel */
         $save_pengembalian = new \App\Models\pengembalian;
         $save_pengembalian->tanggal = $tanggal;
@@ -63,6 +64,7 @@ class PengembalianController extends Controller
         $save_pengembalian->nopol = $nopol;
         $save_pengembalian->pegawai_id = $pegawai;
         $save_pengembalian->transaksi_id = $transaksi;
+        $save_pengembalian->ket = $ket;
         $save_pengembalian->save();
         return redirect('pengembalian');
     }

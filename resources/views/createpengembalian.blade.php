@@ -188,11 +188,19 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" placeholder="Nama Sparepart">
+                            <select class="form-control" id="exampleFormControlSelect1" name="nama_sparepart">
+                              @foreach($transaksi as $key=>$x)
+                                <option value={{$x->id}}>{{$x->nama_sparepart}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" placeholder="Kode Sparepart">
+                            <select class="form-control" id="exampleFormControlSelect1" name="kode_sparepart">
+                              @foreach($transaksi as $key=>$x)
+                                <option value={{$x->id}}>{{$x->kode_sparepart}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         </div>
                         <div class="form-row">
@@ -202,15 +210,11 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" placeholder="Merk Mobil">
-                        </div>
-                        <div class="form-group col-md-12">
-                          <label for="inputtipe">Harga Satuan</label>
-                          <input type="text" class="form-control" id="inputtipe" name="harga" required placeholder="Harga Satuan">
-                        </div>
-                        <div class="form-group col-md-12">
-                          <label for="inputtipe">Nomor Polisi</label>
-                          <input type="text" class="form-control" id="inputtipe" name="nopol" required placeholder="Nomor Polis">
+                            <select class="form-control" id="exampleFormControlSelect1" name="merk">
+                              @foreach($transaksi as $key=>$x)
+                                <option value={{$x->id}}>{{$x->merk}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
@@ -227,6 +231,10 @@ Coded by www.creative-tim.com
                               <option value={{$y->id}}>{{$y->kode_transaksi}}</option>
                             @endforeach
                           </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Keterangan</label>
+                          <input type="text" class="form-control" id="inputtipe" required name="ket" placeholder="Keterangan">
                       </div>
                         </div>
                         <div class="form-group">

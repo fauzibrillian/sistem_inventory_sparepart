@@ -189,11 +189,19 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputkode">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $pengembalian->nama_sparepart}}">
+                            <select class="form-control" id="exampleFormControlSelect1" name="nama_sparepart">
+                              @foreach($transaksi as $key=>$y)
+                                <option value="{{$y->id}}"{{ old('nama_sparepart') == $y->id ? 'selected' : null }}>{{$y->nama_sparepart}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputharga" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $pengembalian->kode_sparepart}}">
+                            <select class="form-control" id="exampleFormControlSelect1" name="kode_sparepart">
+                              @foreach($transaksi as $key=>$y)
+                                <option value="{{$y->id}}"{{ old('kode_sparepart') == $y->id ? 'selected' : null }}>{{$y->kode_sparepart}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         </div>
                         <div class="form-row">
@@ -203,19 +211,15 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
-                            <input type="merk_mobil" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $pengembalian->merk}}">
-                        </div>
-                        <div class="form-group col-md-12">
-                          <label for="inputtipe">Harga Satuan</label>
-                          <input type="text" class="form-control" id="inputtipe" name="harga" required value="{{old('harga') ?? $pengembalian->harga}}">
-                        </div>
-                        <div class="form-group col-md-12">
-                          <label for="inputtipe">Nomor Polisi</label>
-                          <input type="text" class="form-control" id="inputtipe" name="nopol" required value="{{old('nopol') ?? $pengembalian->nopol}}">
+                            <select class="form-control" id="exampleFormControlSelect1" name="merk">
+                              @foreach($transaksi as $key=>$y)
+                                <option value="{{$y->id}}"{{ old('merk') == $y->id ? 'selected' : null }}>{{$y->merk}}</option>
+                              @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputtipe">Nama Pengirim Sparepart</label>
-                            <select class="form-group col-md-12" class="form-select" name="pegawai_id" aria-label="Default select example">
+                            <select class="form-control" id="exampleFormControlSelect1" name="pegawai_id" aria-label="Default select example">
                               @foreach($pegawai as $key=>$y)
                                 <option value="{{$y->id}}"{{ old('pegawai_id') == $y->id ? 'selected' : null }}>{{$y->nama_pegawai}}</option>
                               @endforeach
@@ -223,12 +227,16 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Kode Transaksi</label>
-                          <select class="form-group col-md-12" class="form-select" name="transaksi_id" aria-label="Default select example">
+                          <select class="form-control" id="exampleFormControlSelect1" name="transaksi_id" aria-label="Default select example">
                             @foreach($transaksi as $key=>$y)
                               <option value="{{$y->id}}"{{ old('transaksi_id') == $y->id ? 'selected' : null }}>{{$y->kode_transaksi}}</option>
                             @endforeach
                           </select>
-                      </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputtipe">Keterangan</label>
+                          <input type="qty" class="form-control" id="inputtipe" required name="ket" value="{{old('ket') ?? $pengembalian->ket}}">
+                       </div>
                         </div>
                         <div class="form-group">
                         </div>

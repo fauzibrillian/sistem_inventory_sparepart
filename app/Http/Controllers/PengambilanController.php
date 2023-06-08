@@ -82,9 +82,11 @@ class PengambilanController extends Controller
     public function edit( Pengambilan $pengambilan )
     {
         $pegawai = DB::table('pegawai')->get();
+        $transaksi = DB::table('transaksi')->get();
         return view('editpengambilan',[
         'pengambilan'=>$pengambilan,
-        'pegawai'=>$pegawai]);
+        'pegawai'=>$pegawai,
+        'transaksi'=>$transaksi]);
     }
 
     /**

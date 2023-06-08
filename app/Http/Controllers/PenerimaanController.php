@@ -94,10 +94,12 @@ class PenerimaanController extends Controller
     {
         $pegawai = DB::table('pegawai')->get();
         $supplier = DB::table('supplier')->get();
+        $transaksi = DB::table('transaksi')->get();
         return view('editpenerimaan',[
         'penerimaan'=>$penerimaan,
         'pegawai'=>$pegawai,
-        'supplier'=>$supplier ]);
+        'supplier'=>$supplier,
+        'transaksi'=>$transaksi ]);
     }
 
     /**

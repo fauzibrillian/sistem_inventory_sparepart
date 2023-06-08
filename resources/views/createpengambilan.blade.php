@@ -170,18 +170,10 @@ Coded by www.creative-tim.com
                     <form action="{{route('pengambilan.store')}}" method="POST">
                       @csrf
                         <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputnama">Tanggal</label>
                             <input type="date" class="form-control" id="inputnama" required name="tanggal" placeholder="Tanggal">
                         </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputkode">Kode Transaksi</label>
-                          <select class="form-control" id="exampleFormControlSelect1" name="transaksi_id">
-                            @foreach($transaksi as $key=>$x)
-                              <option value={{$x->id}}>{{$x->kode_transaksi}}</option>
-                            @endforeach
-                          </select>
-                      </div>
                         <div class="form-group col-md-12">
                             <label for="inputkode">Nama Sparepart</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="nama_sparepart">

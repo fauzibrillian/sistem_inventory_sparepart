@@ -15,7 +15,18 @@ class StockController extends Controller
      */
     public function index()
     {
+        $results = DB::table('pengambilan')
+        ->selectRaw('SUM(qty) AS qty, stock_id')
+        ->groupBy('stock_id')
+        ->get();
         $stock = DB::table('stock')->get();
+        foreach ($stock as $stok) {
+            foreach ($results as $result) {
+                if ($stok->id==$result->stock_id){
+                    $stok->qty=$stok->qty - $result->qty ;
+                }
+            }
+        }
         return view('stock', ['stock' => $stock]);
     }
 

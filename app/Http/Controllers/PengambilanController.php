@@ -16,9 +16,9 @@ class PengambilanController extends Controller
     public function index()
     {
         $pengambilan = DB::table('pengambilan')
-        ->rightJoin('pegawai','pengambilan.pegawai_id','=','pegawai.id')
-        ->rightJoin('stock','pengambilan.stock_id','=','stock.id')
-        ->select('pengambilan.*','stock.nama_sparepart', 'stock.kode_sparepart','stock.merk','pegawai.nama_pegawai')
+        ->leftJoin('pegawai','pengambilan.pegawai_id','=','pegawai.id')
+        ->leftJoin('stock','pengambilan.stock_id','=','stock.id')
+        ->select('pengambilan.id','pengambilan.tanggal','pengambilan.qty','pengambilan.nopol','stock.nama_sparepart', 'stock.kode_sparepart','stock.merk','pegawai.nama_pegawai')
         ->get();
         return view('pengambilan', ['pengambilan' => $pengambilan]);
     }
@@ -91,11 +91,11 @@ class PengambilanController extends Controller
     public function edit( Pengambilan $pengambilan )
     {
         $pegawai = DB::table('pegawai')->get();
-        $transaksi = DB::table('transaksi')->get();
+        $stock = DB::table('stock')->get();
         return view('editpengambilan',[
         'pengambilan'=>$pengambilan,
         'pegawai'=>$pegawai,
-        'transaksi'=>$transaksi]);
+        'stock'=>$stock]);
     }
 
     /**

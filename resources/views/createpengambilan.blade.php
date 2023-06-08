@@ -176,7 +176,7 @@ Coded by www.creative-tim.com
                         </div>
                         <div class="form-group col-md-12">
                           <label for="inputkode">Kode Stock</label>
-                          <select class="form-control" id="exampleFormControlSelect1" name="id">
+                          <select class="form-control" id="exampleFormControlSelect1" name="stock_id">
                             @foreach($stock as $key=>$x)
                               <option value='{{$x->id}}'>{{$x->id}}</option>
                             @endforeach

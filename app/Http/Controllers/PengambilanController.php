@@ -16,9 +16,9 @@ class PengambilanController extends Controller
     public function index()
     {
         $pengambilan = DB::table('pengambilan')
-        ->leftJoin('pegawai','pengambilan.pegawai_id','=','pegawai.id')
-        ->leftJoin('transaksi','pengambilan.transaksi_id','=','transaksi.id')
-        ->select('pengambilan.*', 'pegawai.nama_pegawai','transaksi.nama_sparepart', 'transaksi.kode_sparepart')
+        ->rightJoin('pegawai','pengambilan.pegawai_id','=','pegawai.id')
+        ->rightJoin('stock','pengambilan.stock_id','=','stock.id')
+        ->select('pengambilan.*','stock.nama_sparepart', 'stock.kode_sparepart','stock.merk','pegawai.nama_pegawai')
         ->get();
         return view('pengambilan', ['pengambilan' => $pengambilan]);
     }
@@ -31,8 +31,8 @@ class PengambilanController extends Controller
     public function create()
     {
         $pegawai = DB::table('pegawai')->get();
-        $transaksi = DB::table('transaksi')->get();
-        return view('createpengambilan',['pegawai'=>$pegawai, 'transaksi'=>$transaksi]);
+        $stock = DB::table('stock')->get();
+        return view('createpengambilan',['pegawai'=>$pegawai, 'stock'=>$stock]);
     }
 
     /**
@@ -50,7 +50,7 @@ class PengambilanController extends Controller
         $qty = $request->get('qty');
         $nopol = $request->get('nopol');
         $pegawai =$request->get('pegawai_id');
-        $transaksi =$request->get('transaksi_id');
+        $stock =$request->get('stock_id');
         /* Menyimpan data kedalam tabel */
         $save_pengambilan = new \App\Models\pengambilan;
         $save_pemakaian = new \App\Models\pemakaian;
@@ -65,6 +65,7 @@ class PengambilanController extends Controller
         $save_pengambilan->nopol = $nopol;
         $save_pengambilan->qty = $qty;
         $save_pengambilan->pegawai_id = $pegawai;
+        $save_pengambilan->stock_id = $stock;
         $save_pengambilan->save();
         $save_pemakaian->save();
         return redirect('pengambilan');

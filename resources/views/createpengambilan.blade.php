@@ -175,9 +175,17 @@ Coded by www.creative-tim.com
                             <input type="date" class="form-control" id="inputnama" required name="tanggal" placeholder="Tanggal">
                         </div>
                         <div class="form-group col-md-12">
+                          <label for="inputkode">Kode Stock</label>
+                          <select class="form-control" id="exampleFormControlSelect1" name="id">
+                            @foreach($stock as $key=>$x)
+                              <option value='{{$x->id}}'>{{$x->id}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="form-group col-md-12">
                             <label for="inputkode">Nama Sparepart</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="nama_sparepart">
-                              @foreach($transaksi as $key=>$x)
+                              @foreach($stock as $key=>$x)
                                 <option value='{{$x->nama_sparepart}}'>{{$x->nama_sparepart}}</option>
                               @endforeach
                             </select>
@@ -185,7 +193,7 @@ Coded by www.creative-tim.com
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="kode_sparepart">
-                              @foreach($transaksi as $key=>$x)
+                              @foreach($stock as $key=>$x)
                                 <option value='{{$x->kode_sparepart}}'>{{$x->kode_sparepart}}</option>
                               @endforeach
                             </select>
@@ -195,7 +203,7 @@ Coded by www.creative-tim.com
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="merk">
-                              @foreach($transaksi as $key=>$x)
+                              @foreach($stock as $key=>$x)
                                 <option value='{{$x->merk}}'>{{$x->merk}}</option>
                               @endforeach
                             </select>

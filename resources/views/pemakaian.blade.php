@@ -69,12 +69,18 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
-          <li >
-            <a href="/master_supplier">
+          <li>
+            <a href="/supplier">
               <i class="nc-icon nc-single-02"></i>
               <p>Master Supplier</p>
             </a>
           </li>
+          {{-- <li>
+            <a href="/sparepart">
+              <i class="nc-icon nc-briefcase-24"></i>
+              <p>Master Sparepart</p>
+            </a>
+          </li> --}}
           <li class="active">
             <a href="/monitoring">
               <i class="nc-icon nc-tile-56"></i>
@@ -87,7 +93,7 @@ Coded by www.creative-tim.com
               <p>Transaksi</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
               <p>pengembalian</p>
@@ -97,6 +103,12 @@ Coded by www.creative-tim.com
             <a href="/pegawai">
               <i class="nc-icon nc-badge"></i>
               <p>Master Pegawai</p>
+            </a>
+          </li>
+          <li>
+            <a href="/abcmodel">
+              <i class="nc-icon nc-money-coins"></i>
+              <p>ABC Model</p>
             </a>
           </li>
         </ul>
@@ -122,7 +134,7 @@ Coded by www.creative-tim.com
               <p>Monitoring</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/pengembalian">
               <i class="nc-icon nc-simple-remove"></i>
               <p>pengembalian</p>
@@ -164,74 +176,78 @@ Coded by www.creative-tim.com
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card" >
-                <div class="card-body">
-                    <h4 class="card-title">Tambahkan Data Pengambilan Sparepart</h4>
-                    <form action="{{route('pengambilan.store')}}" method="POST">
-                      @csrf
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputnama">Tanggal</label>
-                            <input type="date" class="form-control" id="inputnama" required name="tanggal" placeholder="Tanggal">
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputkode">Kode Transaksi</label>
-                          <select class="form-control" id="exampleFormControlSelect1" name="transaksi_id">
-                            @foreach($transaksi as $key=>$x)
-                              <option value={{$x->id}}>{{$x->kode_transaksi}}</option>
-                            @endforeach
-                          </select>
-                      </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputkode">Nama Sparepart</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="nama_sparepart">
-                              @foreach($transaksi as $key=>$x)
-                                <option value='{{$x->nama_sparepart}}'>{{$x->nama_sparepart}}</option>
-                              @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputharga">Kode Sparepart</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="kode_sparepart">
-                              @foreach($transaksi as $key=>$x)
-                                <option value='{{$x->kode_sparepart}}'>{{$x->kode_sparepart}}</option>
-                              @endforeach
-                            </select>
-                        </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputtipe">Merk Mobil</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="merk">
-                              @foreach($transaksi as $key=>$x)
-                                <option value='{{$x->merk}}'>{{$x->merk}}</option>
-                              @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputtipe">Qty</label>
-                            <input type="Qty" class="form-control" id="inputtipe" required name="qty" placeholder="Qty">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputtipe">Nopol</label>
-                            <input type="nopol" class="form-control" id="inputtipe" required name="nopol" placeholder="Nopol">
-                        </div>
-                        <div class="form-group col-md-12">
-                          <label for="inputtipe">Nama Pegawai</label>
-                          <select class="form-control" id="exampleFormControlSelect1"  name="pegawai_id" >
-                            @foreach($pegawai as $key=>$y)
-                              <option value={{$y->id}}>{{$y->nama_pegawai}}</option>
-                            @endforeach
-                          </select>
-                        </div>
-                        </div>
-                        <div class="form-group">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="/pengambilan" class="btn btn-danger"> Kembali ke Data </a>
-                        <a href="/" class="btn btn-warning"> Kembali ke Dashboard </a>
-                    </form>
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Data Pemakaian Sparepart</h4>
+                <div class="form-group">
+                  <form action="{{ route('search_pemakaian') }}" method="GET">
+                    <input type="text" name="search_pemakaian"  placeholder="Cari Kode Sparepart....">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                  </form>
                 </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" table-primary">
+                      <th>
+                        No
+                      </th>
+                      <th>
+                        Nama Sparepart
+                      </th>
+                      <th>
+                        Kode Sparepart
+                      </th>
+                      <th>
+                        Qty
+                      </th>
+                      <th>
+                        Tipe Mobil
+                      </th>
+                      <th>
+                        Aksi
+                      </th>
+                    </thead>
+                    <tbody>
+                      @foreach ($pemakaian as $key=>$x)
+                      <tr>
+                        <td>
+                          {{$key+1}}
+                        </td>
+                        <td>
+                          {{$x->nama_sparepart}}
+                        </td>
+                        <td>
+                          {{$x->kode_sparepart}}
+                        </td>
+                        <td>
+                          {{$x->qty}}
+                        </td>
+                        <td>
+                          {{$x->merk}}
+                        </td>
+                        <td>
+                          <a href="/pemakaian/{{$x->id}}/edit/" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                              <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                            </svg>
+                          </a>
+                          <form action="{{ route('pemakaian.destroy', $x->id) }}" method="POST" class="inline-block">
+                            {!! method_field('delete') . csrf_field() !!}
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                              </svg>
+                            </button>
+                          </form>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>

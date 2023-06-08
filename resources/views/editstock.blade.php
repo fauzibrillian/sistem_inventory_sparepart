@@ -40,7 +40,7 @@ Coded by www.creative-tim.com
       <div class="logo">
         <a href="https://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="{{asset('assets/img/logo-small.png')}}">
           </div>
           <!-- <p>CT</p> -->
         </a>
@@ -170,20 +170,39 @@ Coded by www.creative-tim.com
                     <form action="{{route('stock.update',$stock->id)}}" method="POST">
                       @csrf
                       @method('put')
+
                         <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputnama">Nama Sparepart</label>
-                            <input type="text" class="form-control" id="inputnama" required name="nama_sparepart" value="{{old('nama_sparepart') ?? $stock->nama_sparepart}}">
+                          <label for="disabledSelect">Nama Sparepart</label>
+                        <fieldset disabled>  
+                          <select id="disabledSelect" class="form-control" name="nama_sparepart">
+                            @foreach($transaksi as $key=>$y)
+                              <option value="{{$y->id}}"{{ old('nama_sparepart') == $y->id ? 'selected' : null }}>{{$y->nama_sparepart}}</option>
+                            @endforeach
+                          </select>
+                        </fieldset> 
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputkode">Kode Sparepart</label>
-                            <input type="text" class="form-control" id="inputkode" required name="kode_sparepart" value="{{old('kode_sparepart') ?? $stock->kode_sparepart}}">
+                            <label for="disabledSelect">Kode Sparepart</label>
+                        <fieldset disabled> 
+                            <select id="disabledSelect" class="form-control" name="kode_sparepart">
+                              @foreach($transaksi as $key=>$y)
+                                <option value="{{$y->id}}"{{ old('kode_sparepart') == $y->id ? 'selected' : null }}>{{$y->kode_sparepart}}</option>
+                              @endforeach
+                            </select>
+                        </fieldset>
                         </div>
                         </div>
                         <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputtipe">Tipe Mobil</label>
-                            <input type="text" class="form-control" id="inputtipe" required name="merk" value="{{old('merk') ?? $stock->merk}}"">
+                          <label for="disabledSelect">Tipe Mobil</label>
+                        <fieldset disabled>
+                          <select id="disabledSelect" class="form-control" name="merk">
+                            @foreach($transaksi as $key=>$y)
+                              <option value="{{$y->id}}"{{ old('merk') == $y->id ? 'selected' : null }}>{{$y->merk}}</option>
+                            @endforeach
+                          </select>
+                        </fieldset>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputqty">Qty</label>
@@ -194,7 +213,8 @@ Coded by www.creative-tim.com
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="/stock" class="btn btn-danger"> Back </a>
-                    </form>
+                      </form>
+
                 </div>
             </div>
           </div>

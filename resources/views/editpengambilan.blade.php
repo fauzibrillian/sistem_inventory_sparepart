@@ -186,18 +186,28 @@ Coded by www.creative-tim.com
                             <input type="date" class="form-control" id="inputnama" required name="tanggal" value="{{old('tanggal') ?? $pengambilan->tanggal}}">
                         </div>
                         <div class="form-group col-md-6">
+                          <label for="inputkode">Kode Transaksi</label>
+                          <fieldset disabled>
+                            <select class="form-control" id="exampleFormControlSelect1" name="transaksi_id">
+                              @foreach($transaksi as $key=>$x)
+                                <option value={{$x->id}}>{{$x->kode_transaksi}}</option>
+                              @endforeach
+                            </select>
+                        </fieldset>
+                        </div>
+                        <div class="form-group col-md-12">
                             <label for="inputkode">Nama Sparepart</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="nama_sparepart">
-                              @foreach($transaksi as $key=>$y)
-                                <option value="{{$y->id}}"{{ old('nama_sparepart') == $y->id ? 'selected' : null }}>{{$y->nama_sparepart}}</option>
+                              @foreach($transaksi as $key=>$x)
+                                <option value='{{$x->nama_sparepart}}'>{{$x->nama_sparepart}}</option>
                               @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputharga">Kode Sparepart</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="kode_sparepart">
-                              @foreach($transaksi as $key=>$y)
-                                <option value="{{$y->id}}"{{ old('kode_sparepart') == $y->id ? 'selected' : null }}>{{$y->kode_sparepart}}</option>
+                              @foreach($transaksi as $key=>$x)
+                                <option value='{{$x->kode_sparepart}}'>{{$x->kode_sparepart}}</option>
                               @endforeach
                             </select>
                         </div>
@@ -206,12 +216,16 @@ Coded by www.creative-tim.com
                         <div class="form-group col-md-6">
                             <label for="inputtipe">Merk Mobil</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="merk">
-                              @foreach($transaksi as $key=>$y)
-                                <option value="{{$y->id}}"{{ old('merk') == $y->id ? 'selected' : null }}>{{$y->merk}}</option>
+                              @foreach($transaksi as $key=>$x)
+                                <option value='{{$x->merk}}'>{{$x->merk}}</option>
                               @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">
+                            <label for="inputtipe">Qty</label>
+                            <input type="Qty" class="form-control" id="inputtipe" required name="qty" value="{{old('qty') ?? $pengambilan->qty}}">
+                        </div>
+                        <div class="form-group col-md-12">
                             <label for="inputtipe">Nopol</label>
                             <input type="nopol" class="form-control" id="inputtipe" name="nopol" value="{{old('nopol') ?? $pengambilan->nopol}}">
                         </div>

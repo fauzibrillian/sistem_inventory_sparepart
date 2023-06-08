@@ -207,6 +207,9 @@ Coded by www.creative-tim.com
                         Merk Mobil
                       </th>
                       <th>
+                        qty
+                      </th>
+                      <th>
                         Nopol
                       </th>
                       <th>
@@ -233,6 +236,9 @@ Coded by www.creative-tim.com
                         </td>
                         <td>
                           {{$x->merk}}
+                        </td>
+                        <td>
+                          {{$x->qty}}
                         </td>
                         <td>
                           {{$x->nopol}}

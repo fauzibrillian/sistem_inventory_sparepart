@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\stock;
+use App\Models\pemakaian;
 
-class StockController extends Controller
+class PemakaianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        $stock = DB::table('stock')->get();
-        return view('stock', ['stock' => $stock]);
+        $pemakaian = DB::table('pemakaian')->get();
+        return view('pemakaian', ['pemakaian' => $pemakaian]);
     }
 
     /**
@@ -26,7 +26,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        return view('createstock');
+        //
     }
 
     /**
@@ -37,18 +37,7 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        $nama_sparepart = $request->get('nama_sparepart');
-        $kode_sparepart = $request->get('kode_sparepart');
-        $qty = $request->get('qty');
-        $merk = $request->get('merk');
-        /* Menyimpan data kedalam tabel */
-        $save_stock = new \App\Models\stock;
-        $save_stock->nama_sparepart = $nama_sparepart;
-        $save_stock->kode_sparepart = $kode_sparepart;
-        $save_stock->qty = $qty;
-        $save_stock->merk = $merk;
-        $save_stock->save();
-        return redirect('stock');
+        //
     }
 
     /**
@@ -68,7 +57,7 @@ class StockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Stock $stock)
+    public function edit(Pemakaian $pemakaian)
     {
         $transaksi = DB::table('transaksi')->get();
         return view('editstock',['stock'=>$stock,
@@ -82,13 +71,9 @@ class StockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Stock $stock)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $stock->update($data);
-
-        return redirect()->route('stock.index');
+        //
     }
 
     /**
@@ -97,19 +82,19 @@ class StockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Stock $stock)
+    public function destroy(Pemakaian $pemakaian)
     {
-        $stock->delete();
+        $pemakaian->delete();
 
-        return redirect()->route('stock.index');
+        return redirect()->route('pemakaian.index');
     }
 
-    public function search_stock(Request $request, Stock $stock)
+    public function search_pemakaian(Request $request, Pemakaian $pemakaian)
     {
-        $searchTerm = $request->input('search_stock');
+        $searchTerm = $request->input('search_pemakaian');
 
-        $stock = stock::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+        $pemakaian = pemakaian::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
         
-        return view('stock', ['stock' => $stock]);
+        return view('pemakaian', ['pemakaian' => $pemakaian]);
     }
 }

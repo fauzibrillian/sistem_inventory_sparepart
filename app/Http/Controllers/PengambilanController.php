@@ -17,7 +17,8 @@ class PengambilanController extends Controller
     {
         $pengambilan = DB::table('pengambilan')
         ->leftJoin('pegawai','pengambilan.pegawai_id','=','pegawai.id')
-        ->select('pengambilan.*', 'pegawai.nama_pegawai')
+        ->leftJoin('transaksi','pengambilan.transaksi_id','=','transaksi.id')
+        ->select('pengambilan.*', 'pegawai.nama_pegawai','transaksi.nama_sparepart', 'transaksi.kode_sparepart')
         ->get();
         return view('pengambilan', ['pengambilan' => $pengambilan]);
     }
@@ -46,11 +47,17 @@ class PengambilanController extends Controller
         $nama_sparepart = $request->get('nama_sparepart');
         $kode_sparepart = $request->get('kode_sparepart');
         $merk = $request->get('merk');
-        $nopol = $request->get('nopol');
         $qty = $request->get('qty');
+        $nopol = $request->get('nopol');
         $pegawai =$request->get('pegawai_id');
+        $transaksi =$request->get('transaksi_id');
         /* Menyimpan data kedalam tabel */
         $save_pengambilan = new \App\Models\pengambilan;
+        $save_pemakaian = new \App\Models\pemakaian;
+        $save_pemakaian->nama_sparepart = $nama_sparepart;
+        $save_pemakaian->kode_sparepart = $kode_sparepart;
+        $save_pemakaian->qty = $qty;
+        $save_pemakaian->merk = $merk;
         $save_pengambilan->tanggal = $tanggal;
         $save_pengambilan->nama_sparepart = $nama_sparepart;
         $save_pengambilan->kode_sparepart = $kode_sparepart;
@@ -59,6 +66,7 @@ class PengambilanController extends Controller
         $save_pengambilan->qty = $qty;
         $save_pengambilan->pegawai_id = $pegawai;
         $save_pengambilan->save();
+        $save_pemakaian->save();
         return redirect('pengambilan');
     }
 

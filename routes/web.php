@@ -10,6 +10,7 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\PengambilanController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\MonitoringController;
+use App\Http\Controllers\PemakaianController;
 
 
 
@@ -63,6 +64,11 @@ Route::get('/stock', [StockController::class,'index']);
 Route::get('/stock/create', [StockController::class, 'create']);
 Route::resource('stock', StockController::class);
 Route::get('/search_stock', [StockController::class, 'search_stock'])->name('search_stock');
+
+Route::get('/pemakaian', [PemakaianController::class,'index']);
+Route::get('/pemakaian/create', [PemakaianController::class, 'create']);
+Route::resource('pemakaian', PemakaianController::class);
+Route::get('/search_pemakaian', [PemakaianController::class, 'search_pemakaian'])->name('search_pemakaian');
 
 Route::get('/monitoring', [MonitoringController::class,'index']);
 

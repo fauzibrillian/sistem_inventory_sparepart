@@ -19,7 +19,6 @@ class CreatePengambilanTable extends Migration
             $table->string('nama_sparepart',100);
             $table->string('kode_sparepart',100);
             $table->string('merk',100);
-            $table->string('nopol',100);
             $table->timestamps();
         });
     }

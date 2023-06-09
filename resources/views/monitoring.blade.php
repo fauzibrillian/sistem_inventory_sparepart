@@ -238,10 +238,8 @@ Coded by www.creative-tim.com
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       
-                      <p class="card-category">Stock Sparepart Mobil</p>
-                      <p class="card-title">
-                      <span class="badge badge-danger">{{ $count }}</span>
-                      Stock<p>
+                      <p class="card-category">Pemakaian Sparepart</p>
+                      <p class="card-title">Pakai Part<p>
                     </div>
                   </div>
                 </div>
@@ -249,7 +247,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/stock" class="btn btn-primary">Pilih</a>
+                  <a href="/pemakaian" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>
@@ -266,8 +264,10 @@ Coded by www.creative-tim.com
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       
-                      <p class="card-category">Pemakaian Sparepart</p>
-                      <p class="card-title">Pakai Part<p>
+                      <p class="card-category">Stock Sparepart Mobil</p>
+                      <p class="card-title">
+                      <span class="badge badge-danger">{{ $limit }}</span>
+                      Stock<p>
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <a href="/pemakaian" class="btn btn-primary">Pilih</a>
+                  <a href="/stock" class="btn btn-primary">Pilih</a>
                 </div>
               </div>
             </div>

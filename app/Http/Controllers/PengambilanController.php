@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 use App\Models\pengambilan;
+use App\Models\stock;
 
 class PengambilanController extends Controller
 {
@@ -43,14 +45,33 @@ class PengambilanController extends Controller
      */
     public function store(Request $request)
     {
+
         $tanggal = $request->get('tanggal');
         $nama_sparepart = $request->get('nama_sparepart');
         $kode_sparepart = $request->get('kode_sparepart');
         $merk = $request->get('merk');
         $qty = $request->get('qty');
-        $nopol = $request->get('nopol');
         $pegawai =$request->get('pegawai_id');
         $stock =$request->get('stock_id');
+
+        $stockquery = DB::table('stock') -> where('id','=',$stock) ->get();
+        $results = DB::table('pengambilan')
+        ->selectRaw('SUM(qty) AS qty, stock_id')
+        ->groupBy('stock_id')
+        ->where('stock_id','=',$stock)
+        ->get();
+        
+        foreach ($stockquery as $stok) {
+            foreach ($results as $result) {
+                if ($stok->id==$result->stock_id){
+                    $stok->qty=$stok->qty - $result->qty;
+                    $stok->qty=$stok->qty - $qty;
+                    if($stok->qty < 0 )
+                    $message = 'Gagal: Jumlah stok tidak mencukupi';
+                    return View::make('errors', compact('message'));
+                }
+            }
+        }
         /* Menyimpan data kedalam tabel */
         $save_pengambilan = new \App\Models\pengambilan;
         $save_pemakaian = new \App\Models\pemakaian;
@@ -62,7 +83,6 @@ class PengambilanController extends Controller
         $save_pengambilan->nama_sparepart = $nama_sparepart;
         $save_pengambilan->kode_sparepart = $kode_sparepart;
         $save_pengambilan->merk = $merk;
-        $save_pengambilan->nopol = $nopol;
         $save_pengambilan->qty = $qty;
         $save_pengambilan->pegawai_id = $pegawai;
         $save_pengambilan->stock_id = $stock;

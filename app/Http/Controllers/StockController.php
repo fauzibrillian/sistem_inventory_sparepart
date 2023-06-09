@@ -15,15 +15,16 @@ class StockController extends Controller
      */
     public function index()
     {
+        $stock = DB::table('stock')->get();
         $results = DB::table('pengambilan')
         ->selectRaw('SUM(qty) AS qty, stock_id')
         ->groupBy('stock_id')
         ->get();
-        $stock = DB::table('stock')->get();
+
         foreach ($stock as $stok) {
             foreach ($results as $result) {
                 if ($stok->id==$result->stock_id){
-                    $stok->qty=$stok->qty - $result->qty ;
+                    $stok->qty=$stok->qty - $result->qty;
                 }
             }
         }

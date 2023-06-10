@@ -237,10 +237,10 @@ Coded by www.creative-tim.com
                           {{formatrupiah($x->harga)}}
                         </td>
                         <td>
-                          Rp. 5.000.000
+                          {{formatrupiah($x->hasil)}}
                         </td>
                         <td>
-                          67%
+                          {{decimal($presentase)}}
                         </td>
                         <td>
                           A
@@ -259,6 +259,8 @@ Coded by www.creative-tim.com
                             <tr>
                               <td colspan="4">Total Pemakaian Dana</td>
                               <td></td>
+                              <td></td>
+                              <td>{{formatrupiah($total)}}</td>
                             </tr>
                       </tfoot>
                   </table>

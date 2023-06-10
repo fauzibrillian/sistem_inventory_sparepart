@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\pemakaian;
-use App\Models\abcmodel;
 
 
 class ModelController extends Controller
@@ -18,7 +17,17 @@ class ModelController extends Controller
     public function index()
     {
         $abcmodel = DB::table('pemakaian')->get();
-        return view('abcmodel', ['abcmodel' => $abcmodel]);
+        $hasil = 0;
+        $total = 0;
+        $presentase = 0;
+        foreach ($abcmodel as $abc) {
+            $abc -> hasil = $abc -> qty * $abc -> harga;
+            $total += $abc->hasil;
+            $presentase = $abc->hasil / $total * 100;
+        }
+
+
+        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'presentase'=>$presentase]);
     }
 
     /**

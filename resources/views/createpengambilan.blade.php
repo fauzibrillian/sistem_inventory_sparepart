@@ -212,6 +212,10 @@ Coded by www.creative-tim.com
                             <label for="inputtipe">Qty</label>
                             <input type="Qty" class="form-control" id="inputtipe" required name="qty" placeholder="Qty">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputtipe">Harga</label>
+                          <input type="Harga" class="form-control" id="inputtipe" required name="harga" placeholder="Harga">
+                       </div>                        
                         <div class="form-group col-md-12">
                           <label for="inputtipe">Nama Pegawai</label>
                           <select class="form-control" id="exampleFormControlSelect1"  name="pegawai_id" >

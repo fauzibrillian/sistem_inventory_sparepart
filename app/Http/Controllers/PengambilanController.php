@@ -51,6 +51,7 @@ class PengambilanController extends Controller
         $kode_sparepart = $request->get('kode_sparepart');
         $merk = $request->get('merk');
         $qty = $request->get('qty');
+        $harga = $request->get('harga');
         $pegawai =$request->get('pegawai_id');
         $stock =$request->get('stock_id');
 
@@ -66,9 +67,10 @@ class PengambilanController extends Controller
                 if ($stok->id==$result->stock_id){
                     $stok->qty=$stok->qty - $result->qty;
                     $stok->qty=$stok->qty - $qty;
-                    if($stok->qty < 0 )
-                    $message = 'Gagal: Jumlah stok tidak mencukupi';
-                    return View::make('errors', compact('message'));
+                    if($stok->qty < 0 ){
+                        $message = 'Gagal: Jumlah stok tidak mencukupi';
+                        return View::make('errors', compact('message'));
+                    }
                 }
             }
         }
@@ -79,6 +81,7 @@ class PengambilanController extends Controller
         $save_pemakaian->kode_sparepart = $kode_sparepart;
         $save_pemakaian->qty = $qty;
         $save_pemakaian->merk = $merk;
+        $save_pemakaian->harga = $harga;
         $save_pengambilan->tanggal = $tanggal;
         $save_pengambilan->nama_sparepart = $nama_sparepart;
         $save_pengambilan->kode_sparepart = $kode_sparepart;

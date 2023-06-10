@@ -194,7 +194,7 @@ Coded by www.creative-tim.com
                         Kode Sparepart
                       </th>
                       <th>
-                        Kuantitas Pemakaian
+                        Qty
                       </th>
                       <th>
                         Tipe Mobil
@@ -203,7 +203,10 @@ Coded by www.creative-tim.com
                         Harga Satuan
                       </th>
                       <th>
-                        Penyerapan Dana ( Harga Satuan x Kuantitas Pemakaian )
+                        Penyerapan Dana ( Harga Satuan x Qty )
+                      </th>
+                      <th>
+                        Presentasi Penyerapan
                       </th>
                       <th>
                         Kategori
@@ -213,27 +216,31 @@ Coded by www.creative-tim.com
                       </th>
                     </thead>
                     <tbody>
+                      @foreach ($abcmodel as $key=>$x)
                       <tr>
                         <td>
-                          1
+                          {{$key+1}}
                         </td>
                         <td>
-                          Bumper Depan
+                          {{$x->nama_sparepart}}
                         </td>
                         <td>
-                          23556-BZ120
+                          {{$x->kode_sparepart}}
                         </td>
                         <td>
-                          10
+                          {{$x->qty}}
                         </td>
                         <td>
-                         Honda Jazz
+                          {{$x->merk}}
                         </td>
                         <td>
-                          Rp. 500.000
+                          {{formatrupiah($x->harga)}}
                         </td>
                         <td>
                           Rp. 5.000.000
+                        </td>
+                        <td>
+                          67%
                         </td>
                         <td>
                           A
@@ -246,6 +253,7 @@ Coded by www.creative-tim.com
                           </a>
                         </td>
                       </tr>
+                      @endforeach
                     </tbody>
                       <tfoot class="table-footer">
                             <tr>

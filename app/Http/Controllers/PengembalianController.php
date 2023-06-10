@@ -123,4 +123,13 @@ class PengembalianController extends Controller
 
         return redirect()->route('pengembalian.index');
     }
+
+    public function search_pengembalian(Request $request, Pengembalian $pengembalian)
+    {
+        $searchTerm = $request->input('search_pengembalian');
+
+        $pengembalian = pengembalian::where('kode_transaksi', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+        return view('pengembalian', ['pengembalian' => $pengembalian]);
+    }
 }

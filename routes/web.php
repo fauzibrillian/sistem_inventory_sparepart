@@ -11,6 +11,8 @@ use App\Http\Controllers\PengambilanController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\MonitoringController;
 use App\Http\Controllers\PemakaianController;
+use App\Http\Controllers\ModelController;
+
 
 
 
@@ -44,6 +46,7 @@ Route::get('/search_pegawai', [PegawaiController::class, 'search_pegawai'])->nam
 Route::get('/pengembalian', [PengembalianController::class,'index']);
 Route::get('/pengembalian/create', [PengembalianController::class, 'create']);
 Route::resource('pengembalian', PengembalianController::class);
+Route::get('/search_pengembalian', [PengembalianController::class, 'search_pengembalian'])->name('search_pengembalian');
 
 Route::get('/penerimaan', [PenerimaanController::class,'index']);
 Route::get('/penerimaan/create', [PenerimaanController::class, 'create']);
@@ -72,9 +75,7 @@ Route::get('/search_pemakaian', [PemakaianController::class, 'search_pemakaian']
 
 Route::get('/monitoring', [MonitoringController::class,'index']);
 
-Route::get('/abcmodel', function () {
-    return view('abcmodel');
-});
+Route::get('/abcmodel', [ModelController::class,'index']);
 
 Route::get('/prediksi', function () {
     return view('prediksi');

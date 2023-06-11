@@ -20,18 +20,17 @@ class ModelController extends Controller
         $hasil = 0;
         $total = 0;
         $presentase=0;
-        $total_presentase=0;
+        $total_qty=0;
         $keterangan='';
         foreach ($abcmodel as $abc) {
             $abc -> hasil = $abc -> qty * $abc -> harga;
 
+            $total_qty += $abc->qty;
             $total += $abc->hasil;
 
         }
         foreach ($abcmodel as $presentase){
             $presentase -> presentase = $presentase -> hasil / $total *100 ;
-
-            $total_presentase += $presentase->presentase;
 
             if ($presentase->presentase > 20 && $presentase->presentase < 100 ) {
                 $presentase->keterangan = 'A';
@@ -44,7 +43,7 @@ class ModelController extends Controller
               }
         }
         
-        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_presentase'=> $total_presentase]);
+        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_qty'=> $total_qty]);
     }
 
     /**
@@ -113,12 +112,39 @@ class ModelController extends Controller
         //
     }
 
-    // public function search_abc(Request $request, Pemakaian $pemakaian)
-    // {
-    //     $searchTerm = $request->input('search_pemakaian');
+    public function search_abc(Request $request, Pemakaian $pemakaian)
+    {
+        $searchTerm = $request->input('search_abc');
 
-    //     $pemakaian = pemakaian::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+        $abcmodel = pemakaian::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+
+        $hasil = 0;
+        $total = 0;
+        $presentase=0;
+        $total_qty=0;
+        $keterangan='';
+        foreach ($abcmodel as $abc) {
+            $abc -> hasil = $abc -> qty * $abc -> harga;
+
+            $total_qty += $abc->qty;
+
+            $total += $abc->hasil;
+
+        }
+        foreach ($abcmodel as $presentase){
+            $presentase -> presentase = $presentase -> hasil / $total *100 ;
+
+            if ($presentase->presentase > 20 && $presentase->presentase < 100 ) {
+                $presentase->keterangan = 'A';
+            } elseif ( $presentase->presentase > 10 && $presentase->presentase < 20 ){
+                $presentase->keterangan = 'B';
+            } elseif ( $presentase->presentase > 0 && $presentase->presentase < 20 ){
+                $presentase->keterangan = 'C';
+            } else {
+                $presentase->keterangan = 'tidak ada';;
+              }
+        }
         
-    //     return view('', ['pemakaian' => $pemakaian]);
-    // }
+        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_qty'=> $total_qty]);
+    }
 }

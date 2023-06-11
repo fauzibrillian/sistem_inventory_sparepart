@@ -261,7 +261,9 @@ Coded by www.creative-tim.com
                     </tbody>
                       <tfoot class="table-footer">
                             <tr>
-                              <td colspan="4">Total Pemakaian Dana</td>
+                              <td colspan="2">Total Pemakaian Dana</td>
+                              <td></td>
+                              <td>{{$total_qty}}</td>
                               <td></td>
                               <td></td>
                               <td>{{formatrupiah($total)}}</td>

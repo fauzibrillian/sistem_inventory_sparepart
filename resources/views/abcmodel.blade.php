@@ -179,6 +179,10 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Forecasting Sparepart </h4>
+                <form action="{{ route('search_abc') }}" method="GET">
+                  <input type="text" name="search_abc"  placeholder="Cari Kode Sparepart....">
+                  <button class="btn btn-primary" type="submit">Cari</button>
+                </form>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

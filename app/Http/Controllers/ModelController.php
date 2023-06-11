@@ -20,23 +20,31 @@ class ModelController extends Controller
         $hasil = 0;
         $total = 0;
         $presentase=0;
+        $total_presentase=0;
         $keterangan='';
         foreach ($abcmodel as $abc) {
             $abc -> hasil = $abc -> qty * $abc -> harga;
+
             $total += $abc->hasil;
+
         }
         foreach ($abcmodel as $presentase){
             $presentase -> presentase = $presentase -> hasil / $total *100 ;
-            if ($presentase->presentase > 80 && $presentase->presentase < 100 ) {
+
+            $total_presentase += $presentase->presentase;
+
+            if ($presentase->presentase > 20 && $presentase->presentase < 100 ) {
                 $presentase->keterangan = 'A';
-            } elseif ( $presentase->presentase > 50 && $presentase->presentase < 80 ){
+            } elseif ( $presentase->presentase > 10 && $presentase->presentase < 20 ){
                 $presentase->keterangan = 'B';
-            } elseif ( $presentase->presentase > 20 && $presentase->presentase < 50 ){
+            } elseif ( $presentase->presentase > 0 && $presentase->presentase < 20 ){
                 $presentase->keterangan = 'C';
-            } 
+            } else {
+                $presentase->keterangan = 'tidak ada';;
+              }
         }
         
-        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total ,'presentase','keterangan']);
+        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_presentase'=> $total_presentase]);
     }
 
     /**
@@ -104,4 +112,13 @@ class ModelController extends Controller
     {
         //
     }
+
+    // public function search_abc(Request $request, Pemakaian $pemakaian)
+    // {
+    //     $searchTerm = $request->input('search_pemakaian');
+
+    //     $pemakaian = pemakaian::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+        
+    //     return view('', ['pemakaian' => $pemakaian]);
+    // }
 }

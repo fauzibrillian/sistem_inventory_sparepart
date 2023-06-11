@@ -76,6 +76,7 @@ Route::get('/search_pemakaian', [PemakaianController::class, 'search_pemakaian']
 Route::get('/monitoring', [MonitoringController::class,'index']);
 
 Route::get('/abcmodel', [ModelController::class,'index']);
+Route::get('/search_abc', [ModelController::class, 'search_abc'])->name('search_abc');
 
 Route::get('/prediksi', function () {
     return view('prediksi');

@@ -19,15 +19,24 @@ class ModelController extends Controller
         $abcmodel = DB::table('pemakaian')->get();
         $hasil = 0;
         $total = 0;
-        $presentase = 0;
+        $presentase=0;
+        $keterangan='';
         foreach ($abcmodel as $abc) {
             $abc -> hasil = $abc -> qty * $abc -> harga;
             $total += $abc->hasil;
-            $presentase = $abc->hasil / $total * 100;
         }
-
-
-        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'presentase'=>$presentase]);
+        foreach ($abcmodel as $presentase){
+            $presentase -> presentase = $presentase -> hasil / $total *100 ;
+            if ($presentase->presentase > 80 && $presentase->presentase < 100 ) {
+                $presentase->keterangan = 'A';
+            } elseif ( $presentase->presentase > 50 && $presentase->presentase < 80 ){
+                $presentase->keterangan = 'B';
+            } elseif ( $presentase->presentase > 20 && $presentase->presentase < 50 ){
+                $presentase->keterangan = 'C';
+            } 
+        }
+        
+        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total ,'presentase','keterangan']);
     }
 
     /**

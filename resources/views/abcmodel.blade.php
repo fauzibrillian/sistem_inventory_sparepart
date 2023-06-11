@@ -240,10 +240,10 @@ Coded by www.creative-tim.com
                           {{formatrupiah($x->hasil)}}
                         </td>
                         <td>
-                          {{decimal($presentase)}}
+                          {{decimal($x->presentase)}}
                         </td>
                         <td>
-                          A
+                          {{$x->keterangan}}
                         </td>
                         <td>
                           <a href="/prediksi" class="btn btn-warning"> 

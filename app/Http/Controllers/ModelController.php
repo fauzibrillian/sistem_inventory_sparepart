@@ -112,39 +112,39 @@ class ModelController extends Controller
         //
     }
 
-    public function search_abc(Request $request, Pemakaian $pemakaian)
-    {
-        $searchTerm = $request->input('search_abc');
+    // public function search_abc(Request $request, Pemakaian $pemakaian)
+    // {
+    //     $searchTerm = $request->input('search_abc');
 
-        $abcmodel = pemakaian::where('kode_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+    //     $abcmodel = pemakaian::where('tanggal', 'LIKE', '%' . $searchTerm . '%')->get();
 
-        $hasil = 0;
-        $total = 0;
-        $presentase=0;
-        $total_qty=0;
-        $keterangan='';
-        foreach ($abcmodel as $abc) {
-            $abc -> hasil = $abc -> qty * $abc -> harga;
+    //     $hasil = 0;
+    //     $total = 0;
+    //     $presentase=0;
+    //     $total_qty=0;
+    //     $keterangan='';
+    //     foreach ($abcmodel as $abc) {
+    //         $abc -> hasil = $abc -> qty * $abc -> harga;
 
-            $total_qty += $abc->qty;
+    //         $total_qty += $abc->qty;
 
-            $total += $abc->hasil;
+    //         $total += $abc->hasil;
 
-        }
-        foreach ($abcmodel as $presentase){
-            $presentase -> presentase = $presentase -> hasil / $total *100 ;
+    //     }
+    //     foreach ($abcmodel as $presentase){
+    //         $presentase -> presentase = $presentase -> hasil / $total *100 ;
 
-            if ($presentase->presentase > 20 && $presentase->presentase < 100 ) {
-                $presentase->keterangan = 'A';
-            } elseif ( $presentase->presentase > 10 && $presentase->presentase < 20 ){
-                $presentase->keterangan = 'B';
-            } elseif ( $presentase->presentase > 0 && $presentase->presentase < 20 ){
-                $presentase->keterangan = 'C';
-            } else {
-                $presentase->keterangan = 'tidak ada';;
-              }
-        }
+    //         if ($presentase->presentase > 20 && $presentase->presentase < 100 ) {
+    //             $presentase->keterangan = 'A';
+    //         } elseif ( $presentase->presentase > 10 && $presentase->presentase < 20 ){
+    //             $presentase->keterangan = 'B';
+    //         } elseif ( $presentase->presentase > 0 && $presentase->presentase < 20 ){
+    //             $presentase->keterangan = 'C';
+    //         } else {
+    //             $presentase->keterangan = 'tidak ada';;
+    //           }
+    //     }
         
-        return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_qty'=> $total_qty]);
-    }
+    //     return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_qty'=> $total_qty]);
+    // }
 }

@@ -12,6 +12,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\MonitoringController;
 use App\Http\Controllers\PemakaianController;
 use App\Http\Controllers\ModelController;
+use App\Http\Controllers\SparepartUsageController;
 
 
 
@@ -78,9 +79,9 @@ Route::get('/monitoring', [MonitoringController::class,'index']);
 Route::get('/abcmodel', [ModelController::class,'index']);
 Route::get('/search_abc', [ModelController::class, 'search_abc'])->name('search_abc');
 
-Route::get('/prediksi', function () {
-    return view('prediksi');
-});
+Route::get('/sparepart-prediction', [SparepartUsageController::class, 'index']);
+Route::post('/sparepart-prediction', [SparepartUsageController::class, 'predictUsage']);
+
 
 Route::get('/logout', function(){
     \Auth::logout();

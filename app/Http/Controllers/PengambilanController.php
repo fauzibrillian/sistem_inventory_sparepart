@@ -77,6 +77,7 @@ class PengambilanController extends Controller
         /* Menyimpan data kedalam tabel */
         $save_pengambilan = new \App\Models\pengambilan;
         $save_pemakaian = new \App\Models\pemakaian;
+        $save_pemakaian->tanggal = $tanggal;
         $save_pemakaian->nama_sparepart = $nama_sparepart;
         $save_pemakaian->kode_sparepart = $kode_sparepart;
         $save_pemakaian->qty = $qty;

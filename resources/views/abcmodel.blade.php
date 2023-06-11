@@ -179,10 +179,14 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Forecasting Sparepart </h4>
-                <form action="{{ route('search_abc') }}" method="GET">
-                  <input type="text" name="search_abc"  placeholder="Cari Kode Sparepart....">
-                  <button class="btn btn-primary" type="submit">Cari</button>
-                </form>
+                {{-- <form action="{{ route('search_abc') }}" method="GET">
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <input type="date" date-date-format="MM" id="bulanInput" name="search_abc"  placeholder="Cari Kode Sparepart....">
+                      <button class="btn btn-primary" type="submit">Cari</button>
+                    </div>
+                  </div>
+                </form> --}}
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -190,6 +194,9 @@ Coded by www.creative-tim.com
                     <thead class=" table-primary">
                       <th>
                         No
+                      </th>
+                      <th>
+                        Tanggal
                       </th>
                       <th>
                         Nama Sparepart
@@ -215,15 +222,15 @@ Coded by www.creative-tim.com
                       <th>
                         Kategori
                       </th>
-                      <th>
-                        Aksi
-                      </th>
                     </thead>
                     <tbody>
                       @foreach ($abcmodel as $key=>$x)
                       <tr>
                         <td>
                           {{$key+1}}
+                        </td>
+                        <td>
+                          {{$x->tanggal}}
                         </td>
                         <td>
                           {{$x->nama_sparepart}}
@@ -249,12 +256,7 @@ Coded by www.creative-tim.com
                         <td>
                           {{$x->keterangan}}
                         </td>
-                        <td>
-                          <a href="/prediksi" class="btn btn-warning"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fa-solid fa-chart-line" viewBox="0 0 512 512">
-                              <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
-                            </svg>
-                          </a>
+                        <td> 
                         </td>
                       </tr>
                       @endforeach
@@ -263,10 +265,19 @@ Coded by www.creative-tim.com
                             <tr>
                               <td colspan="2">Total Pemakaian Dana</td>
                               <td></td>
+                              <td></td>
                               <td>{{$total_qty}}</td>
                               <td></td>
                               <td></td>
                               <td>{{formatrupiah($total)}}</td>
+                              <td></td>
+                              <td>
+                              <a href="/sparepart-prediction" class="btn btn-warning"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fa-solid fa-chart-line" viewBox="0 0 512 512">
+                                  <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
+                                </svg>
+                              </a>
+                              </td>
                             </tr>
                       </tfoot>
                   </table>
@@ -296,6 +307,26 @@ Coded by www.creative-tim.com
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
       demo.initChartsPages();
+    });
+
+    var bulanInput = document.getElementById("bulanInput");
+
+    // Mengatur nilai default ke bulan saat ini
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+    var defaultValue = year + "-" + ("0" + month).slice(-2);
+    bulanInput.value = defaultValue;
+
+    // Menangkap perubahan nilai input
+    bulanInput.addEventListener("change", function() {
+        // Mendapatkan nilai bulan dan tahun dari input
+        var value = bulanInput.value;
+        var selectedMonth = parseInt(value.split("-")[1]);
+
+        // Melakukan sesuatu dengan nilai bulan yang dipilih
+        console.log("Bulan yang dipilih:", selectedMonth);
+        bulanInput.value=selectedMonth;
     });
   </script>
 </body>

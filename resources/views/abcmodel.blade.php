@@ -210,7 +210,7 @@ Coded by www.creative-tim.com
                         Penyerapan Dana ( Harga Satuan x Qty )
                       </th>
                       <th>
-                        Presentasi Penyerapan
+                        Presentase Penyerapan
                       </th>
                       <th>
                         Kategori

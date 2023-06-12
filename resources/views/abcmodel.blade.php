@@ -30,6 +30,8 @@ Coded by www.creative-tim.com
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <!-- Tambahkan di bagian <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
@@ -179,6 +181,10 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Forecasting Sparepart </h4>
+                <form action="{{ route('search_abc') }}" method="GET">
+                  <input type="text" class="datepicker" data-date-format="mm/yyyy" name="search_abc" placeholder="Cari Bulan....">
+                  <button class="btn btn-primary" type="submit">Cari</button>
+                </form>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -295,30 +301,15 @@ Coded by www.creative-tim.com
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <!-- Tambahkan sebelum penutup tag </body> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
   <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-
-    var bulanInput = document.getElementById("bulanInput");
-
-    // Mengatur nilai default ke bulan saat ini
-    var today = new Date();
-    var month = today.getMonth() + 1;
-    var year = today.getFullYear();
-    var defaultValue = year + "-" + ("0" + month).slice(-2);
-    bulanInput.value = defaultValue;
-
-    // Menangkap perubahan nilai input
-    bulanInput.addEventListener("change", function() {
-        // Mendapatkan nilai bulan dan tahun dari input
-        var value = bulanInput.value;
-        var selectedMonth = parseInt(value.split("-")[1]);
-
-        // Melakukan sesuatu dengan nilai bulan yang dipilih
-        console.log("Bulan yang dipilih:", selectedMonth);
-        bulanInput.value=selectedMonth;
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            minViewMode: 1,
+            format: 'mm/yyyy',
+            autoclose: true
+        });
     });
   </script>
 </body>

@@ -179,14 +179,6 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Forecasting Sparepart </h4>
-                {{-- <form action="{{ route('search_abc') }}" method="GET">
-                  <div class="form-row">
-                    <div class="form-group col-md-12">
-                      <input type="date" date-date-format="MM" id="bulanInput" name="search_abc"  placeholder="Cari Kode Sparepart....">
-                      <button class="btn btn-primary" type="submit">Cari</button>
-                    </div>
-                  </div>
-                </form> --}}
               </div>
               <div class="card-body">
                 <div class="table-responsive">

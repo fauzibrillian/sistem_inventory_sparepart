@@ -46,9 +46,10 @@ class ModelController extends Controller
         return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_qty'=> $total_qty]);
     }
 
-    public function prediction()
+    public function search_prediction(Request $request, Pemakaian $pemakaian)
     {
-        $abcmodel = DB::table('pemakaian')->get();
+        $searchTerm = $request->input('search_prediction');
+        $abcmodel = pemakaian::whereRaw("DATE_FORMAT( tanggal,'%m/%Y') = '$searchTerm' ")->get();
         $total_qty=[];
         foreach ($abcmodel as $abc) {
          $total_qty[] += $abc->qty;
@@ -61,7 +62,7 @@ class ModelController extends Controller
         // Mengulang perhitungan rata-rata untuk setiap bulan ke depan
         $predictedData = [];
         for ($i = 0; $i < $jangkaWaktu; $i++) {
-            $predictedData[] = round(array_sum(array_slice($total_qty, $jumlahData - $jangkaWaktu + $i, $jangkaWaktu)));
+            $predictedData[] = round(array_sum(array_slice($total_qty, $jumlahData - $jangkaWaktu + $i, $jangkaWaktu))* 1.5);
         }
         
         return view('prediction', ['predictedData' => $predictedData,'total_qty'=> $total_qty]);

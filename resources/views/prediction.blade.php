@@ -30,6 +30,7 @@ Coded by www.creative-tim.com
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
@@ -179,15 +180,19 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header ">
                 <h5 class="card-title">Prediksi Pemakaian Sparepart</h5>
-                {{-- <form action="/sparepart-prediction" method="POST">
+                {{-- <form action="/search_prediction" method="POST">
                   @csrf
                   <label for="start_date">Start Date:</label>
                   <input type="date" name="start_date" id="start_date">
                   <label for="end_date">End Date:</label>
                   <input type="date" name="end_date" id="end_date">
                   <button class="btn btn-primary" type="submit">Cari</button>
+                </form> --}}
+                <form action="{{ route('search_prediction') }}" method="GET">
+                  <input type="text" class="datepicker" data-date-format="mm/yyyy" name="search_prediction" placeholder="Cari Bulan....">
+                  <button class="btn btn-primary" type="submit">Cari</button>
                 </form>
-                <p class="card-category">Periode Januari - Desember </p> --}}
+                <p class="card-category">Periode Januari - Desember </p>
               </div>
               <div class="card-body ">
                 <canvas id="chart" width="400" height="100"></canvas>
@@ -214,19 +219,31 @@ Coded by www.creative-tim.com
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
   
   <script>
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            minViewMode: 1,
+            format: 'mm/yyyy',
+            autoclose: true
+        });
+    });
+
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
       demo.initChartsPages();
     });
+
     var predictedData = @json($predictedData);
 
     var labels = [];
     var data = [];
 
     predictedData.forEach(function(prediction, predictedData) {
-            labels.push("{{ \Carbon\Carbon::now()->addMonths($predictedData)->format('M Y') }}");
+            var currentDate = new Date();
+            currentDate.setMonth(currentDate.getMonth() + predictedData + 1);
+            labels.push(currentDate.toLocaleString('default', { month: 'short', year: 'numeric' }));
             data.push(prediction);
         });
 

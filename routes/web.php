@@ -79,8 +79,9 @@ Route::get('/monitoring', [MonitoringController::class,'index']);
 Route::get('/abcmodel', [ModelController::class,'index']);
 Route::get('/search_abc', [ModelController::class, 'search_abc'])->name('search_abc');
 
-Route::get('/prediction', [ModelController::class, 'prediction']);
-Route::post('/sparepart-prediction', [ModelController::class, 'prediction']);
+Route::get('/prediction', [ModelController::class, 'search_prediction']);
+Route::post('/sparepart-prediction', [ModelController::class, 'search_prediction']);
+Route::get('/search_prediction', [ModelController::class, 'search_prediction'])->name('search_prediction');
 
 
 Route::get('/logout', function(){

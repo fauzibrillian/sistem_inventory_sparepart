@@ -79,8 +79,8 @@ Route::get('/monitoring', [MonitoringController::class,'index']);
 Route::get('/abcmodel', [ModelController::class,'index']);
 Route::get('/search_abc', [ModelController::class, 'search_abc'])->name('search_abc');
 
-Route::get('/sparepart-prediction', [SparepartUsageController::class, 'index']);
-Route::post('/sparepart-prediction', [SparepartUsageController::class, 'predictUsage']);
+Route::get('/prediction', [ModelController::class, 'prediction']);
+Route::post('/sparepart-prediction', [ModelController::class, 'prediction']);
 
 
 Route::get('/logout', function(){

@@ -179,7 +179,7 @@ Coded by www.creative-tim.com
             <div class="card">
               <div class="card-header ">
                 <h5 class="card-title">Prediksi Pemakaian Sparepart</h5>
-                <form action="/sparepart-prediction" method="POST">
+                {{-- <form action="/sparepart-prediction" method="POST">
                   @csrf
                   <label for="start_date">Start Date:</label>
                   <input type="date" name="start_date" id="start_date">
@@ -187,10 +187,10 @@ Coded by www.creative-tim.com
                   <input type="date" name="end_date" id="end_date">
                   <button class="btn btn-primary" type="submit">Cari</button>
                 </form>
-                <p class="card-category">Periode Januari - Desember </p>
+                <p class="card-category">Periode Januari - Desember </p> --}}
               </div>
               <div class="card-body ">
-                <canvas id="predictionChart" width="400" height="100"></canvas>
+                <canvas id="chart" width="400" height="100"></canvas>
                 <a href="/abcmodel" class="btn btn-danger"> Back </a>
               </div>
             </div>
@@ -213,58 +213,44 @@ Coded by www.creative-tim.com
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
       demo.initChartsPages();
     });
-  
-  console.log($prediction);
-  if($prediction==undefined){
-    const predictionData = [
-    
-    ]
-  }else {
-    const predictionData = @json($prediction);
-  }
+    var predictedData = @json($predictedData);
 
-  const chartLabels = predictionData.map(data => data.date);
-  const chartData = predictionData.map(data => data.prediction);
+    var labels = [];
+    var data = [];
 
-  const ctx = document.getElementById('predictionChart').getContext('2d');
-      new Chart(ctx, {
-          type: 'line',
-          data: {
-              labels: chartLabels,
-              datasets: [{
-                  label: 'Sparepart Prediction',
-                  data: chartData,
-                  fill: false,
-                  borderColor: 'rgba(75, 192, 192, 1)',
-                  tension: 0.1
-              }]
-          },
-          options: {
-              responsive: true,
-              scales: {
-                  x: {
-                      display: true,
-                      title: {
-                          display: true,
-                          text: 'Date'
-                      }
-                  },
-                  y: {
-                      display: true,
-                      title: {
-                          display: true,
-                          text: 'Sparepart Usage'
-                      }
-                  }
-              }
-          }
-      });
+    predictedData.forEach(function(prediction, predictedData) {
+            labels.push("{{ \Carbon\Carbon::now()->addMonths($predictedData)->format('M Y') }}");
+            data.push(prediction);
+        });
+
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Prediksi Pemakaian',
+                data: data,
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
   </script>
 </body>
 

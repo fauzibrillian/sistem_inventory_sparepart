@@ -46,6 +46,28 @@ class ModelController extends Controller
         return view('abcmodel', ['abcmodel' => $abcmodel,'total'=> $total,'total_qty'=> $total_qty]);
     }
 
+    public function prediction()
+    {
+        $abcmodel = DB::table('pemakaian')->get();
+        $total_qty=[];
+        foreach ($abcmodel as $abc) {
+         $total_qty[] += $abc->qty;
+        }
+
+        $jumlahData = count($total_qty);
+        // Jumlah bulan ke depan yang akan diprediksi
+        $jangkaWaktu = 6;
+
+        // Mengulang perhitungan rata-rata untuk setiap bulan ke depan
+        $predictedData = [];
+        for ($i = 0; $i < $jangkaWaktu; $i++) {
+            $predictedData[] = round(array_sum(array_slice($total_qty, $jumlahData - $jangkaWaktu + $i, $jangkaWaktu)));
+        }
+        
+        return view('prediction', ['predictedData' => $predictedData,'total_qty'=> $total_qty]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

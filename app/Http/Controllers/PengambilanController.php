@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use App\Models\pengambilan;
+use App\Models\pemakaian;
 use App\Models\stock;
 
 class PengambilanController extends Controller
@@ -116,10 +117,12 @@ class PengambilanController extends Controller
     {
         $pegawai = DB::table('pegawai')->get();
         $stock = DB::table('stock')->get();
+        $pemakaian = DB::table('pemakaian')->get();
         return view('editpengambilan',[
         'pengambilan'=>$pengambilan,
         'pegawai'=>$pegawai,
-        'stock'=>$stock]);
+        'stock'=>$stock,
+        ]);
     }
 
     /**
@@ -129,10 +132,11 @@ class PengambilanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pengambilan $pengambilan)
+    public function update(Request $request, Pengambilan $pengambilan , Pemakaian $pemakaian)
     {
         $data = $request->all();
         $pengambilan->update($data);
+        $pemakaian->update($data);
 
         return redirect()->route('pengambilan.index');
     }

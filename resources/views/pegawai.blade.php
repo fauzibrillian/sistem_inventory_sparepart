@@ -45,7 +45,7 @@ Coded by www.creative-tim.com
           <!-- <p>CT</p> -->
         </a>
         <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Admin
+          Super User
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->

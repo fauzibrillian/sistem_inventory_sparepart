@@ -62,10 +62,10 @@ class ModelController extends Controller
         // Mengulang perhitungan rata-rata untuk setiap bulan ke depan
         $predictedData = [];
         for ($i = 0; $i < $jangkaWaktu; $i++) {
-            $predictedData[] = round(array_sum(array_slice($total_qty, $jumlahData - $jangkaWaktu + $i, $jangkaWaktu))* 1.5);
+            $predictedData[] = round(array_sum(array_slice($total_qty, $jumlahData - $jangkaWaktu + $i, $jangkaWaktu))* 1.25);
         }
         
-        return view('prediction', ['predictedData' => $predictedData,'total_qty'=> $total_qty]);
+        return view('prediction', ['predictedData' => $predictedData,'total_qty'=> $total_qty , 'searchTerm' => $searchTerm]);
     }
 
 

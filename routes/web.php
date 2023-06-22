@@ -83,6 +83,8 @@ Route::get('/prediction', [ModelController::class, 'search_prediction']);
 Route::post('/sparepart-prediction', [ModelController::class, 'search_prediction']);
 Route::get('/search_prediction', [ModelController::class, 'search_prediction'])->name('search_prediction');
 
+Route::get('/stocklama', [PenerimaanController::class, 'stocklama']);
+
 
 Route::get('/logout', function(){
     \Auth::logout();

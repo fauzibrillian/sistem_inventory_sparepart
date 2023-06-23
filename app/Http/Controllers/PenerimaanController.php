@@ -26,15 +26,15 @@ class PenerimaanController extends Controller
 
     public function stocklama()
     {
+        $today = now();
+        $lastYear = now()->subYear();
         $stocklama = DB::table('penerimaan')
         ->leftJoin('pegawai','penerimaan.pegawai_id','=','pegawai.id')
         ->leftJoin('supplier','penerimaan.supplier_id','=','supplier.id')
         ->leftJoin('transaksi','penerimaan.transaksi_id','=','transaksi.id')
         ->select('penerimaan.*', 'pegawai.nama_pegawai', 'supplier.nama_supplier', 'transaksi.nama_sparepart', 'transaksi.kode_sparepart','transaksi.kode_transaksi')
+        ->where('penerimaan.tanggal', '<', $lastYear)
         ->get();
-        $today = now();
-        $lastYear = now()->subYear();
-        $stocklama = penerimaan::where('tanggal', '<', $lastYear)->get();
         return view('stocklama', ['stocklama' => $stocklama]);
     }
 

@@ -57,7 +57,7 @@ class ModelController extends Controller
 
         $jumlahData = count($total_qty);
         // Jumlah bulan ke depan yang akan diprediksi
-        $jangkaWaktu = 15;
+        $jangkaWaktu = 6;
 
         // Mengulang perhitungan rata-rata untuk setiap bulan ke depan
         $predictedData = [];
